@@ -11,7 +11,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />}>
-          <Route path='/login' element={<Login/>}/>
           {/* Añadir rutas aqui */}
           <Route path='*' element={<Navigate replace to={'/'}/>}/>
         </Route>

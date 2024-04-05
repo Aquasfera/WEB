@@ -1,11 +1,12 @@
 import '../src/styles/App.css'
+import Landing from './pages/Landing'
 
 function App() {
 
 
   return (
     <>
-      <h1>Bienvenido a Aquasfera!</h1>
+      <Landing></Landing>
 
     </>
   )
