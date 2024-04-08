@@ -6,13 +6,14 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
 import { BrowserRouter, Routes, Route, } from 'react-router-dom';
 import Animals from './pages/Animals.jsx'
-
+import AboutUs from './pages/AboutUs.jsx'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />}/>
         <Route path='animals' element={<Animals />}/>
+        <Route path='/about-us' element={<AboutUs />}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
