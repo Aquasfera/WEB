@@ -3,31 +3,31 @@ import { NavLink } from "react-router-dom"
 function Landing() {
 
     const backgroundimage = {
-        height : "100vh",
+        minHeight : "100vh",
         backgroundImage : `url(${bgImage})`
     }
     const titleStyle = {
-        paddingTop: "150px",
-        marginLeft: "50px",
-        marginRight: "50px",
-        fontSize: "40px",
+        paddingTop: "3em",
+        marginLeft: "1em",
+        marginRight: "1em",
+        fontSize: "2.5em",
         lineHeight: "1.4",
         color: "#CCDBDC"
     }
     const textStyle = {
-        marginTop: "90px",
-        marginLeft: "50px",
-        marginRight: "50px",
-        fontSize: "20px",
+        marginTop: "3em",
+        marginLeft: "2.5em",
+        marginRight: "1em,",
+        fontSize: "1.1em",
         lineHeight: "1.6",
         color: "#CCDBDC"
     }
     const buttonContainerStyle = {
-        marginTop: "80px",
+        marginTop: "5em",
     }
     const buttonStyle = {
-        paddingInline: "30px",
-        paddingBlock: "10px",
+        paddingInline: "2em",
+        paddingBlock: "0.6em",
         borderColor: "#CCDBDC",
         borderStyle: "solid",
         backgroundColor: "transparent",

@@ -8,7 +8,7 @@ const bgcolor = {
 
 function Navhead() {
     return (
-        <Navbar expand="lg" className='navbar-dark' style={bgcolor}>
+        <Navbar expand="lg" className='navbar-dark sticky-top' style={bgcolor}>
         <Container>
           <Navbar.Brand href="#home" >Aquasfera</Navbar.Brand>
           <Navbar.Toggle  aria-controls="basic-navbar-nav" />
