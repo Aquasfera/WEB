@@ -1,8 +1,7 @@
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 const cardStyle = {
-    width: '100px',
-    marginBlock: "10px",
+    width: '7em',
+    marginBlock: "1em",
     backgroundColor: "transparent",
 }
 const textStyle = {
