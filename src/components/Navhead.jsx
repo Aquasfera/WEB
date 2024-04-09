@@ -3,12 +3,12 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 const bgcolor = {
-  backgroundColor: "transparent",
+  backgroundColor: "#0A141F"
 }
 
 function Navhead() {
     return (
-        <Navbar expand="lg" className='navbar-dark sticky-top' style={bgcolor}>
+        <Navbar expand="lg" className='navbar-dark sticky-top' style={bgcolor} navbar-expand-end="true">
         <Container>
           <Navbar.Brand href="#home" >Aquasfera</Navbar.Brand>
           <Navbar.Toggle  aria-controls="basic-navbar-nav" />
