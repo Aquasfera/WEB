@@ -2,13 +2,13 @@ import Navhead from "../components/Navhead";
 import AnimalCard from "../components/AnimalCard";
 import { useEffect, useState } from "react";
 
-
+import data from "../fakedata/fakedata.js";
 
 function Animals() {
-    const stickyTop={
-         top :  "3.5em",
-         backgroundColor: "#0A141F",
-         paddingTop: "1em"
+    const stickyTop = {
+        top: "3.5em",
+        backgroundColor: "#0A141F",
+        paddingTop: "1em"
     }
     const bgcolor = {
 
@@ -30,35 +30,35 @@ function Animals() {
     }
     const hRule = {
         border: "2px solid white",
-        marginInline: "1.5em" ,
-        marginBlock: "1.5em"  
+        marginInline: "1.5em",
+        marginBlock: "1.5em"
 
     }
     const containerStyle = {
-        marginInline: "1.5em",
+        paddingInline: "1.5em",
     }
 
     const [animalData, setAnimalData] = useState([]);
 
-    useEffect(()=>{
+    useEffect(() => {
         const fetchData = async () => {
             try {
-              const response = await fetch('http://192.168.1.244:3000/api/animal');
-              const jsonData = await response.json();
-              setAnimalData(jsonData);
-              console.log("hola")
-              console.log(jsonData)
+                const response = await fetch('http://192.168.1.244:3000/api/animal');
+                const jsonData = await response.json();
+                setAnimalData(jsonData);
+                console.log("hola")
+                console.log(jsonData)
             } catch (error) {
-              console.error(error);
+                console.error(error);
             }
-          };
-          fetchData()
-    },[])
+        };
+        fetchData()
+    }, [])
 
     return (
         <div style={bgcolor}>
             <Navhead />
-            <div  className="sticky-top"style={stickyTop}>
+            <div className=" container-fluid" style={stickyTop}>
                 <h1 style={titleStyle}>Mar<br />Mediterraneo</h1>
                 <h5 style={textStyle}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo, dicta inventore perferendis quam ullam nobis qui eum </h5>
                 <hr style={hRule} />
@@ -67,9 +67,9 @@ function Animals() {
             <div style={containerStyle} className="grid gap-3">
                 <div className="row">
                     {
-                        animalData.map(function (e, index) {
+                        data.map(function (e, index) {
                             return (
-                                <div className="col-4" key={index}><AnimalCard img={e.photos[0].url} name={e.name}></AnimalCard></div>
+                                <div className="col-6 d-flex justify-content-center" key={index}><AnimalCard img={e.img} name={e.name}></AnimalCard></div>
                             )
                         })
                     }

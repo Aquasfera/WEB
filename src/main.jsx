@@ -12,6 +12,7 @@ import AboutUs from './pages/AboutUs.jsx'
 import Feed from './pages/Feed.jsx'
 import PersonalPost from './pages/PersonalPost.jsx'
 import NewPost from './pages/NewPost.jsx'
+import AnimalDetail from './pages/AnimalDetail.jsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
         <Route path='/' element={<App />} />
         <Route path='/animals' element={<Animals />} />
+        <Route path='/animals/:name' element={<AnimalDetail/>}/>
         <Route path='/feed' element={<Feed />} />
         <Route path='/personal-post' element={<PersonalPost />} />
         <Route path='/about-us' element={<AboutUs />}/>
