@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Adrian Risco",
+        "photo": "./ods-3.png",
+        "github": "https://github.com/juanperez"
+      },
+      {
+        "name": "Mireia Garcia",
+        "photo": "./ods-3.png",
+        "github": "https://github.com/juanperez"
+      },
+      {
+        "name": "Arnau Orts",
+        "photo": "./ods-3.png",
+        "github": "https://github.com/juanperez"
+      },
+      {
+        "name": "Kevin Florencia",
+        "photo": "./ods-3.png",
+        "github": "https://github.com/KevinFlorenciaMoragas/"
+      },
+      {
+        "name": "Alex Pérez",
+        "photo": "./ods-3.png",
+        "github": "https://github.com/juanperez"
+      }
+      
+]
