@@ -26,7 +26,7 @@ function Post(props) {
 
     return (
         <div style={bgcolor}>
-            <div className="container mt-5">
+            <div className="container">
                 <div className="post-header" style={displayHeader}>
                     <div className="post-username">
                         <p className="username" style={textColor}>{props.username}</p>

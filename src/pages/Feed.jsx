@@ -14,12 +14,10 @@ function Feed() {
             .then(data => {
                 setPosts(data)
                 posts.forEach(post => {
-                    console.log(post)
                     idLocation = post.location_id;
-                    console.log(idLocation)
                     fetch(`http://192.168.1.244:3000/api/location/${idLocation}`)
                         .then(response => response.json())
-                        .then(data => setLocations(data))
+                        .then(data => setLocations(prevLocations => [...prevLocations, data]))
                         .catch(error => console.error(error))
                 })
 
@@ -34,14 +32,14 @@ function Feed() {
     return (
         <>
             <Navhead />
-            {posts.map(function (post) {
+            {posts.map(post => {
+                const location = locations.find(loc => loc.id === post.location_id)
                 return (
                     <div key={post.id}>
 
-
                         <Post
                             username={post.user.username}
-                            location={locations.name}
+                            location={location.name}
                             img={post.url}
                             comment={post.comment}
                             key={locations.id}
