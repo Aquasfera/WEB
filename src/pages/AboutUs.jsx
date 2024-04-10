@@ -7,6 +7,7 @@ import ods13 from "../assets/images/ods-13.png"
 import ods14 from "../assets/images/ods-14.png"
 import teamData from "../assets/team.json"
 import TeamCard from '../components/TeamCard'
+import Footer from '../components/Footer'
 export default function AboutUs() {
   const backgroundimage = {
     minHeight: "100vh",
@@ -29,7 +30,7 @@ export default function AboutUs() {
       <section className='container-fluid' style={backgroundimage}>
         <section className='row'>
           <div className='col-sm-12 col-md-6 col-lg-6 '>
-            <h1 style={titleStyle}>About Us</h1>
+            <h1 style={titleStyle}>Sobre Nosotros</h1>
             <p style={textStyle}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet
               pharetra nunc. Nullam nec nisl in dolor ultricies ultrices. Phasellus
@@ -41,16 +42,18 @@ export default function AboutUs() {
             </p>
           </div>
         </section>
-        <section className='row pt-2'>
-          <div className='col-sm-12 col-md-6 col-lg-6'>
+        <section className='row pt-3'>
+          <div className='col-sm-12 col-md-6 col-lg-6 '>
             <h1 style={titleStyle}>Nuestras ODS</h1>
-            <img className='img-fluid p-1 rounded' src={ods3} alt='ODS'></img>
-            <img className='img-fluid p-1 rounded' src={ods4} alt='ODS'></img>
-            <img className='img-fluid p-1 rounded' src={ods13} alt='ODS'></img>
-            <img className='img-fluid p-1 rounded' src={ods14} alt='ODS'></img>
+            <div className='d-flex flex-wrap justify-content-center'>
+              <img className='img-fluid p-1 rounded' src={ods3} alt='ODS'></img>
+              <img className='img-fluid p-1 rounded' src={ods4} alt='ODS'></img>
+              <img className='img-fluid p-1 rounded' src={ods13} alt='ODS'></img>
+              <img className='img-fluid p-1 rounded' src={ods14} alt='ODS'></img>
+            </div>
           </div>
         </section>
-        <section className='row'>
+        <section className='row pt-3 '>
           <h1 style={titleStyle}>Nuestro equipo</h1>
           {
             teamData.map((team, index) => {
@@ -62,6 +65,7 @@ export default function AboutUs() {
 
         </section>
       </section>
+      <Footer></Footer>
     </>
   )
 }
