@@ -6,9 +6,9 @@ function Feed() {
 
     const [posts, setPosts] = useState([]);
     const [locations, setLocations] = useState([]);
-    let idLocation;
 
     useEffect(() => {
+        let idLocation;
         fetch('http://192.168.1.244:3000/api/post')
             .then(response => response.json())
             .then(data => {

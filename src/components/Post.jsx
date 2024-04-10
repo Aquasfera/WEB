@@ -23,6 +23,11 @@ function Post(props) {
         display: "flex",
     }
 
+    const iconSize = {
+        height: "25px",
+        widht: "25px"
+    }
+
 
     return (
         <div style={bgcolor}>
@@ -32,7 +37,7 @@ function Post(props) {
                         <p className="username" style={textColor}>{props.username}</p>
                     </div>
                     <div className="post-location" style={display}>
-                        <img className="location-icon" src="" />
+                        <img className="location-icon" style={iconSize} src="../src/assets/icons/location-icon.svg" />
                         <p className="location" style={textColor}>{props.location}</p>
                     </div>
                 </div>
