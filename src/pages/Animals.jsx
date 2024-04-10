@@ -67,9 +67,9 @@ function Animals() {
             <div style={containerStyle} className="grid gap-3">
                 <div className="row">
                     {
-                        data.map(function (e, index) {
+                        animalData.map(function (e, index) {
                             return (
-                                <div className="col-6 d-flex justify-content-center" key={index}><AnimalCard img={e.img} name={e.name}></AnimalCard></div>
+                                <div className="col-6 d-flex justify-content-center" key={index}><AnimalCard img={`http://192.168.1.244:3000/photos/${e.photos[0]?.url}`} name={e.name}></AnimalCard></div>
                             )
                         })
                     }
