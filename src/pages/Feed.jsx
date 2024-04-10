@@ -37,8 +37,6 @@ function Feed() {
             {posts.map(function (post) {
                 return (
                     <div key={post.id}>
-
-
                         <Post
                             username={post.user.username}
                             location={locations.name}
@@ -46,10 +44,6 @@ function Feed() {
                             comment={post.comment}
                             key={locations.id}
                         />
-
-
-
-
                     </div>
                 );
             })}
