@@ -40,7 +40,7 @@ function Feed() {
                         username={post.user?.username}
                         avatar={post.user?.avatar}
                         location={post.location?.name}
-                        img={post.url}
+                        img={`http://192.168.1.244:3000/photos/${post.url}`}
                         comment={post.comment}
                         key={post.id}
                     />

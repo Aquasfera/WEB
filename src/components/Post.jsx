@@ -5,7 +5,6 @@
 function Post(props) {
 
     const bgcolor = {
-
         height: "100vh",
         backgroundColor: "#0A141F"
     }
@@ -24,12 +23,18 @@ function Post(props) {
     }
 
     const iconSize = {
-        marginRight: "20px"
+        width: "25px",
+        height: "25px"
     }
 
     const imgFooterIcons = {
         display: "flex",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        marginTop: "15px"
+    }
+
+    const noMargin = {
+        margin: "0px"
     }
 
 
@@ -46,11 +51,16 @@ function Post(props) {
                         <p className="location" style={textColor}>{props.location}</p>
                     </div>
                 </div>
-
-                <img className="post-img img-fluid" src={props.img} />
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-12 p-0">
+                            <img className="post-img img-fluid" src={props.img} style={noMargin} />
+                        </div>
+                    </div>
+                </div>
                 <div className="post-icons" style={imgFooterIcons}>
                     <div className="insta-icons">
-                        <img className="heart-icon" style={iconSize} src="../src/assets/icons/like-icon.svg" />
+                        <img className="heart-icon me-2" style={iconSize} src="../src/assets/icons/like-icon.svg" />
                         <img className="comment-icon" style={iconSize} src="../src/assets/icons/comment-icon.svg" />
                     </div>
                     <div className="encilopedia-icon flex" style={display}>
