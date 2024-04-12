@@ -1,11 +1,9 @@
 import bgImage from "../assets/images/landing-bg.png";
 import { NavLink } from "react-router-dom";
-import Login from "../components/Login";
-import Register from "../components/Register";
 function Landing() {
-  const backgroundimage = {
-        minHeight : "100vh",
-        backgroundImage : `url(${bgImage})`
+    const backgroundimage = {
+        minHeight: "100vh",
+        backgroundImage: `url(${bgImage})`
     }
     const titleStyle = {
         paddingTop: "3em",
@@ -36,7 +34,7 @@ function Landing() {
 
     }
     return (
-        <div  style={backgroundimage}>
+        <div style={backgroundimage}>
             <div className="container">
                 <h1 style={titleStyle}>
                     Lorem ipsum dolor comsdosd adispldsa elit
@@ -54,9 +52,8 @@ function Landing() {
                 </div>
             </div>
         </div>
-      </div>
-    </div>
-  );
+
+    );
 }
 
 export default Landing;
