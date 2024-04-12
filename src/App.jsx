@@ -7,9 +7,8 @@ function App() {
 
   return (
     <>
-
-      <Landing></Landing>
-      <Footer></Footer>
+      <Landing/>
+      <Footer/>
     </>
   )
 }
