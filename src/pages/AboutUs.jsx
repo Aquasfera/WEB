@@ -29,7 +29,7 @@ export default function AboutUs() {
       <Navhead></Navhead>
       <section className='container-fluid' style={backgroundimage}>
         <section className='row'>
-          <div className='col-sm-12 col-md-6 col-lg-6 '>
+          <div className='col-sm-12 col-md-12 col-lg-12 '>
             <h1 style={titleStyle}>Sobre Nosotros</h1>
             <p style={textStyle}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet
@@ -43,7 +43,7 @@ export default function AboutUs() {
           </div>
         </section>
         <section className='row pt-3'>
-          <div className='col-sm-12 col-md-6 col-lg-6 '>
+          <div className='col-sm-12 col-md-12 col-lg-12 '>
             <h1 style={titleStyle}>Nuestras ODS</h1>
             <div className='d-flex flex-wrap justify-content-center'>
               <img className='img-fluid p-1 rounded' src={ods3} alt='ODS'></img>
@@ -53,16 +53,18 @@ export default function AboutUs() {
             </div>
           </div>
         </section>
-        <section className='row pt-3 '>
-          <h1 style={titleStyle}>Nuestro equipo</h1>
-          {
-            teamData.map((team, index) => {
-              return (
-                <TeamCard key={index} name={team.name} photo={team.photo} github={team.github} style={textStyle}></TeamCard>
-              )
-            })
-          }
+        <section className='row pt-3'>
 
+          <h1 style={titleStyle}>Nuestro equipo</h1>
+          <div className='col-sm-12 col-md-12 col-lg-12 d-flex flex-wrap justify-content-center '>
+            {
+              teamData.map((team, index) => {
+                return (
+                  <TeamCard key={index} name={team.name} photo={team.photo} github={team.github} style={textStyle}></TeamCard>
+                )
+              })
+            }
+          </div>
         </section>
       </section>
       <Footer></Footer>
