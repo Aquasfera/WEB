@@ -24,8 +24,6 @@ function Post(props) {
     }
 
     const iconSize = {
-        height: "25px",
-        widht: "25px",
         marginRight: "20px"
     }
 
