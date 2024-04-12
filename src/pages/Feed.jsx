@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import Post from "../components/Post";
 import Navhead from "../components/Navhead";
@@ -5,46 +6,44 @@ import Navhead from "../components/Navhead";
 function Feed() {
 
     const [posts, setPosts] = useState([]);
-    const [locations, setLocations] = useState([]);
-    let idLocation;
 
     useEffect(() => {
         fetch('http://192.168.1.244:3000/api/post')
             .then(response => response.json())
             .then(data => {
                 setPosts(data)
-                posts.forEach(post => {
-                    console.log(post)
-                    idLocation = post.location_id;
-                    console.log(idLocation)
-                    fetch(`http://192.168.1.244:3000/api/location/${idLocation}`)
-                        .then(response => response.json())
-                        .then(data => setLocations(data))
-                        .catch(error => console.error(error))
-                })
-
-
+                console.log(data)
+                console.log(posts)
             })
             .catch(error => console.error(error))
 
-
-
     }, [])
+
+    if (!posts.length) {
+        return (
+            <div className="spinner-border" role="status">
+                <span >Loading...</span>
+            </div>)
+    }
+
+
 
     return (
         <>
             <Navhead />
-            {posts.map(function (post) {
+
+            {posts.map(cosa => {
+
                 return (
-                    <div key={post.id}>
-                        <Post
-                            username={post.user.username}
-                            location={locations.name}
-                            img={post.url}
-                            comment={post.comment}
-                            key={locations.id}
-                        />
-                    </div>
+
+                    <Post
+                        username={cosa.user?.username}
+                        location={cosa.location?.name}
+                        img={cosa.url}
+                        comment={cosa.comment}
+                        key={cosa.id}
+                    />
+
                 );
             })}
         </>
