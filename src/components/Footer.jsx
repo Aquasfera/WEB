@@ -1,6 +1,6 @@
 import React from 'react'
-import logo from "../assets/images/A-Q-U-A-E-S-F-E-R-A_001.svg"
-import {Link} from 'react-router-dom'
+import logo from "../assets/icons/AquasferaLogo.png"
+import { Link } from 'react-router-dom'
 export default function Footer() {
     const date = new Date();
     const year = date.getFullYear();
@@ -11,21 +11,18 @@ export default function Footer() {
     const linkStyle = {
         color: 'white'
     }
-  return (
-    <footer className='d-flex flex-column text-center p-3' style={footerStyle}>
-        
-        <div className='d-flex flex-row justify-content-center align-items-center '>
-            <img src={logo} alt='logo' className='w-25' />
-            <span>© {year} Aquaesfera</span>
-        </div>
-        <div className='d-flex flex-row justify-content-center'>
-        <Link className='text-decoration-none m-2' to='/about-us'style={linkStyle} >Sobre Nosotros</Link>
-        <Link className='text-decoration-none m-2' to='/contact' style={linkStyle}>Contacto</Link>
-        </div>
-        {/* <div className='d-flex flex-row justify-content-center'>
-
-        </div> */}
+    return (
+        <footer className="d-flex flex-wrap justify-content-between align-items-center border-top p-2" style={footerStyle}>
+        <p className="col-md-4 mb-0">© {year} Aquaesfera</p>
+        <Link to={"/"} className="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <img className="bi m-2" width="40" height="40" src={logo} alt="Logo"></img>
+        </Link>
+    
+        <ul className="nav col-md-4 justify-content-end">
+            <li className="nav-item"><Link to={"/animals"} className="nav-link px-2 text-decoration-none" style={linkStyle}>Enciclopedia</Link></li>
+            <li className="nav-item"><Link to={"/feed"} className="nav-link px-2 text-decoration-none" style={linkStyle}>Instagram</Link></li>
+            <li className="nav-item"><Link to={"/about-us"} className="nav-link px-2 text-decoration-none" style={linkStyle}>Sobre Nosotros</Link></li>
+        </ul>
     </footer>
-
-  )
+    )
 }
