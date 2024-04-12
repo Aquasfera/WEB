@@ -46,7 +46,7 @@ function Landing() {
                     <NavLink to={"/mapa"}>
                         <button className="rounded" style={buttonStyle}>Mapa</button>
                     </NavLink>
-                    <NavLink to={"/insta"}>
+                    <NavLink to={"/feed"}>
                         <button className="rounded" style={buttonStyle}>Insta</button>
                     </NavLink>
                 </div>
