@@ -1,5 +1,5 @@
 import '../src/styles/App.css'
-import { Outlet } from'react-router-dom'
+import Footer from './components/Footer'
 import Landing from './pages/Landing'
 
 function App() {
@@ -7,8 +7,9 @@ function App() {
 
   return (
     <>
-    <Outlet></Outlet>
-    <Landing></Landing>
+
+      <Landing></Landing>
+      <Footer></Footer>
     </>
   )
 }
