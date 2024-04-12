@@ -5,9 +5,11 @@ import '../src/styles/index.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
 
-import Login from './components/Login.jsx'
-import Register from './components/Register.jsx'
+import Login from './pages/Login.jsx'
+import Register from './pages/Register.jsx'
+
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+
 import Animals from './pages/Animals.jsx'
 
 import AboutUs from './pages/AboutUs.jsx'
@@ -21,9 +23,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<App />} />  
-          <Route path='/*' element={<Navigate replace to={'/'}/>}/>
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
+        <Route path='/*' element={<Navigate replace to={'/'}/>}/>
+        <Route path='map' element={' '} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
 
         <Route path='/animals' element={<Animals />} />
         <Route path='/feed' element={<Feed />} />
