@@ -85,13 +85,13 @@ function NewPost() {
                 </div>
                 <div className="mb-3">
 
-                    <DropdownButton id="locationDropdown" title="Ubicación" className="mb-3" variant="success" onSelect={(a) => setLocationIdSelected(a)}>
+                    <DropdownButton id="locationDropdown" title={possibleLocations.find(an => an.id == locationIdSelected)?.name || "Localización"} className="mb-3" variant="success" onSelect={(a) => setLocationIdSelected(a)}>
                         {
                             possibleLocations.length > 0 ? possibleLocations.map(locs => (<Dropdown.Item key={locs.id} eventKey={locs.id}>{locs.name}</Dropdown.Item>)) : 'Not Valid'
                         }
                     </DropdownButton>
 
-                    <DropdownButton id="fishDropdown" title={possibleAnimals.find(an => an.id === animalIdSelected)?.name || "Animal"} className="mb-3" variant="success" onSelect={(a) => { setAnimalIdSelected(a) }}>
+                    <DropdownButton id="fishDropdown" title={possibleAnimals.find(an => an.id == animalIdSelected)?.name || "Animal"} className="mb-3" variant="success" onSelect={(a) => {setAnimalIdSelected(a) }}>
                         {
                             possibleAnimals.length > 0 ? possibleAnimals.map(ani => (<Dropdown.Item key={ani.id} eventKey={ani.id}>{ani.name}</Dropdown.Item>)) : 'Not Valid'
                         }
