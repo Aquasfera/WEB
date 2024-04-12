@@ -1,8 +1,9 @@
-import bgImage from "../assets/images/landing-bg.png"
-import { NavLink } from "react-router-dom"
+import bgImage from "../assets/images/landing-bg.png";
+import { NavLink } from "react-router-dom";
+import Login from "../components/Login";
+import Register from "../components/Register";
 function Landing() {
-
-    const backgroundimage = {
+  const backgroundimage = {
         minHeight : "100vh",
         backgroundImage : `url(${bgImage})`
     }
@@ -53,8 +54,9 @@ function Landing() {
                 </div>
             </div>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
-
 
 export default Landing;
