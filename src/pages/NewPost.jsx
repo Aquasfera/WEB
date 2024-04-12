@@ -14,11 +14,11 @@ function NewPost()
     const[possibleAnimals, setPossibleAnimals] = useState([""]);
     const[possibleLocations, setPossibleLocations] = useState([""]);
 
-    const [locationSelected, setLocationSelected] = useState("Localización");
-    const [animalSelected, setAnimalSelected] = useState("Animal");
+    const [locationIdSelected, setLocationIdSelected] = useState("Localización");
+    const [animalIdSelected, setAnimalIdSelected] = useState("Animal");
+
     
-    const [description, setDescription] = useState("");   
-    const [image, setImage] = useState();
+    const [description, setDescription] = useState("");
 
     const onDrop = useCallback(acceptedFiles => {
     }, [])
@@ -44,17 +44,15 @@ function NewPost()
         const formData = new FormData();
         formData.append('description', description);
         formData.append('likes', 0);
-        formData.append('animal_id', animalSelected);
-        formData.append('location_id', locationSelected);
+        formData.append('animal_id', animalIdSelected);
+        formData.append('location_id', locationIdSelected);
         formData.append('url', acceptedFiles[0]);
         formData.append('user_id', 1)
 
         const options = {
             method: 'post',
             credentials: 'include',
-            headers: {
-                'Content-Type': 'multipart/form-data'
-            },
+            
             body: formData
         } 
 
@@ -87,15 +85,15 @@ function NewPost()
             </div>
             <div className="mb-3">
 
-                <DropdownButton id="locationDropdown" title="Ubicación" className="mb-3" variant="success" onSelect={(a) => setLocationSelected(a)}>
+                <DropdownButton id="locationDropdown" title="Ubicación" className="mb-3" variant="success" onSelect={(a) => setLocationIdSelected(a)}>
                     {
-                        possibleLocations.length > 0 ? possibleLocations.map(locs => (<Dropdown.Item eventKey={locs.id}>{locs.name}</Dropdown.Item>)) : 'Not Valid'
+                        possibleLocations.length > 0 ? possibleLocations.map(locs => (<Dropdown.Item key={locs.id} eventKey={locs.id}>{locs.name}</Dropdown.Item>)) : 'Not Valid'
                     }
                 </DropdownButton>
 
-                <DropdownButton id="fishDropdown" title="Animal" className="mb-3" variant="success" onSelect={(a) => {setAnimalSelected(a)}}>
+                <DropdownButton id="fishDropdown" title={possibleAnimals.find(an => an.id===animalIdSelected)?.name || "Animal"} className="mb-3" variant="success" onSelect={(a) => {setAnimalIdSelected(a)}}>
                     {
-                        possibleAnimals.length > 0 ? possibleAnimals.map(ani => (<Dropdown.Item eventKey={ani.id}>{ani.name}</Dropdown.Item>)) : 'Not Valid'
+                        possibleAnimals.length > 0 ? possibleAnimals.map(ani => (<Dropdown.Item key={ani.id} eventKey={ani.id}>{ani.name}</Dropdown.Item>)) : 'Not Valid'
                     }
                 </DropdownButton>
             </div>
