@@ -25,7 +25,13 @@ function Post(props) {
 
     const iconSize = {
         height: "25px",
-        widht: "25px"
+        widht: "25px",
+        marginRight: "20px"
+    }
+
+    const imgFooterIcons = {
+        display: "flex",
+        justifyContent: "space-between"
     }
 
 
@@ -33,23 +39,24 @@ function Post(props) {
         <div style={bgcolor}>
             <div className="container">
                 <div className="post-header" style={displayHeader}>
-                    <div className="post-username">
+                    <div className="post-username flex" style={display}>
+                        <img className="user-avatar img-fluid" style={iconSize} src={props.avatar} />
                         <p className="username" style={textColor}>{props.username}</p>
                     </div>
                     <div className="post-location" style={display}>
-                        <img className="location-icon" style={iconSize} src="../src/assets/icons/location-icon.svg" />
+                        <img className="location-icon img-fluid" style={iconSize} src="../src/assets/icons/location-icon.svg" />
                         <p className="location" style={textColor}>{props.location}</p>
                     </div>
                 </div>
 
-                <img className="post-img" src={props.img} />
-                <div className="post-icons flex">
+                <img className="post-img img-fluid" src={props.img} />
+                <div className="post-icons" style={imgFooterIcons}>
                     <div className="insta-icons">
-                        <img className="heart-icon" src="" />
-                        <img className="comment-icon" src="" />
+                        <img className="heart-icon" style={iconSize} src="../src/assets/icons/like-icon.svg" />
+                        <img className="comment-icon" style={iconSize} src="../src/assets/icons/comment-icon.svg" />
                     </div>
-                    <div className="encilopedia-icon">
-                        <img className="pedia-icon" src="" />
+                    <div className="encilopedia-icon flex" style={display}>
+                        <img className="pedia-icon" src="../src/assets/icons/enciclopedia-icon.svg" style={iconSize} />
                     </div>
                 </div>
 
