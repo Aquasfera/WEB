@@ -19,7 +19,7 @@ export const globalProvider = ({ children }) => {
     }
     const [themeName, setThemeName] = useState("dark");
     const [theme, setTheme] = useState(themes[themeName]);
-
+    const API_URL = '192.168.1.244:3000/api/'
 
     const setCSSVariables = theme => {
         for (const value in theme) {
@@ -53,7 +53,7 @@ export const globalProvider = ({ children }) => {
     };
 
     return (
-        <GlobaContext.Provider value={{ toggleTheme, themeName, setCSSVariables, language, toggleLanguage, translate }}>
+        <GlobaContext.Provider value={{ toggleTheme, themeName, setCSSVariables, language, toggleLanguage, translate, API_URL }}>
             {children}
         </GlobaContext.Provider>
     );
