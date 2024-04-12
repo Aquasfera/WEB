@@ -5,7 +5,7 @@
 function Post(props) {
 
     const bgcolor = {
-        height: "100vh",
+        // height: "100vh",
         backgroundColor: "#0A141F"
     }
 
