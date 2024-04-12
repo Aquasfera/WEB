@@ -31,6 +31,7 @@ function Feed() {
     return (
         <>
             <Navhead />
+
             {posts.map(cosa => {
 
                 return (
