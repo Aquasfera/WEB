@@ -32,16 +32,17 @@ function Feed() {
         <>
             <Navhead />
 
-            {posts.map(cosa => {
+            {posts.map(post => {
 
                 return (
 
                     <Post
-                        username={cosa.user?.username}
-                        location={cosa.location?.name}
-                        img={cosa.url}
-                        comment={cosa.comment}
-                        key={cosa.id}
+                        username={post.user?.username}
+                        avatar={post.user?.avatar}
+                        location={post.location?.name}
+                        img={post.url}
+                        comment={post.comment}
+                        key={post.id}
                     />
 
                 );
