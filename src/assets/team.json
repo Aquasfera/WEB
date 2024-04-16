@@ -2,27 +2,32 @@
     {
         "name": "Adrian Risco",
         "photo": "./ods-3.png",
-        "github": "https://github.com/Adrin63"
+        "github": "https://github.com/Adrin63",
+        "linkedin": "https://www.linkedin.com/in/adrian-risco-fernandez/"
       },
       {
         "name": "Mireia Garcia",
         "photo": "./ods-3.png",
-        "github": "https://github.com/juanperez"
+        "github": "https://github.com/mimigargon",
+        "linkedin": "https://www.linkedin.com/in/mireia-garcia-gonzalez/"
       },
       {
         "name": "Arnau Orts",
         "photo": "./ods-3.png",
-        "github": "https://github.com/juanperez"
+        "github": "https://github.com/juanperez",
+        "linkedin": "https://www.linkedin.com/in/arnau-orts-llorca/"
       },
       {
         "name": "Kevin Florencia",
         "photo": "./ods-3.png",
-        "github": "https://github.com/KevinFlorenciaMoragas/"
+        "github": "https://github.com/KevinFlorenciaMoragas/",
+        "linkedin": "https://www.linkedin.com/in/kevin-florencia-moragas/"
       },
       {
         "name": "Alex Díaz",
         "photo": "./ods-3.png",
-        "github": "https://github.com/juanperez"
+        "github": "https://github.com/juanperez",
+        "linkedin": "https://www.linkedin.com/in/alex-d%C3%ADaz-7b1b3b1b/"
       }
       
 ]
