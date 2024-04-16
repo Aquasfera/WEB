@@ -122,6 +122,7 @@ function NewPost() {
                   possibleAnimals.find((an) => an.id === animalIdSelected)
                     ?.name || "Animal"
                 }
+
                 className="mb-3"
                 variant="light"
                 onSelect={(a) => {
@@ -145,6 +146,7 @@ function NewPost() {
       </div>
     </div>
   );
+
 }
 
 export default NewPost;

@@ -1,3 +1,4 @@
+
 import bgImage from "../assets/images/landing-bg.png";
 import { NavLink } from "react-router-dom";
 function Landing() {
@@ -33,6 +34,7 @@ function Landing() {
         color: "#CCDBDC"
 
     }
+    const API = 1
     return (
         <div style={backgroundimage}>
             <div className="container">
@@ -46,11 +48,12 @@ function Landing() {
                     <NavLink to={"/mapa"}>
                         <button className="rounded" style={buttonStyle}>Mapa</button>
                     </NavLink>
-                    <NavLink to={"/insta"}>
+                    <NavLink to={"/feed"}>
                         <button className="rounded" style={buttonStyle}>Insta</button>
                     </NavLink>
                 </div>
             </div>
+            
         </div>
 
     );
