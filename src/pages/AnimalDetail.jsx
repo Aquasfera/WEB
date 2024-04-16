@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Navhead from "../components/Navhead";
 import { useParams } from "react-router-dom";
-import ListGroup from 'react-bootstrap/ListGroup';
+import Foundations from "../components/Fouondations";
 
 
 function AnimalDetail() {
@@ -91,7 +91,7 @@ function AnimalDetail() {
                 <h1 style={titleStyle}>
                     Fundaciones
                 </h1>
-
+                <Foundations/>
 
             </div>
         </>
