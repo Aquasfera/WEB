@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 const API_URL = "http://192.168.1.244:3000/api";
-import "./Login.css";
+import "./styles/Login.css";
 
 export default function Register() {
   const [username, setUsername] = useState("");
@@ -56,7 +56,7 @@ export default function Register() {
               <input
                 onInput={(e) => setUsername(e.target.value)}
                 type="text"
-                class="form-control letraBlanca"
+                class="form-control"
                 id="username"
                 placeholder="Nombre..."
               />

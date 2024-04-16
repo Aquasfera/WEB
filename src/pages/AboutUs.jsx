@@ -60,7 +60,7 @@ export default function AboutUs() {
             {
               teamData.map((team, index) => {
                 return (
-                  <TeamCard key={index} name={team.name} photo={team.photo} github={team.github} style={textStyle}></TeamCard>
+                  <TeamCard key={index} linkedin={team.linkedin} name={team.name} photo={team.photo} github={team.github} style={textStyle}></TeamCard>
                 )
               })
             }

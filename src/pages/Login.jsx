@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import "./Login.css";
+import "./styles/Login.css";
 const API_URL = "http://192.168.1.244:3000/api";
 
 export default function Login() {
@@ -26,7 +26,6 @@ export default function Login() {
       .then((res) => res.json())
       .then((data) => {
         console.log("resp", data);
-        setLogin(data);
         redirect("/");
       })
       .catch((err) => console.log(err));
