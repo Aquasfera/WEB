@@ -1,0 +1,38 @@
+.colorFondo {
+    height: 100vh;
+    background-color: #0A141F;
+}
+.colorLetraB {
+    color: black;
+}
+.DragDrop {
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    border: 1px solid white;
+    
+}
+.center {
+    text-align: center;
+}
+.img-container {
+    width: 200px; 
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .LetraBlanca {
+    color: white;
+    font-size: 15px;
+  }
+  .colorFondoBoton {
+    background-color: #273654;
+  }
+  .tamanoh2 {
+    font-size: 30px;
+    letter-spacing: 3px;
+    padding-top: 20px;
+  }
