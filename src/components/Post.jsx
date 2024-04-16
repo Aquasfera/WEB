@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-
-
+import { useState } from "react"
+import { Link } from "react-router-dom"
 
 function Post(props) {
 
     const bgcolor = {
-        // height: "100vh",
+        height: "auto",
         backgroundColor: "#0A141F"
     }
 
@@ -37,6 +37,13 @@ function Post(props) {
         margin: "0px"
     }
 
+    const [liked, setLiked] = useState(false);
+
+    const handleLikeClick = () => {
+        props.onLike();
+        setLiked(!liked);
+    };
+
 
     return (
         <div style={bgcolor}>
@@ -60,15 +67,16 @@ function Post(props) {
                 </div>
                 <div className="post-icons" style={imgFooterIcons}>
                     <div className="insta-icons">
-                        <img className="heart-icon me-2" style={iconSize} src="../src/assets/icons/like-icon.svg" />
-                        <img className="comment-icon" style={iconSize} src="../src/assets/icons/comment-icon.svg" />
+                        <img className="heart-icon me-2" style={iconSize} src={!liked ? "../src/assets/icons/like-icon.svg" : "../src/assets/icons/fav-like-icon.svg"} onClick={handleLikeClick} />
                     </div>
                     <div className="encilopedia-icon flex" style={display}>
-                        <img className="pedia-icon" src="../src/assets/icons/enciclopedia-icon.svg" style={iconSize} />
+                        <Link to="/animals">
+                            <img className="pedia-icon" src="../src/assets/icons/enciclopedia-icon.svg" style={iconSize} />
+                        </Link>
                     </div>
                 </div>
 
-                <div className="photo-description">
+                <div className="photo-description mt-2">
                     <p className="description" style={textColor}>{props.comment}</p>
 
                 </div>
