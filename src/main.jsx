@@ -5,36 +5,48 @@ import '../src/styles/index.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
 
-import Login from './pages/Login.jsx'
-import Register from './pages/Register.jsx'
-
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
-import Animals from './pages/Animals.jsx'
-
-import AboutUs from './pages/AboutUs.jsx'
+import Animals from './pages/aquapedia/Animals.jsx'
+import AboutUs from './pages/aquapedia/AboutUs.jsx'
+import Aquapedia from './pages/aquapedia/Aquapedia.jsx'
+import Maps from './pages/aquapedia/Maps.jsx'
 
 import Feed from './pages/Feed.jsx'
-import PersonalPost from './pages/PersonalPost.jsx'
+import PersonalPost from './pages/aquagram/PersonalPost.jsx'
 import NewPost from './pages/NewPost.jsx'
-import PersonalProfile from './pages/PersonalProfile.jsx'
+import PersonalProfile from './pages/aquagram/PersonalProfile.jsx'
+import Feed from './pages/aquagram/Feed.jsx'
+import PersonalPost from './pages/aquagram/PersonalPost.jsx'
+import NewPost from './pages/aquagram/NewPost.jsx'
+import Login from './pages/aquagram/Login.jsx'
+import Register from './pages/aquagram/Register.jsx'
+import Aquagram from './pages/aquagram/Aquagram.jsx'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
+        
+      
         <Route path='/' element={<App />} />  
-        <Route path='/*' element={<Navigate replace to={'/'}/>}/>
-        <Route path='map' element={' '} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
+        <Route path='*' element={<Navigate replace to={'/'}/>}/>
+        
+        <Route path='/aquapedia' element={<Aquapedia/>}>
+          <Route path='/aquapedia' element={<Maps/>} />
+          <Route path='/aquapedia/animals' element={<Animals />} />
+          <Route path='/aquapedia/about-us' element={<AboutUs />}/>
+        </Route>
 
-        <Route path='/animals' element={<Animals />} />
-        <Route path='/feed' element={<Feed />} />
-        <Route path='/personal-post' element={<PersonalPost />} />
-        <Route path='/personal-profile' element={<PersonalProfile />} />
-        <Route path='/about-us' element={<AboutUs />}/>
-        <Route path='/newPost' element={<NewPost/>}/>
+        <Route path='/aquagram' element={<Aquagram/>}>
+          <Route path='/aquagram' element={<Feed />} />
+          <Route path='/aquagram/login' element={<Login />} />
+          <Route path='/aquagram/register' element={<Register />} />
+          <Route path='/aquagram/personal-profile' element={<PersonalProfile />} />
+          <Route path='/aquagram/personal-post' element={<PersonalPost />} />
+          <Route path='/aquagram/newPost' element={<NewPost/>} />
+        </Route>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

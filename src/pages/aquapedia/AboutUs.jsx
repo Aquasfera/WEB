@@ -1,13 +1,14 @@
 import React from 'react'
-import Navhead from '../components/Navhead'
-import bgImage from "../assets/images/landing-bg.png"
-import ods3 from "../assets/images/ods-3.png"
-import ods4 from "../assets/images/ods-4.png"
-import ods13 from "../assets/images/ods-13.png"
-import ods14 from "../assets/images/ods-14.png"
-import teamData from "../assets/team.json"
-import TeamCard from '../components/TeamCard'
-import Footer from '../components/Footer'
+import NavheadAquapedia from '../../components/NavheadAquapedia'
+import bgImage from "../../assets/images/landing-bg.png"
+import ods3 from "../../assets/images/ods-3.png"
+import ods4 from "../../assets/images/ods-4.png"
+import ods13 from "../../assets/images/ods-13.png"
+import ods14 from "../../assets/images/ods-14.png"
+import teamData from "../../assets/team.json"
+import TeamCard from '../../components/TeamCard'
+import Footer from '../../components/Footer'
+
 export default function AboutUs() {
   const backgroundimage = {
     minHeight: "100vh",
@@ -26,7 +27,7 @@ export default function AboutUs() {
   }
   return (
     <>
-      <Navhead></Navhead>
+      <NavheadAquapedia />
       <section className='container-fluid' style={backgroundimage}>
         <section className='row'>
           <div className='col-sm-12 col-md-12 col-lg-12 '>

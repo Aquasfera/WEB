@@ -6,7 +6,7 @@ const bgcolor = {
   backgroundColor: "#0A141F"
 }
 
-function Navhead() {
+function NavheadAquapedia() {
     return (
         <Navbar expand="lg" className='navbar-dark sticky-top' style={bgcolor} navbar-expand-end="true">
         <Container>
@@ -22,4 +22,4 @@ function Navhead() {
       </Navbar>
     )
 }
-export default Navhead;
+export default NavheadAquapedia;
