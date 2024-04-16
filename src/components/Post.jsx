@@ -1,7 +1,4 @@
 /* eslint-disable react/prop-types */
-
-
-
 function Post(props) {
 
     const bgcolor = {
