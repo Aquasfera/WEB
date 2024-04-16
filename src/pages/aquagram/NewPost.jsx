@@ -72,11 +72,12 @@ function NewPost() {
                             <p>Drop the files here ...</p> :
                             <p>Drag and drop some files here, or click to select files</p>
                     }
-                </div>
+                
                 {
                     acceptedFiles[0] ? (<Card.Img style={{ height: '200px', width: '169' }} src={URL.createObjectURL(acceptedFiles[0])} />)
                         : 'vacio'
                 }
+                </div>
                 {/* <input type="file" id="image" onChange={(e)=>{setImage(e.target.files[0])}} accept="image/*" capture="environment"/> */}
 
                 <div className="mb-3">

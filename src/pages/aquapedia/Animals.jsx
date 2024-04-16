@@ -1,8 +1,8 @@
-import Navhead from "../components/Navhead";
-import AnimalCard from "../components/AnimalCard";
+import NavheadAquapedia from "../../components/NavheadAquapedia.jsx";
+import AnimalCard from "../../components/AnimalCard.jsx";
 import { useEffect, useState } from "react";
 
-import data from "../fakedata/fakedata.js";
+import data from "../../fakedata/fakedata.js";
 
 function Animals() {
     const stickyTop={
@@ -57,7 +57,7 @@ function Animals() {
 
     return (
         <div style={bgcolor}>
-            <Navhead />
+            <NavheadAquapedia />
             <div  className=" container-fluid"style={stickyTop}>
                 <h1 style={titleStyle}>Mar<br />Mediterraneo</h1>
                 <h5 style={textStyle}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo, dicta inventore perferendis quam ullam nobis qui eum </h5>
