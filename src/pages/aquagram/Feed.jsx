@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import Post from "../../components/Post";
+import NavheadAquapedia from "../../components/NavheadAquapedia";
 
 function Feed() {
 

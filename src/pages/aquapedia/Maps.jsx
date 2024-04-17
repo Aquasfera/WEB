@@ -1,9 +1,10 @@
 function Maps(){
     return(
         <>
-        <a href='aquapedia/animals'>Mar mediterraneo</a>
+            <h1>Por hacer</h1>
         </>
     )
+
 }
 
 export default Maps;

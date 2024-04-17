@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import NavHeadAquagram from "../../components/NavheadAquagram";
+import Context from "../../contexts/Context.js";
 import { Outlet, redirect } from "react-router-dom";
-import Context from "../../contexts/Context";
-import NavheadAquagram from "../../components/NavheadAquagram";
-function Aquagram(){
 
-
+function Aquagram()
+{
     const [actualUser, setActualUser] = useState(null);
 
     useEffect(() =>{
@@ -35,10 +35,9 @@ function Aquagram(){
         //   redirect('/login')
       }
 
-      
-    return (
-        <Context.Provider value={{actualUser, setActualUser}}>
-            <NavheadAquagram/>
+    return(
+        <Context.Provider value={{actualUser, setActualUser}}>    
+            <NavHeadAquagram/>
             <Outlet/>
         </Context.Provider>
     )

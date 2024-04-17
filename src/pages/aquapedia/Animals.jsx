@@ -1,3 +1,4 @@
+import NavheadAquapedia from "../../components/NavheadAquapedia.jsx";
 import AnimalCard from "../../components/AnimalCard.jsx";
 import { useEffect, useState } from "react";
 
@@ -60,7 +61,8 @@ function Animals() {
     
     return (
         <div style={bgcolor}>
-            <div className=" container-fluid" style={stickyTop}>
+            <NavheadAquapedia />
+            <div  className=" container-fluid"style={stickyTop}>
                 <h1 style={titleStyle}>Mar<br />Mediterraneo</h1>
                 <h5 style={textStyle}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo, dicta inventore perferendis quam ullam nobis qui eum </h5>
                 <hr style={hRule} />

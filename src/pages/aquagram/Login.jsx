@@ -81,7 +81,7 @@ export default function Login() {
           <div className="d-flex justify-content-center align-items-center">
             <p className="text-center pt-4 letraBlanca">
               ¿ Todavía no tienes cuenta ?<br />
-              <Link to="/register" className="NoSubrayado">
+              <Link to="/aquapedia/register" className="NoSubrayado">
                 ¡ Regístrate !
               </Link>
             </p>
