@@ -15,9 +15,9 @@ function Navhead() {
           <Navbar.Toggle  aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home" >Mapa</Nav.Link>
-              <Nav.Link href="/feed" >Instagram</Nav.Link>
-              <Nav.Link href="/animals" >Mediterraneo</Nav.Link>
+              <Nav.Link href="/aquapedia" >Mapa</Nav.Link>
+              <Nav.Link href="/aquagram" >Instagram</Nav.Link>
+              <Nav.Link href="/aquagram/animals" >Mediterraneo</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

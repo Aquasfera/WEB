@@ -3,7 +3,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Button from "react-bootstrap/Button";
 import { useEffect, useState, useCallback } from "react";
-import "./NewPost.css";
+import "./styles/NewPost.css";
 
 import Card from "react-bootstrap/Card";
 import { useDropzone } from "react-dropzone";
@@ -81,7 +81,8 @@ function NewPost() {
                 style={{ height: "200px", width: "169" }}
                 src={URL.createObjectURL(acceptedFiles[0])}
               />
-            ) : (
+            ) : (isDragActive ? 
+              <p className="LetraBlanca">Suelta Aquí</p> :
               <p className="LetraBlanca">Arrastra tu foto aquí<br></br> o<br></br> click para examinar</p>
             )}
             {/* <input type="file" id="image" onChange={(e)=>{setImage(e.target.files[0])}} accept="image/*" capture="environment"/> */}
@@ -101,7 +102,10 @@ function NewPost() {
             <div className="col-6">
               <DropdownButton
                 id="locationDropdown"
-                title="Ubicación"
+                title={
+                  possibleLocations.find((an) => an.id === locationIdSelected)
+                    ?.name || "Ubiicación"
+                }
                 className="mb-3"
                 variant="light"
                 onSelect={(a) => setLocationIdSelected(a)}

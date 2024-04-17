@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import Navhead from "../components/Navhead";
 import { useParams } from "react-router-dom";
-import Foundations from "../components/Fouondations";
+import Foundations from "../../components/Fouondations";
 
 
 function AnimalDetail() {
@@ -59,9 +58,9 @@ function AnimalDetail() {
     if (animalData === null) {
         return <h1>Loading...</h1>
     }
+
     return (
         <>
-            <Navhead />
             <div className="container-fliud" style={bgcolor}>
                 <h1 style={titleStyle}>
                     {animalData.name}

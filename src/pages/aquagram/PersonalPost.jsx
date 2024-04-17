@@ -1,12 +1,10 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
-import Post from "../components/Post";
-import Navhead from "../components/Navhead";
+import Post from "../../components/Post";
 
-function Feed() {
+function PersonalPost() {
 
     const [posts, setPosts] = useState([]);
-    const [liked, setLiked] = useState(false)
+    const [liked, setLiked] = useState(false);
 
     useEffect(() => {
         fetch('http://192.168.1.244:3000/api/post')
@@ -56,38 +54,26 @@ function Feed() {
         }
     }
 
-    if (!posts.length) {
-        return (
-            <div className="spinner-border" role="status">
-                <span >Loading...</span>
-            </div>)
-    }
-
-
 
     return (
         <>
-            <Navhead />
+            {
 
-            {posts.map(post => {
+                posts.map(post => {
 
-                return (
+                    return (
+                        <Post username={post.user?.username} avatar={post.user?.avatar} location={post.location?.name} img={`http://192.168.1.244:3000/photos/${post.url}`}
+                            comment={post.description}
+                            key={post.id} likes={post.likes} onLike={() => handleLike(post.id, post.likes)} />
 
-                    <Post
-                        username={post.user?.username}
-                        avatar={post.user?.avatar}
-                        location={post.location?.name}
-                        img={`http://192.168.1.244:3000/photos/${post.url}`}
-                        comment={post.description}
-                        likes={post.likes}
-                        key={post.id}
-                        onLike={() => handleLike(post.id, post.likes)}
-                    />
+                    )
 
-                );
-            })}
+                })
+
+            }
         </>
-    );
+
+    )
 }
 
-export default Feed;
+export default PersonalPost;
