@@ -58,7 +58,6 @@ function PersonalPost() {
 
     return (
         <>
-            <Navhead />
             {
 
                 posts.map(post => {

@@ -1,7 +1,8 @@
 
 import React from 'react'
-import imgSVG from '../assets/images/ods-3.png'
-import TabsComponent from '../components/TabsComponent'
+import imgSVG from '../../assets/images/ods-3.png'
+import TabsComponent from '../../components/TabsComponent'
+
 export default function PersonalProfile() {
     const imgStyle = {
         width: "4em",

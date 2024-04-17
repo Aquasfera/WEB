@@ -45,10 +45,10 @@ function Landing() {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </h5>
                 <div className="d-inline-flex justify-content-around w-100" style={buttonContainerStyle}>
-                    <NavLink to={"/mapa"}>
+                    <NavLink to={"/aquapedia"}>
                         <button className="rounded" style={buttonStyle}>Mapa</button>
                     </NavLink>
-                    <NavLink to={"/feed"}>
+                    <NavLink to={"/aquagram"}>
                         <button className="rounded" style={buttonStyle}>Insta</button>
                     </NavLink>
                 </div>
