@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Foundations from "../../components/Fouondations";
+import CarrouselPhotos from "../../components/CarouselPhotos"
 
 
 function AnimalDetail() {
@@ -69,7 +70,8 @@ function AnimalDetail() {
                     {animalData.description}
                 </h5>
                 <div className="container-fluid">
-                    <img src={`http://192.168.1.244:3000/photos/` + animalData.photos[0]?.url} className="img-fluid mt-3 rounded" alt={animalData.name} />
+                    {/* <img src={`http://192.168.1.244:3000/photos/` + animalData.photos[0]?.url} className="img-fluid mt-3 rounded" alt={animalData.name} /> */}
+                    <CarrouselPhotos id={animalData.id}/>
                 </div>
                 <div >
                     <h5 style={textStyle} className="mt-5">
