@@ -8,13 +8,10 @@ import 'bootstrap/dist/js/bootstrap.js'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import Animals from './pages/aquapedia/Animals.jsx'
+import AnimalDetail from './pages/aquapedia/AnimalDetail.jsx'
 import AboutUs from './pages/aquapedia/AboutUs.jsx'
 import Aquapedia from './pages/aquapedia/Aquapedia.jsx'
 import Maps from './pages/aquapedia/Maps.jsx'
-
-import Feed from './pages/Feed.jsx'
-import PersonalPost from './pages/aquagram/PersonalPost.jsx'
-import NewPost from './pages/NewPost.jsx'
 import PersonalProfile from './pages/aquagram/PersonalProfile.jsx'
 import Feed from './pages/aquagram/Feed.jsx'
 import PersonalPost from './pages/aquagram/PersonalPost.jsx'
@@ -36,6 +33,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/aquapedia' element={<Aquapedia/>}>
           <Route path='/aquapedia' element={<Maps/>} />
           <Route path='/aquapedia/animals' element={<Animals />} />
+          <Route path='/aquapedia/animals/:name' element={<AnimalDetail />} />
           <Route path='/aquapedia/about-us' element={<AboutUs />}/>
         </Route>
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Navhead from "../components/Navhead";
+import NavheadAquagram from "../../components/NavheadAquagram"
 import Post from "../../components/Post";
 
 function PersonalPost() {
