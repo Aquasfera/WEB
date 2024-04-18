@@ -42,10 +42,11 @@ function AnimalDetail() {
         marginLeft: "1em"
     }
     const [animalData, setAnimalData] = useState(null);
-
+    const API_URL = import.meta.env.VITE_API_URL;
+    const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO ;
     useEffect(() => {
         try {
-            fetch('http://192.168.1.244:3000/api/animal/name/' + name)
+            fetch(API_URL + 'animal/name/' + name)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
@@ -70,8 +71,11 @@ function AnimalDetail() {
                     {animalData.description}
                 </h5>
                 <div className="container-fluid">
+                    <img src={API_PHOTOS + animalData.photos[0]?.url} className="img-fluid mt-3 rounded" alt={animalData.name} />
+
                     {/* <img src={`http://192.168.1.244:3000/photos/` + animalData.photos[0]?.url} className="img-fluid mt-3 rounded" alt={animalData.name} /> */}
                     <CarrouselPhotos id={animalData.id}/>
+
                 </div>
                 <div >
                     <h5 style={textStyle} className="mt-5">
