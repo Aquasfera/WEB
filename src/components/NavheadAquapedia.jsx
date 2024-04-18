@@ -11,7 +11,7 @@ function Navhead() {
     return (
         <Navbar expand="lg" className='navbar-dark sticky-top' style={bgcolor} navbar-expand-end="true">
         <Container>
-          <Navbar.Brand href="/" >Aquasfera</Navbar.Brand>
+          <Link to='/'><Navbar.Brand>Aquasfera</Navbar.Brand></Link>
           <Navbar.Toggle  aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">

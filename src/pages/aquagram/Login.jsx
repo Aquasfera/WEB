@@ -7,16 +7,18 @@ const API_URL = "http://192.168.1.244:3000/api";
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const redirect = useNavigate();
+  const navigate = useNavigate();
+
   const login = (e) => {
     e.preventDefault();
     const credentials = {
       username,
       password,
     };
+
     const options = {
-      method: "POST",
-      credentials: "include",
+      method: 'POST',
+      credentials: 'include',
       headers: {
         "Content-Type": "application/json",
       },
@@ -25,10 +27,10 @@ export default function Login() {
     fetch(API_URL + "/login", options)
       .then((res) => res.json())
       .then((data) => {
-        console.log("resp", data);
-        redirect("/");
+        console.log("Login correcto! : ", data);
+        navigate("/aquagram");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log('Fallo de login : ' + err));
   };
 
   return (
@@ -81,7 +83,7 @@ export default function Login() {
           <div className="d-flex justify-content-center align-items-center">
             <p className="text-center pt-4 letraBlanca">
               ¿ Todavía no tienes cuenta ?<br />
-              <Link to="/aquapedia/register" className="NoSubrayado">
+              <Link to="/register" className="NoSubrayado">
                 ¡ Regístrate !
               </Link>
             </p>

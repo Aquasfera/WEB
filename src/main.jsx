@@ -22,7 +22,6 @@ import Aquagram from './pages/aquagram/Aquagram.jsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
     <BrowserRouter>
       <Routes>
         
@@ -37,15 +36,15 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/aquapedia/about-us' element={<AboutUs />}/>
         </Route>
 
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+
         <Route path='/aquagram' element={<Aquagram/>}>
           <Route path='/aquagram' element={<Feed />} />
-          <Route path='/aquagram/login' element={<Login />} />
-          <Route path='/aquagram/register' element={<Register />} />
           <Route path='/aquagram/personal-profile' element={<PersonalProfile />} />
           <Route path='/aquagram/personal-post' element={<PersonalPost />} />
           <Route path='/aquagram/newPost' element={<NewPost/>} />
         </Route>
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
 )
