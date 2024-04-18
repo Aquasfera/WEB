@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
 
@@ -38,53 +38,97 @@ function Post(props) {
     const noMargin = {
         margin: "0px"
     }
+    const API_URL = import.meta.env.VITE_API_URL;
+    const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO;
+    const [like, setLike] = useState();
+    const [likeCount, setLikeCount] = useState(0);
 
-    const [liked, setLiked] = useState(false);
-
-    const handleLikeClick = () => {
-        props.onLike();
-        setLiked(!liked);
-    };
+    useEffect(() => {
+        fetch(API_URL + 'like/user/1/post/' + props.id)
+            .then(response => response.json())
+            .then(data => {
+                setLike(data)
+                console.log(data)
+            })
+            .catch(error => console.error(error))
+        fetch(API_URL + 'like/count/' + props.id)
+            .then(response => response.json())
+            .then(data => {
+                setLikeCount(data)
+                console.log(data)
+            })
+            .catch(error => console.error(error))
+    }, [like])
+    const handleLike = async (postId, currentLikes) => {
+        try {
+            if (like) {
+                fetch(API_URL + 'like/user/' + 1 + '/post/' + props.id, {
+                    method: 'DELETE',
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data)
+                        setLike(null)
+                    })
+                    .catch(error => console.error(error))
+            } else {
+                fetch(API_URL + 'like', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        userId: 1,
+                        postId: props.id,
+                    })
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data)
+                        setLike(data)
+                    })
+                    .catch(error => console.error(error))
+            }
+        } catch (error) {
+            console.error('Error al actualizar los likes del post:', error);
+        }
+    }
 
 
     return (
-        <div style={bgcolor}>
-            <div className="container">
-                <div className="post-header" style={displayHeader}>
-                    <div className="post-username flex" style={display}>
-                        <img className="user-avatar img-fluid" style={iconSize} src={props.avatar} />
-                        <p className="username" style={textColor}>{props.username}</p>
-                    </div>
-                    <div className="post-location" style={display}>
-                        <img className="location-icon img-fluid" style={iconSize} src="../src/assets/icons/location-icon.svg" />
-                        <p className="location" style={textColor}>{props.location}</p>
+        <div className="pb-5" style={bgcolor}>
+            <div className="post-header" style={displayHeader}>
+                <div className="post-username flex" style={display}>
+                    <img className="user-avatar img-fluid" style={iconSize} src={props.avatar} />
+                    <p className="username" style={textColor}>{props.username}</p>
+                </div>
+                <div className="post-location" style={display}>
+                    <img className="location-icon img-fluid" style={iconSize} src="../src/assets/icons/location-icon.svg" />
+                    <p className="location" style={textColor}>{props.location}</p>
+                </div>
+            </div>
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-12 p-0">
+                        <img className="post-img img-fluid" src={props.img} style={noMargin} />
                     </div>
                 </div>
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-12 p-0">
-                            <img className="post-img img-fluid" src={props.img} style={noMargin} />
-                        </div>
-                    </div>
+            </div>
+            <div className="post-icons" style={imgFooterIcons}>
+                <div className="insta-icons">
+                    <img className="heart-icon me-2" style={iconSize} src={!like ? "../src/assets/icons/like-icon.svg" : "../src/assets/icons/fav-like-icon.svg"} onClick={handleLike} />
+                    <p className="like-count" style={textColor}>{likeCount}</p>
                 </div>
-                <div className="post-icons" style={imgFooterIcons}>
-                    <div className="insta-icons">
-                        <img className="heart-icon me-2" style={iconSize} src={!liked ? "../src/assets/icons/like-icon.svg" : "../src/assets/icons/fav-like-icon.svg"} onClick={handleLikeClick} />
-                    </div>
-                    <div className="encilopedia-icon flex" style={display}>
-                        <Link to="/animals">
-                            <img className="pedia-icon" src="../src/assets/icons/enciclopedia-icon.svg" style={iconSize} />
-                        </Link>
-                    </div>
+                <div className="encilopedia-icon flex" style={display}>
+                    <Link to="/animals">
+                        <img className="pedia-icon" src="../src/assets/icons/enciclopedia-icon.svg" style={iconSize} />
+                    </Link>
                 </div>
-
-                <div className="photo-description mt-2">
-                    <p className="description" style={textColor}>{props.comment}</p>
-
-                </div>
-
             </div>
 
+            <div className="photo-description mt-2">
+                <p className="description m-0" style={textColor}>{props.comment}</p>
+            </div>
         </div>
     )
 

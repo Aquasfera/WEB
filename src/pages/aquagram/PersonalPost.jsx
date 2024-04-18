@@ -6,9 +6,10 @@ function PersonalPost() {
 
     const [posts, setPosts] = useState([]);
     const [liked, setLiked] = useState(false);
-
+    const API_URL = import.meta.env.VITE_API_URL;
+    const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO ;
     useEffect(() => {
-        fetch('http://192.168.1.244:3000/api/post')
+        fetch(API_URL + 'post')
             .then(response => response.json())
             .then(data => {
                 setPosts(data)
@@ -21,7 +22,7 @@ function PersonalPost() {
         try {
             const updatedLikes = currentLikes + 1;
 
-            const response = await fetch(`http://192.168.1.244:3000/api/post/${postId}`, {
+            const response = await fetch( API_URL + `post/${postId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -63,7 +64,7 @@ function PersonalPost() {
                 posts.map(post => {
 
                     return (
-                        <Post username={post.user?.username} avatar={post.user?.avatar} location={post.location?.name} img={`http://192.168.1.244:3000/photos/${post.url}`}
+                        <Post username={post.user?.username} avatar={post.user?.avatar} location={post.location?.name} img={`${API_PHOTOS}${post.url}`}
                             comment={post.description}
                             key={post.id} likes={post.likes} onLike={() => handleLike(post.id, post.likes)} />
 

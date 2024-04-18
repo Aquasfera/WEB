@@ -9,7 +9,8 @@ import Card from "react-bootstrap/Card";
 import { useDropzone } from "react-dropzone";
 
 function NewPost() {
-  const API_URL = "http://192.168.1.244:3000/api/";
+  const API_URL = import.meta.env.VITE_API_URL;
+  const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO ;
 
   const [possibleAnimals, setPossibleAnimals] = useState([""]);
   const [possibleLocations, setPossibleLocations] = useState([""]);
@@ -25,12 +26,12 @@ function NewPost() {
     useDropzone({ onDrop });
 
   useEffect(() => {
-    fetch(API_URL + "/location")
+    fetch(API_URL + "location")
       .then((res) => res.json())
       .then((res) => setPossibleLocations(res))
       .catch((error) => console.error(error));
 
-    fetch(API_URL + "/animal")
+    fetch(API_URL + "animal")
       .then((res) => res.json())
       .then((res) => setPossibleAnimals(res))
       .catch((error) => console.error(error));
@@ -53,7 +54,7 @@ function NewPost() {
       body: formData,
     };
 
-    fetch(API_URL + "/post", options)
+    fetch(API_URL + "post", options)
       .then((res) => res.json())
       .then((res) => console.log("Post creado", res))
       .catch((err) => console.log(err));

@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import NavHeadAquagram from "../../components/NavheadAquagram";
+import NavHeadAquapedia from "../../components/NavheadAquapedia.jsx";
 import Context from "../../contexts/Context.js";
 import { Outlet, redirect } from "react-router-dom";
 
 function Aquagram()
 {
     const [actualUser, setActualUser] = useState(null);
-
+    const API_URL = import.meta.env.VITE_API_URL;
     useEffect(() =>{
-        fetch('http://192.168.1.244:3000/api/refresh')
+        fetch(API_URL + 'refresh')
         .then(resp => resp.json())
         .then(data => {
           if(data.error){
@@ -37,7 +37,7 @@ function Aquagram()
 
     return(
         <Context.Provider value={{actualUser, setActualUser}}>    
-            <NavHeadAquagram/>
+            <NavHeadAquapedia/>
             <Outlet/>
         </Context.Provider>
     )
