@@ -32,8 +32,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         
         <Route path='/aquapedia' element={<Aquapedia/>}>
           <Route path='/aquapedia' element={<Maps/>} />
-          <Route path='/aquapedia/animals' element={<Animals />} />
-          <Route path='/aquapedia/animals/:name' element={<AnimalDetail />} />
+          <Route path='/aquapedia/:sea' element={<Animals />} />
+          <Route path='/aquapedia/:sea/:name' element={<AnimalDetail />} />
           <Route path='/aquapedia/about-us' element={<AboutUs />}/>
         </Route>
 
