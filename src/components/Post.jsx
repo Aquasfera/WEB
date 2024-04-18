@@ -117,7 +117,7 @@ function Post(props) {
             <div className="post-icons" style={imgFooterIcons}>
                 <div className="insta-icons">
                     <img className="heart-icon me-2" style={iconSize} src={!like ? "../src/assets/icons/like-icon.svg" : "../src/assets/icons/fav-like-icon.svg"} onClick={handleLike} />
-                    <p className="like-count" style={textColor}>{likeCount}</p>
+                    <span className="like-count" style={textColor}>{likeCount}</span>
                 </div>
                 <div className="encilopedia-icon flex" style={display}>
                     <Link to="/animals">
