@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import "./styles/Login.css";
 const API_URL = import.meta.env.VITE_API_URL;
 const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO ;
 
-import "./aquagram/styles/Login.css"
+import "./aquagram/styles/Login.css";
 import Cookie from 'js-cookie';
 
 export default function Login() {
