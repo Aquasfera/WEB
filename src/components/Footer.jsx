@@ -21,7 +21,7 @@ export default function Footer() {
         <ul className="nav col-md-4 justify-content-end">
             <li className="nav-item"><Link to={"/animals"} className="nav-link px-2 text-decoration-none" style={linkStyle}>Enciclopedia</Link></li>
             <li className="nav-item"><Link to={"/feed"} className="nav-link px-2 text-decoration-none" style={linkStyle}>Instagram</Link></li>
-            <li className="nav-item"><Link to={"/about-us"} className="nav-link px-2 text-decoration-none" style={linkStyle}>Sobre Nosotros</Link></li>
+            <li className="nav-item"><Link to={"/aquapedia/about-us"} className="nav-link px-2 text-decoration-none" style={linkStyle}>Sobre Nosotros</Link></li>
         </ul>
     </footer>
     )

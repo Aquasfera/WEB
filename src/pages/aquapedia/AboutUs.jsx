@@ -1,5 +1,4 @@
 import React from 'react'
-import NavheadAquapedia from '../../components/NavheadAquapedia'
 import bgImage from "../../assets/images/landing-bg.png"
 import ods3 from "../../assets/images/ods-3.png"
 import ods4 from "../../assets/images/ods-4.png"
@@ -27,7 +26,6 @@ export default function AboutUs() {
   }
   return (
     <>
-      <NavheadAquapedia />
       <section className='container-fluid' style={backgroundimage}>
         <section className='row'>
           <div className='col-sm-12 col-md-12 col-lg-12 '>
