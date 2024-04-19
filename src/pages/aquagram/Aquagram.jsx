@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import NavHeadAquapedia from "../../components/NavheadAquapedia.jsx";
+import NavHeadAquagram from '../../components/NavheadAquagram.jsx';
 import Context from "../../contexts/Context.js";
 import { Outlet, redirect, useNavigate } from "react-router-dom";
 import Cookie from 'js-cookie';
