@@ -6,10 +6,9 @@ import NavheadAquapedia from "../../components/NavheadAquapedia";
 function Feed() {
 
     const [posts, setPosts] = useState([]);
-    const [liked, setLiked] = useState(false)
     const API_URL = import.meta.env.VITE_API_URL;
     const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO;
-    
+
     useEffect(() => {
         fetch(API_URL + 'post')
             .then(response => response.json())
@@ -76,7 +75,7 @@ function Feed() {
                     {posts.map(post => {
                         return (
                             <Post
-                                id = {post.id}
+                                id={post.id}
                                 username={post.user?.username}
                                 avatar={post.user?.avatar}
                                 location={post.location?.name}
@@ -84,7 +83,8 @@ function Feed() {
                                 comment={post.description}
                                 likes={post.likes}
                                 key={post.id}
-                                
+                                animal={post.animal.name}
+
                             />
 
                         );
