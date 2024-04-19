@@ -68,7 +68,7 @@ export default function UserCard(props) {
 
     return (
 
-        <div className="col-md-4">
+        <div className="col-md-4 section-card">
             <div className="card profile-card-3">
                 <div className="background-block">
                     <img src="https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="profile-sample1" className="background" />
