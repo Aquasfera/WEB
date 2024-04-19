@@ -1,8 +1,7 @@
-import NavheadAquapedia from "../../components/NavheadAquapedia.jsx";
 import AnimalCard from "../../components/AnimalCard.jsx";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-import data from "../../fakedata/fakedata.js";
 
 function Animals() {
     const stickyTop = {
@@ -39,6 +38,7 @@ function Animals() {
     }
 
     const [animalData, setAnimalData] = useState([]);
+    let {sea} = useParams()
     const API_URL = import.meta.env.VITE_API_URL;
     const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO ;
     useEffect(() => {
@@ -62,9 +62,8 @@ function Animals() {
     
     return (
         <div style={bgcolor}>
-            <NavheadAquapedia />
             <div  className=" container-fluid"style={stickyTop}>
-                <h1 style={titleStyle}>Mar<br />Mediterraneo</h1>
+                <h1 style={titleStyle}>{sea}</h1>
                 <h5 style={textStyle}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo, dicta inventore perferendis quam ullam nobis qui eum </h5>
                 <hr style={hRule} />
             </div>
