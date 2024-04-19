@@ -7,7 +7,7 @@ import { Button } from "bootstrap";
 
 function Aquagram()
 {
-  const API_URL = import.meta.env.VITE_API_URL;
+    const API_URL = import.meta.env.VITE_API_URL;
 
     const [actualUser, setActualUser] = useState(null);
     const navigate = useNavigate()
@@ -46,7 +46,7 @@ function Aquagram()
         useEffect(() => {
     
           console.log("Logout intento")
-          fetch('http://192.168.1.244:3000/api/logout', {method: 'POST', credentials: 'include'})
+          fetch(API_URL + 'logout', {method: 'POST', credentials: 'include'})
           .then(resp => resp.json())
           .then(data => {
                   console.log(data);})
