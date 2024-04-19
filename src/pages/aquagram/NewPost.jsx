@@ -2,11 +2,14 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import Button from "react-bootstrap/Button";
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useContext } from "react";
+import Context from '../../contexts/Context';
+
 import "./styles/NewPost.css";
 
 import Card from "react-bootstrap/Card";
 import { useDropzone } from "react-dropzone";
+import { useNavigate } from "react-router-dom";
 
 function NewPost() {
   const API_URL = import.meta.env.VITE_API_URL;
@@ -20,11 +23,16 @@ function NewPost() {
 
   const [description, setDescription] = useState("");
 
+  const {actualUser} = useContext(Context);
   const onDrop = useCallback((acceptedFiles) => {}, []);
 
   const { getRootProps, getInputProps, isDragActive, acceptedFiles } =
     useDropzone({ onDrop });
 
+
+
+  const navigate = useNavigate()
+  
   useEffect(() => {
     fetch(API_URL + "location")
       .then((res) => res.json())
@@ -44,7 +52,7 @@ function NewPost() {
     formData.append("animal_id", animalIdSelected);
     formData.append("location_id", locationIdSelected);
     formData.append("url", acceptedFiles[0]);
-    formData.append("user_id", 1);
+    formData.append("user_id", actualUser.id);
 
     const options = {
       method: "post",
@@ -55,7 +63,7 @@ function NewPost() {
 
     fetch(API_URL + "post", options)
       .then((res) => res.json())
-      .then((res) => console.log("Post creado", res))
+      .then((res) => {console.log("Post creado", res); navigate('/aquagram')})
       .catch((err) => console.log(err));
   }
 
@@ -103,8 +111,8 @@ function NewPost() {
               <DropdownButton
                 id="locationDropdown"
                 title={
-                  possibleLocations.find((an) => an.id === locationIdSelected)
-                    ?.name || "Ubiicación"
+                  possibleLocations.find((an) => an.id == locationIdSelected)
+                    ?.name || "Ubicación"
                 }
                 className="mb-3"
                 variant="light"
@@ -123,7 +131,7 @@ function NewPost() {
               <DropdownButton
                 id="fishDropdown"
                 title={
-                  possibleAnimals.find((an) => an.id === animalIdSelected)
+                  possibleAnimals.find((an) => an.id == animalIdSelected)
                     ?.name || "Animal"
                 }
 
