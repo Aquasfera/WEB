@@ -40,6 +40,7 @@ function Post(props) {
     }
     const API_URL = import.meta.env.VITE_API_URL;
     const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO;
+    const animalLink = `/aquapedia/${props.location}/${props.animal}`
     const [like, setLike] = useState();
     const [likeCount, setLikeCount] = useState(0);
 
@@ -120,7 +121,7 @@ function Post(props) {
                     <span className="like-count" style={textColor}>{likeCount}</span>
                 </div>
                 <div className="encilopedia-icon flex" style={display}>
-                    <Link to="/animals">
+                    <Link to={animalLink}>
                         <img className="pedia-icon" src="../src/assets/icons/enciclopedia-icon.svg" style={iconSize} />
                     </Link>
                 </div>
