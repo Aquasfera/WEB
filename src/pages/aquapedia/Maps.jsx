@@ -50,7 +50,7 @@ useEffect(()=>{
 
 const  test = (area)=>{
 if (area.id == 1) {
-    setRoute("/aquapedia/Mar Mediterraneo")
+    setRoute("/aquapedia/Mar Mediterráneo")
     setClicked(clicked + 1)
 }
 if (area.id == 2) {
