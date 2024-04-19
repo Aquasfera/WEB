@@ -19,7 +19,7 @@ import NewPost from './pages/aquagram/NewPost.jsx'
 import Login from './pages/aquagram/Login.jsx'
 import Register from './pages/aquagram/Register.jsx'
 import Aquagram from './pages/aquagram/Aquagram.jsx'
-
+import FAQ from './pages/aquapedia/FAQ.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -34,6 +34,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/aquapedia' element={<Maps/>} />
           <Route path='/aquapedia/:sea' element={<Animals />} />
           <Route path='/aquapedia/:sea/:name' element={<AnimalDetail />} />
+          <Route path='/aquapedia/faqs' element={<FAQ />}/>
           <Route path='/aquapedia/about-us' element={<AboutUs />}/>
         </Route>
 

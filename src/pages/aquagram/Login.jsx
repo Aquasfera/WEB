@@ -2,8 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./styles/Login.css";
-const API_URL = "http://192.168.1.244:3000/api";
-
+const API_URL = import.meta.env.VITE_API_URL;
+const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO ;
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -22,7 +22,7 @@ export default function Login() {
       },
       body: JSON.stringify(credentials),
     };
-    fetch(API_URL + "/login", options)
+    fetch(API_URL + "login", options)
       .then((res) => res.json())
       .then((data) => {
         console.log("resp", data);
