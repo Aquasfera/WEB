@@ -39,11 +39,12 @@ function Animals() {
     }
 
     const [animalData, setAnimalData] = useState([]);
-
+    const API_URL = import.meta.env.VITE_API_URL;
+    const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO ;
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://192.168.1.244:3000/api/animal');
+                const response = await fetch(API_URL +'animal');
                 const jsonData = await response.json();
                 setAnimalData(jsonData);
                 console.log("hola")
@@ -74,7 +75,7 @@ function Animals() {
 
                         animalData.map(function (e, index) {
                             return (
-                                <div className="col-6 d-flex justify-content-center" key={index}><AnimalCard img={`http://192.168.1.244:3000/photos/${e.photos[0]?.url}`} name={e.name}></AnimalCard></div>
+                                <div className="col-6 d-flex justify-content-center" key={index}><AnimalCard img={`${API_PHOTOS}${e.photos[0]?.url}`} name={e.name}></AnimalCard></div>
                             )
                         })
                     }

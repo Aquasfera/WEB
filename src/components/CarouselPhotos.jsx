@@ -8,9 +8,10 @@ function CarouselPhotos(props) {
     const handleSelect = (selectedIndex) => {
         setIndex(selectedIndex);
     };
-
+    const API_URL = import.meta.env.VITE_API_URL;
+    const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO ;
     useEffect(() => {
-        fetch('http://192.168.1.244:3000/api/photo/animal/' + props.id)
+        fetch(API_URL + 'photo/animal/' + props.id)
             .then(res => res.json())
             .then(data => {
                 setData(data)
@@ -26,7 +27,7 @@ function CarouselPhotos(props) {
                 data.map((item, index) => {
                     return (
                         <Carousel.Item key={index}>
-                            <img className='img-fluid' src={`http://192.168.1.244:3000/photos/${item.url}`} />
+                            <img className='img-fluid' src={`${API_PHOTOS}${item.url}`} />
                             {/* <Carousel.Caption>
                                 <h3>{item.title}</h3>
                                 <p>{item.description}</p>
