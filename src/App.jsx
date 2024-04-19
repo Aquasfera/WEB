@@ -16,10 +16,12 @@ function App() {
   // const data = {login, setLogin, logout}
   return (
     <>
+
       {/* <Context.Provider value={data}> */}
         <Landing />
         <Footer />
       {/* </Context.Provider> */}
+
     </>
   )
 }

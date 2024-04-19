@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #0a141f;
+  text-align: center;
+}
+.titulo {
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  color: white;
+}
+
+.tituloPreg {
+    color: white;
+}
+.textwhite {
+  color: rgba(255, 255, 255, 0.882);
+}
+.caja1 {
+  margin-bottom: 40px;
+}
+
