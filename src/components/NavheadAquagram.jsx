@@ -5,6 +5,10 @@ import { Link, useNavigate } from 'react-router-dom';
 import Context from '../contexts/Context';
 import { useContext, useEffect } from 'react';
 
+const bgcolor = {
+  backgroundColor: "#0A141F"
+}
+
 function Navhead() {
   
   const {actualUser, setActualUser} = useContext(Context);
@@ -21,10 +25,6 @@ function Navhead() {
           
       console.log("Logout hecho")
       navigate('/login')
-  }
-
-  const bgcolor = {
-    backgroundColor: "#0A141F"
   }
 
   return (
