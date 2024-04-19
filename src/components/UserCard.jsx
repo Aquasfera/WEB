@@ -20,13 +20,14 @@ export default function UserCard(props) {
             setFolloweds(data)
         })
         .catch(error => console.error(error))
+
         fetch(API_URL + 'follow/follower/' + 1 + '/followed/' + props.id)
         .then(res => res.json())
         .then(data => {
             setFollow(data)
         })
         .catch(error => console.error(error))
-    }, [])
+    }, [ follow])
     
     const handleFollow = async (postId, currentLikes) => {
         try {
@@ -36,8 +37,7 @@ export default function UserCard(props) {
                 })
                     .then(response => response.json())
                     .then(data => {
-                        console.log(data)
-                        setLike(null)
+                        setFollow(null)
                     })
                     .catch(error => console.error(error))
             } else {
@@ -47,14 +47,13 @@ export default function UserCard(props) {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        userId: 1,
-                        postId: props.id,
+                        followerId: 1,
+                        followedId: props.id,
                     })
                 })
                     .then(response => response.json())
                     .then(data => {
-                        console.log(data)
-                        setLike(data)
+                        setFollow(data)
                     })
                     .catch(error => console.error(error))
             }
@@ -62,20 +61,26 @@ export default function UserCard(props) {
             console.error('Error al actualizar los likes del post:', error);
         }
     }
+    const iconSize = {
+        width: "25px",
+        height: "25px"
+    }
 
     return (
 
-        <div class="col-md-4">
-            <div class="card profile-card-3">
-                <div class="background-block">
-                    <img src="https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="profile-sample1" class="background" />
+        <div className="col-md-4">
+            <div className="card profile-card-3">
+                <div className="background-block">
+                    <img src="https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="profile-sample1" className="background" />
                 </div>
-                <div class="profile-thumb-block">
-                    <img src={props.avatar} alt="profile-image" class="profile" />
+                <div className="profile-thumb-block">
+                    <img src={props.avatar} alt="profile-image" className="profile" />
                 </div>
-                <div class="card-content">
-                    <h2>{props.username}<small>Seguidores { followers} Seguidos {followeds}</small></h2>
-                    <div class="icon-block"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"> <i class="fa fa-twitter"></i></a><a href="#"> <i class="fa fa-google-plus"></i></a></div>
+                <div className="card-content">
+                    <h2>{props.username}<small>Seguidores { followeds} Seguidos {followers}</small></h2>
+                    <div className="icon-block"><a href="#"><i className="fa fa-facebook"></i></a><a href="#"> <i className="fa fa-twitter"></i></a><a href="#"> <i className="fa fa-google-plus"></i></a></div>
+                        <button className=" icon-block" onClick={handleFollow}>{!follow ? 'Seguir' : 'Dejar de seguir'} </button>
+
                 </div>
             </div>
         </div>
