@@ -6,8 +6,24 @@ import { useNavigate } from 'react-router-dom';
 
 
 
+const bgcolor = {
 
-
+    minHeight: "100vh",
+    backgroundColor: "#0A141F"
+}
+const titleStyle = {
+    color: "#D2AD89",
+    marginLeft: "1em",
+    paddingTop: "0.8em"
+}
+const textStyle = {
+    color: "white",
+    marginLeft: "1.6em",
+    marginRight: "2em",
+    marginTop: "1em",
+    fontSize: "1.6em",
+    fontWeight: "lighter"
+}
 const Maps = props => {
 
 const divRef = useRef(null);
@@ -28,15 +44,11 @@ const navigate = useNavigate();
 const [clicked, setClicked] = useState(0)
 const [route, setRoute] = useState("");
 
-
-
 useEffect(()=>{
     navigate(route)
-
 },[clicked])
 
-const  test = (area,index,event)=>{
-console.log(area.id)
+const  test = (area)=>{
 if (area.id == 1) {
     setRoute("/aquapedia/Mar Mediterraneo")
     setClicked(clicked + 1)
@@ -59,11 +71,17 @@ if (area.id == 3) {
     };
 
     return (
-        <div>
+        <div style={bgcolor}>
+            <h1 style={titleStyle}>
+                Descubre miles de especies en nuestro mapa!
+            </h1>
             <div className='container-fluid' ref={divRef} >
                 {width}
                 <ImageMapper src={mapImg} map={MAP}  onClick={test} responsive={true} parentWidth={width} />
             </div>
+            <h2 style={textStyle}>
+                Clica en algun punto del mapa y descubre!
+            </h2>
         </div>
     )
         ;
