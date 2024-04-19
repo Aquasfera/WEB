@@ -41,7 +41,6 @@ function NewPost() {
     e.preventDefault();
     const formData = new FormData();
     formData.append("description", description);
-    formData.append("likes", 0);
     formData.append("animal_id", animalIdSelected);
     formData.append("location_id", locationIdSelected);
     formData.append("url", acceptedFiles[0]);

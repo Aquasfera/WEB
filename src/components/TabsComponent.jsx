@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import UserCard from './UserCard';
 export default function TabsComponent() {
-    const [key, setKey] = useState('home');
+    const [key, setKey] = useState('Mis Post');
     const [data, setData] = useState([])
     const [user, setUser] = useState([])
     const API_URL = import.meta.env.VITE_API_URL;
@@ -17,7 +17,6 @@ export default function TabsComponent() {
             .then(res => res.json())
             .then(data => {
                 setData(data)
-                console.log(data)
             })
             .catch(error => console.error(error))
     }, []);
@@ -26,7 +25,6 @@ export default function TabsComponent() {
         .then(res => res.json())
         .then(data => {
             setUser(data)
-            console.log(data)
         })
         .catch(error => console.error(error))
     }
@@ -39,7 +37,7 @@ export default function TabsComponent() {
             onSelect={(k) => setKey(k)}
             className="mb-3"
         >
-            <Tab eventKey="home" title="Home">
+            <Tab eventKey="Mis Post" title="Mis Post">
 
                 <div className='col-12 justify-content-center d-flex flex-row flex-wrap'>
                     {
@@ -55,7 +53,7 @@ export default function TabsComponent() {
                         )}
                 </div>
             </Tab>
-            <Tab eventKey="profile" title="Profile">
+            <Tab eventKey="usuarios" title="Usuarios">
                 {
                     user.map((item, index) => {
                         return (
