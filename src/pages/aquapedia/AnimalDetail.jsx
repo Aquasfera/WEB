@@ -71,7 +71,6 @@ function AnimalDetail() {
                     {animalData.description}
                 </h5>
                 <div className="container-fluid">
-                    <img src={API_PHOTOS + animalData.photos[0]?.url} className="img-fluid mt-3 rounded" alt={animalData.name} />
 
                     {/* <img src={`http://192.168.1.244:3000/photos/` + animalData.photos[0]?.url} className="img-fluid mt-3 rounded" alt={animalData.name} /> */}
                     <CarrouselPhotos id={animalData.id}/>
