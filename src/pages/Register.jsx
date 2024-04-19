@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 const API_URL = "http://192.168.1.244:3000/api";
-import "./styles/Login.css";
+import "./aquagram/styles/Login.css"
 
 export default function Register() {
   const [username, setUsername] = useState("");

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import "./styles/Login.css";
+import "./aquagram/styles/Login.css"
 const API_URL = "http://192.168.1.244:3000/api";
 import Cookie from 'js-cookie';
 
