@@ -1,11 +1,14 @@
 /* eslint-disable react/prop-types */
 
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import Context from "../contexts/Context"
 
 
 function Post(props) {
 
+    const {actualUser} = useContext(Context);
+    
     const bgcolor = {
         height: "auto",
         backgroundColor: "#0A141F"
@@ -45,7 +48,7 @@ function Post(props) {
     const [likeCount, setLikeCount] = useState(0);
 
     useEffect(() => {
-        fetch(API_URL + 'like/user/1/post/' + props.id)
+        fetch(API_URL + 'like/user/' + actualUser.id +'/post/' + props.id)
             .then(response => response.json())
             .then(data => {
                 setLike(data)
@@ -63,7 +66,7 @@ function Post(props) {
     const handleLike = async (postId, currentLikes) => {
         try {
             if (like) {
-                fetch(API_URL + 'like/user/' + 1 + '/post/' + props.id, {
+                fetch(API_URL + 'like/user/' + actualUser.id + '/post/' + props.id, {
                     method: 'DELETE',
                 })
                     .then(response => response.json())
@@ -79,7 +82,7 @@ function Post(props) {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        userId: 1,
+                        userId: actualUser.id,
                         postId: props.id,
                     })
                 })
