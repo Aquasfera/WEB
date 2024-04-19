@@ -27,14 +27,14 @@ function Aquagram()
 
       fetch('http://192.168.1.244:3000/api/refresh', options)
       .then(resp => resp.json())
-      .then(data => {
-        if(data.error){//Si no hay token
+      .then(resp => {
+        if(resp.error){//Si no hay token
           console.log('No detecta token')
           logout()
         }
         else{
-          setActualUser(data)
-          console.log('Usuario comprobado.', data)
+          setActualUser(resp)
+          console.log('Usuario comprobado.', resp)
       }}
       )
       .catch(err => logout())
