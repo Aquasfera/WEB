@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./styles/Login.css";
 const API_URL = "http://192.168.1.244:3000/api";
+import Cookie from 'js-cookie';
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
   const navigate = useNavigate();
 
   const login = (e) => {
@@ -26,9 +28,14 @@ export default function Login() {
     };
     fetch(API_URL + "/login", options)
       .then((res) => res.json())
-      .then((data) => {
-        console.log("Login correcto! : ", data);
-        navigate("/aquagram");
+      .then(res => {
+        if(res.error){
+          console.log('Credenciales mal.')
+        }
+        else{
+          Cookie.set('tokenCookie', res, { expires: 180000 });
+          navigate("/aquagram");
+        }
       })
       .catch((err) => console.log('Fallo de login : ' + err));
   };

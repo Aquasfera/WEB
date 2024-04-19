@@ -12,12 +12,15 @@ import AnimalDetail from './pages/aquapedia/AnimalDetail.jsx'
 import AboutUs from './pages/aquapedia/AboutUs.jsx'
 import Aquapedia from './pages/aquapedia/Aquapedia.jsx'
 import Maps from './pages/aquapedia/Maps.jsx'
+
+import Register from './pages/aquagram/Register.jsx'
+import Login from './pages/aquagram/Login.jsx'
+import Logout from './pages/Logout.jsx'
 import PersonalProfile from './pages/aquagram/PersonalProfile.jsx'
 import Feed from './pages/aquagram/Feed.jsx'
 import PersonalPost from './pages/aquagram/PersonalPost.jsx'
 import NewPost from './pages/aquagram/NewPost.jsx'
-import Login from './pages/aquagram/Login.jsx'
-import Register from './pages/aquagram/Register.jsx'
+
 import Aquagram from './pages/aquagram/Aquagram.jsx'
 
 
@@ -35,9 +38,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/aquapedia/animals/:name' element={<AnimalDetail />} />
           <Route path='/aquapedia/about-us' element={<AboutUs />}/>
         </Route>
-
+        
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/logout' element={<Logout/>}/>
 
         <Route path='/aquagram' element={<Aquagram/>}>
           <Route path='/aquagram' element={<Feed />} />
