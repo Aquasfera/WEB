@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Post from "../../components/Post";
 import NavheadAquapedia from "../../components/NavheadAquapedia";
+import Loading from "../../components/Loading";
 
 function Feed() {
 
@@ -58,15 +59,6 @@ function Feed() {
     //         console.error('Error al actualizar los likes del post:', error);
     //     }
     // }
-
-    if (!posts.length) {
-        return (
-            <div className="spinner-border" role="status">
-                <span ></span>
-            </div>)
-    }
-
-
 
     return (
         <>

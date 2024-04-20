@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import NavHeadAquagram from '../../components/NavheadAquagram.jsx';
 import Context from "../../contexts/Context.js";
-import { Outlet, redirect, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import Cookie from 'js-cookie';
-import { Button } from "bootstrap";
+
+import Loading from "../../components/Loading";
 
 function Aquagram()
 {
@@ -39,27 +40,29 @@ function Aquagram()
           console.log('Usuario comprobado.', resp)
       }}
       )
-      .catch(err => logout())
+      .catch(err => console.log(err))// logout())
       },[])
 
       const logout = () => {
-        useEffect(() => {
-    
           console.log("Logout intento")
           fetch(API_URL + 'logout', {method: 'POST', credentials: 'include'})
           .then(resp => resp.json())
           .then(data => {
                   console.log(data);})
-          .catch(err => Cookies.remove('tokenCookie'))
+          .catch(err => Cookie.remove('tokenCookie'))
+          
           setActualUser(null)
               
           console.log("Logout hecho")
           navigate('/login')
-      ,[]})
       }
+    
+    // if(actualUser == null){
+    //   return (<Loading/>)
+    // }
 
     return(
-        <Context.Provider value={{actualUser, setActualUser}}>  
+        <Context.Provider value={{actualUser, setActualUser, logout}}>  
             <NavHeadAquagram/>
             <Outlet/>
         </Context.Provider>

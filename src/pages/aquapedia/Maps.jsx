@@ -28,17 +28,18 @@ const Maps = props => {
 
 const divRef = useRef(null);
 const [width, setWidth] = useState(null);
+
 useEffect(() => {
-    if (divRef.current) {
-      // Obtenemos el ancho del div utilizando la propiedad offsetWidth
-      const divWidth = divRef.current.offsetWidth;
-      // Actualizamos el estado con el ancho obtenido
-      setWidth(divWidth-30);
+    const handleResize = () => {
+        setWidth(divRef.current.offsetWidth);
+    };
 
-    }
-  }, [width]);
+    window.addEventListener('resize', handleResize);
 
-
+    return () => {
+        window.removeEventListener('resize', handleResize);
+    };
+}, []);
 
 const navigate = useNavigate();
 const [clicked, setClicked] = useState(0)
@@ -76,15 +77,13 @@ if (area.id == 3) {
                 Descubre miles de especies en nuestro mapa!
             </h1>
             <div className='container-fluid' ref={divRef} >
-                {width}
-                <ImageMapper src={mapImg} map={MAP}  onClick={test} responsive={true} parentWidth={width} />
+                <ImageMapper src={mapImg} map={MAP}  onClick={test} responsive={true} parentWidth={width - 30} />
             </div>
             <h2 style={textStyle}>
                 Clica en algun punto del mapa y descubre!
             </h2>
         </div>
     )
-        ;
 }
 
 export default Maps;
