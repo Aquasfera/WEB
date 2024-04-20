@@ -40,7 +40,7 @@ function Aquagram()
           console.log('Usuario comprobado.', resp)
       }}
       )
-      .catch(err => console.log(err))// logout())
+      .catch(err => logout())
       },[])
 
       const logout = () => {
@@ -57,9 +57,9 @@ function Aquagram()
           navigate('/login')
       }
     
-    // if(actualUser == null){
-    //   return (<Loading/>)
-    // }
+    if(actualUser == null){
+      return (<Loading/>)
+    }
 
     return(
         <Context.Provider value={{actualUser, setActualUser, logout}}>  
