@@ -2,10 +2,10 @@ import { useContext, useState } from "react";
 import Context from "../contexts/Context";
 import pfp from "../assets/profilePics/0_cardinalFish.png"
 
-import options from '../assets/icons/old/settings-icon.svg'
-import newPost from '../assets/icons/old/add-image-icon.svg'
-import logoutSvg from '../assets/icons/old/logout-svgrepo-com.svg'
-import aquarium from '../assets/icons/old/aquarium.svg'
+import options from '../assets/icons/options.svg'
+import newPost from '../assets/icons/addNewPost.svg'
+import logoutSvg from '../assets/icons/logout.svg'
+import aquarium from '../assets/icons/personalProfile.svg'
 import { useNavigate } from "react-router-dom";
 
 function PersonalMenu(){

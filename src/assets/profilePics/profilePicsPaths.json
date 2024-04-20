@@ -1,7 +1,9 @@
 [
   "0_cardinalFish.png",
+  "0.5_flyfish.png",
   "1_butterfish.png",
   "2_clownfish.png",
+  "2.5_shark.png",
   "3_shell.png",
   "4_fish.png",
   "5_fish.png",
@@ -11,5 +13,6 @@
   "9_seaweed.png",
   "10_shell.png",
   "11_shrimp.png",
+  "11.5_anchor.png",
   "12_squid.png"
 ]
