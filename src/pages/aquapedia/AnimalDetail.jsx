@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Foundations from "../../components/Fouondations";
 import CarouselPhotos from "../../components/CarouselPhotosAnimals"
+import Loading from "../../components/Loading";
 
 
 function AnimalDetail() {
@@ -58,7 +59,7 @@ function AnimalDetail() {
     }, [])
 
     if (animalData === null) {
-        return <h1>Loading...</h1>
+        return <Loading/>
     }
 
     return (
