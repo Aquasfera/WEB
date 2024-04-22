@@ -12,7 +12,7 @@ export default function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [active, setActive] = useState(true);
-  const [avatar, setAvatar] = useState(0);
+  const [avatar , setAvatar] = useState(0);
   const redirect = useNavigate();
 
   const register = (e) => {
@@ -37,7 +37,8 @@ export default function Register() {
     fetch(API_URL + "/register", options)
       .then((res) => res.json())
       .then((data) => {
-        if(data.error)//Usuario existe
+        console.log(data);
+        if(data.error) //Usuario existe
         {
           console.log('El usuario ya existe.')
         }
@@ -103,9 +104,9 @@ export default function Register() {
           </div>
           <div>
             <p className="text-center pt-4 letraBlanca">
-              ¿ Ya tienes una cuenta ?<br />
+              ¿Ya tienes una cuenta?<br />
               <Link to="/login" className="NoSubrayado">
-                ¡ Ir al Login !
+                ¡Ir al Login!
               </Link>
             </p>
           </div>
