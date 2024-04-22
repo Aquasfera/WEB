@@ -89,11 +89,11 @@ export default function Login() {
               </button>
             </div>
           </div>
-          <div className="d-flex justify-content-center align-items-center">
+          <div className="d-flex flex-column justify-content-center align-items-center">
             <p className="text-center pt-4 letraBlanca">
-              ¿ Todavía no tienes cuenta ?<br />
+              ¿Todavía no tienes cuenta?<br />
               <Link to="/register" className="NoSubrayado">
-                ¡ Regístrate !
+                ¡Regístrate!
               </Link>
             </p>
           </div>
