@@ -20,9 +20,9 @@ function PersonalMenu(){
         <h1>{actualUser.name}</h1>
         <div style={{display: showMenu ? 'none' : 'flex', gap: '10px',  justifyContent: 'center', alignItems: 'center'}}>
             <img src={logoutSvg} style={{width: '20px', transform: "scaleX(-1)"}} onClick={() => logout()}/>
-            <img src={options} style={{width: '25px'}} onClick={() => navigate('/')}/>
-            <img src={newPost} style={{width: '25px'}} onClick={() => navigate('/aquagram/newPost')}/>
-            <img src={aquarium} style={{width: '25px'}} onClick={() => navigate('/aquagram/personal-profile')}/>
+            <img src={options} style={{width: '25px'}} onClick={() => {setShowMenu(true); navigate('/')}}/>
+            <img src={newPost} style={{width: '25px'}} onClick={() => {setShowMenu(true); navigate('/aquagram/newPost')}}/>
+            <img src={aquarium} style={{width: '25px'}} onClick={() => {setShowMenu(true); navigate('/aquagram/personal-profile')}}/>
         </div>
         <img src={"src/assets/profilePics/" + PFPPaths[actualUser.avatar]} style={{width: "40px", padding: "2px"}} onClick={() => setShowMenu((showMenu ? false : true))}/>
         </>

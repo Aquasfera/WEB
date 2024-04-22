@@ -36,6 +36,7 @@ function Aquagram()
           logout()
         }
         else{
+          resp.avatar = resp.avatar - 1;
           setActualUser(resp)
           console.log('Usuario comprobado.', resp)
       }}

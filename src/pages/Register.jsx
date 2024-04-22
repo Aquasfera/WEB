@@ -22,8 +22,9 @@ export default function Register() {
       username,
       password,
       active,
-      avatar,
+      avatar: avatar + 1,
     };
+
     const options = {
       method: "POST",
       credentials: "include",
@@ -32,6 +33,7 @@ export default function Register() {
       },
       body: JSON.stringify(credentials),
     };
+
     fetch(API_URL + "/register", options)
       .then((res) => res.json())
       .then((data) => {

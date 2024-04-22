@@ -65,6 +65,7 @@ function Post(props) {
             })
             .catch(error => console.error(error))
     }, [like])
+
     const handleLike = async (postId, currentLikes) => {
         try {
             if (like) {
@@ -100,6 +101,9 @@ function Post(props) {
         }
     }
 
+    const deletePost = () => {
+
+    }
 
     return (
         <div className="pb-5" style={bgcolor}>
@@ -109,7 +113,7 @@ function Post(props) {
                     <p className="username" style={textColor}>{props.username}</p>
                 </div>
                 <div className="post-location" style={display}>
-                    <img className="location-icon img-fluid" style={iconSize} src="../src/assets/icons/old/location-icon.svg" />
+                    <img className="location-icon img-fluid" style={iconSize} src="../src/assets/icons/location.svg" />
                     <p className="location" style={textColor}>{props.location}</p>
                 </div>
             </div>
@@ -122,12 +126,15 @@ function Post(props) {
             </div>
             <div className="post-icons" style={imgFooterIcons}>
                 <div className="insta-icons">
-                    <img className="heart-icon me-2" style={iconSize} src={!like ? "../src/assets/icons/old/like-icon.svg" : "../src/assets/icons/old/fav-like-icon.svg"} onClick={handleLike} />
+                    <img className="heart-icon me-2" style={iconSize} src={!like ? "../src/assets/icons/fav.svg" : "../src/assets/icons/fav-like-icon.svg"} onClick={handleLike} />
                     <span className="like-count" style={textColor}>{likeCount}</span>
                 </div>
+                {actualUser.username == props.username ? <div>
+                    <img src="../src/assets/icons/delete.svg"/> 
+                </div> : null}
                 <div className="encilopedia-icon flex" style={display}>
                     <Link to={animalLink}>
-                        <img className="pedia-icon" src="../src/assets/icons/old/enciclopedia-icon.svg" style={iconSize} />
+                        <img className="pedia-icon" src="../src/assets/icons/pediaReference.svg" style={iconSize} />
                     </Link>
                 </div>
             </div>
