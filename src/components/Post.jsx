@@ -4,6 +4,7 @@ import { useContext, useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import Context from "../contexts/Context"
 
+import PFPPaths from '../assets/profilePics/profilePicsPaths.json'
 
 function Post(props) {
 
@@ -29,7 +30,8 @@ function Post(props) {
 
     const iconSize = {
         width: "25px",
-        height: "25px"
+        height: "25px",
+        marginRight: '10px'
     }
 
     const imgFooterIcons = {
@@ -52,14 +54,14 @@ function Post(props) {
             .then(response => response.json())
             .then(data => {
                 setLike(data)
-                console.log(data)
+                // console.log(data)
             })
             .catch(error => console.error(error))
         fetch(API_URL + 'like/count/' + props.id)
             .then(response => response.json())
             .then(data => {
                 setLikeCount(data)
-                console.log(data)
+                // console.log(data)
             })
             .catch(error => console.error(error))
     }, [like])
@@ -71,7 +73,7 @@ function Post(props) {
                 })
                     .then(response => response.json())
                     .then(data => {
-                        console.log(data)
+                        // console.log(data)
                         setLike(null)
                     })
                     .catch(error => console.error(error))
@@ -88,7 +90,7 @@ function Post(props) {
                 })
                     .then(response => response.json())
                     .then(data => {
-                        console.log(data)
+                        // console.log(data)
                         setLike(data)
                     })
                     .catch(error => console.error(error))
@@ -103,7 +105,7 @@ function Post(props) {
         <div className="pb-5" style={bgcolor}>
             <div className="post-header" style={displayHeader}>
                 <div className="post-username flex" style={display}>
-                    <img className="user-avatar img-fluid" style={iconSize} src={props.avatar} />
+                    <img className="user-avatar img-fluid" style={iconSize} src={'src/assets/profilePics/' + PFPPaths[props.avatar]} />
                     <p className="username" style={textColor}>{props.username}</p>
                 </div>
                 <div className="post-location" style={display}>

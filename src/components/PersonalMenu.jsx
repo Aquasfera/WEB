@@ -1,12 +1,13 @@
 import { useContext, useState } from "react";
 import Context from "../contexts/Context";
-import pfp from "../assets/profilePics/0_cardinalFish.png"
 
 import options from '../assets/icons/options.svg'
 import newPost from '../assets/icons/addNewPost.svg'
 import logoutSvg from '../assets/icons/logout.svg'
 import aquarium from '../assets/icons/personalProfile.svg'
 import { useNavigate } from "react-router-dom";
+
+import PFPPaths from '../assets/profilePics/profilePicsPaths.json'
 
 function PersonalMenu(){
 
@@ -16,14 +17,14 @@ function PersonalMenu(){
 
     return(
         <>
-        <h1>{actualUser}</h1>
+        <h1>{actualUser.name}</h1>
         <div style={{display: showMenu ? 'none' : 'flex', gap: '10px',  justifyContent: 'center', alignItems: 'center'}}>
-            <img src={logoutSvg} style={{width: '20px', transform: "scaleX(-1)"}} onClick={() => logout}/>
+            <img src={logoutSvg} style={{width: '20px', transform: "scaleX(-1)"}} onClick={() => logout()}/>
             <img src={options} style={{width: '25px'}} onClick={() => navigate('/')}/>
             <img src={newPost} style={{width: '25px'}} onClick={() => navigate('/aquagram/newPost')}/>
             <img src={aquarium} style={{width: '25px'}} onClick={() => navigate('/aquagram/personal-profile')}/>
         </div>
-        <img src={pfp} style={{width: "40px", padding: "2px"}} onClick={() => setShowMenu((showMenu ? false : true))}/>
+        <img src={"src/assets/profilePics/" + PFPPaths[actualUser.avatar]} style={{width: "40px", padding: "2px"}} onClick={() => setShowMenu((showMenu ? false : true))}/>
         </>
     )
 }
