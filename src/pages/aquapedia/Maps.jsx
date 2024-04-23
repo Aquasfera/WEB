@@ -27,9 +27,10 @@ const textStyle = {
 const Maps = props => {
 
 const divRef = useRef(null);
-const [width, setWidth] = useState(null);
+const [width, setWidth] = useState();
 
 useEffect(() => {
+    setWidth(divRef.current.offsetWidth);
     const handleResize = () => {
         setWidth(divRef.current.offsetWidth);
     };
