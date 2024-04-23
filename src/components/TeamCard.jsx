@@ -13,20 +13,20 @@ export default function TeamCard(props) {
         height: "auto",
     }
     const cardStyle = {
+
+    }
+    const style = {
+        width: "10em",
         backgroundColor: "#273654",
         borderRadius: "10px",
+        color: "white",
     }
-
     return (
-
-        <div className="col-4 col-md-4 col-lg-2 m-2 d-flex flex-column flex-wrap align-items-center" style={cardStyle}>
-            <div className='p-2'>
-                <img src={ods} className="rounded-circle card-img-top pt-2 img-fluid" style={imgStyle} alt={props.name} />
-                
-                <div>
-                    <h5 style={props.style} className="text-center card-title">{props.name}</h5>
-                </div>
-                <div className='pt-2 d-flex justify-content-center flex-row'>
+        <div class="card m-1" style={style}>
+            <img class="card-img-top" src={ods} alt="Card image"></img>
+            <div class="card-body">
+                <h4 class="card-title">{props.name}</h4>
+                <div className='d-flex justify-content-center'>
                     <a className='' href={props.github} target="_blank" rel="noreferrer">
                         <img className='img-fluid' style={svgStyle} src={githubIcon}></img>
                     </a>
@@ -35,8 +35,6 @@ export default function TeamCard(props) {
                     </a>
                 </div>
             </div>
-            
         </div>
-
     )
 }

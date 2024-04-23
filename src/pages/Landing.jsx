@@ -34,7 +34,6 @@ function Landing() {
         color: "#CCDBDC"
 
     }
-    const API = 1
     return (
         <div style={backgroundimage}>
             <div className="container">
@@ -53,7 +52,7 @@ function Landing() {
                     </NavLink>
                 </div>
             </div>
-            
+
         </div>
 
     );

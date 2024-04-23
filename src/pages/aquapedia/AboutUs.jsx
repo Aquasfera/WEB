@@ -10,11 +10,11 @@ import TeamCard from '../../components/TeamCard'
 import Footer from '../../components/Footer'
 
 export default function AboutUs() {
-  const backgroundimage = {
+  const bgcolor = {
+
     minHeight: "100vh",
-    height: "auto",
-    backgroundImage: `url(${bgImage})`
-  }
+    backgroundColor: "#0A141F"
+}
   const titleStyle = {
     fontSize: "40px",
     lineHeight: "1.4",
@@ -27,8 +27,7 @@ export default function AboutUs() {
   }
   return (
     <>
-      <NavheadAquapedia />
-      <section className='container-fluid' style={backgroundimage}>
+      <section className='container-fluid' style={bgcolor}>
         <section className='row'>
           <div className='col-sm-12 col-md-12 col-lg-12 '>
             <h1 style={titleStyle}>Sobre Nosotros</h1>
@@ -68,7 +67,7 @@ export default function AboutUs() {
           </div>
         </section>
       </section>
-      <Footer></Footer>
+      <Footer></Footer> 
     </>
   )
 }
