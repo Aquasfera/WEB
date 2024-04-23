@@ -1,10 +1,17 @@
 /* eslint-disable react/prop-types */
 
-import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { useContext, useEffect, useState } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import Context from "../contexts/Context"
+
+import PFPPaths from '../assets/profilePics/profilePicsPaths.json'
 
 
 function Post(props) {
+
+    const {actualUser, token} = useContext(Context);
+    
+    const redirect = useNavigate();
 
     const bgcolor = {
         height: "auto",
@@ -26,7 +33,8 @@ function Post(props) {
 
     const iconSize = {
         width: "25px",
-        height: "25px"
+        height: "25px",
+        marginRight: '10px'
     }
 
     const imgFooterIcons = {
@@ -40,34 +48,36 @@ function Post(props) {
     }
     const API_URL = import.meta.env.VITE_API_URL;
     const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO;
+    const animalLink = `/aquapedia/${props.location}/${props.animal}`
     const [like, setLike] = useState();
     const [likeCount, setLikeCount] = useState(0);
 
     useEffect(() => {
-        fetch(API_URL + 'like/user/1/post/' + props.id)
+        fetch(API_URL + 'like/user/' + actualUser.id +'/post/' + props.id)
             .then(response => response.json())
             .then(data => {
                 setLike(data)
-                console.log(data)
+                // console.log(data)
             })
             .catch(error => console.error(error))
         fetch(API_URL + 'like/count/' + props.id)
             .then(response => response.json())
             .then(data => {
                 setLikeCount(data)
-                console.log(data)
+                // console.log(data)
             })
             .catch(error => console.error(error))
     }, [like])
+
     const handleLike = async (postId, currentLikes) => {
         try {
             if (like) {
-                fetch(API_URL + 'like/user/' + 1 + '/post/' + props.id, {
+                fetch(API_URL + 'like/user/' + actualUser.id + '/post/' + props.id, {
                     method: 'DELETE',
                 })
                     .then(response => response.json())
                     .then(data => {
-                        console.log(data)
+                        // console.log(data)
                         setLike(null)
                     })
                     .catch(error => console.error(error))
@@ -78,13 +88,13 @@ function Post(props) {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        userId: 1,
+                        userId: actualUser.id,
                         postId: props.id,
                     })
                 })
                     .then(response => response.json())
                     .then(data => {
-                        console.log(data)
+                        // console.log(data)
                         setLike(data)
                     })
                     .catch(error => console.error(error))
@@ -94,16 +104,31 @@ function Post(props) {
         }
     }
 
+    const deletePost = () => {
+        
+        const options = {
+            method: 'DELETE',
+            credentials: 'include',
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({token: token})
+          };   
+
+        fetch(API_URL+'/post/' + props.id, options)
+        .then(resp=> props.setFeedTrigger(props.feedTrigger+1))
+        .catch(err => console.log(err))
+    }
 
     return (
         <div className="pb-5" style={bgcolor}>
             <div className="post-header" style={displayHeader}>
                 <div className="post-username flex" style={display}>
-                    <img className="user-avatar img-fluid" style={iconSize} src={props.avatar} />
+                    <img className="user-avatar img-fluid" style={iconSize} src={'src/assets/profilePics/' + PFPPaths[props.avatar]} />
                     <p className="username" style={textColor}>{props.username}</p>
                 </div>
                 <div className="post-location" style={display}>
-                    <img className="location-icon img-fluid" style={iconSize} src="../src/assets/icons/location-icon.svg" />
+                    <img className="location-icon img-fluid" style={iconSize} src="../src/assets/icons/location.svg" />
                     <p className="location" style={textColor}>{props.location}</p>
                 </div>
             </div>
@@ -116,12 +141,15 @@ function Post(props) {
             </div>
             <div className="post-icons" style={imgFooterIcons}>
                 <div className="insta-icons">
-                    <img className="heart-icon me-2" style={iconSize} src={!like ? "../src/assets/icons/like-icon.svg" : "../src/assets/icons/fav-like-icon.svg"} onClick={handleLike} />
+                    <img className="heart-icon me-2" style={iconSize} src={!like ? "../src/assets/icons/fav.svg" : "../src/assets/icons/fav-like-icon.svg"} onClick={handleLike} />
                     <span className="like-count" style={textColor}>{likeCount}</span>
                 </div>
+                {actualUser.username == props.username ? <div>
+                    <img onClick={deletePost} src="../src/assets/icons/delete.svg"/> 
+                </div> : null}
                 <div className="encilopedia-icon flex" style={display}>
-                    <Link to="/animals">
-                        <img className="pedia-icon" src="../src/assets/icons/enciclopedia-icon.svg" style={iconSize} />
+                    <Link to={animalLink}>
+                        <img className="pedia-icon" src="../src/assets/icons/pediaReference.svg" style={iconSize} />
                     </Link>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 import AnimalCard from "../../components/AnimalCard.jsx";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Loading from "../../components/Loading.jsx";
 
 
 function Animals() {
@@ -57,7 +58,7 @@ function Animals() {
     }, [])
 
     if (animalData[0] == null) {
-        return <h1>Loading...</h1>
+        return <Loading/>
     }
     
     return (

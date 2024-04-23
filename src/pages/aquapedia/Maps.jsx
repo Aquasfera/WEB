@@ -27,19 +27,20 @@ const textStyle = {
 }
 const Maps = props => {
 
-    const divRef = useRef(null);
-    const [width, setWidth] = useState(null);
-    useEffect(() => {
-        if (divRef.current) {
-            // Obtenemos el ancho del div utilizando la propiedad offsetWidth
-            const divWidth = divRef.current.offsetWidth;
-            // Actualizamos el estado con el ancho obtenido
-            setWidth(divWidth - 30);
 
-        }
-    }, [width]);
+const divRef = useRef(null);
+const [width, setWidth] = useState();
 
-
+useEffect(() => {
+    setWidth(divRef.current.offsetWidth);
+    const handleResize = () => {
+        setWidth(divRef.current.offsetWidth);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+        window.removeEventListener('resize', handleResize);
+    };
+}, []);
 
     const navigate = useNavigate();
     const [clicked, setClicked] = useState(0)
@@ -49,19 +50,20 @@ const Maps = props => {
         navigate(route)
     }, [clicked])
 
-    const test = (area) => {
-        if (area.id == 1) {
-            setRoute("/aquapedia/Mar Mediterraneo")
-            setClicked(clicked + 1)
-        }
-        if (area.id == 2) {
-            setRoute("/aquapedia/Océano Atlántico")
-            setClicked(clicked + 1)
-        }
-        if (area.id == 3) {
-            setRoute("/aquapedia/Mar Cantábrico")
-            setClicked(clicked + 1)
-        }
+
+const  test = (area)=>{
+if (area.id == 1) {
+    setRoute("/aquapedia/Mar Mediterráneo")
+    setClicked(clicked + 1)
+}
+if (area.id == 2) {
+    setRoute("/aquapedia/Océano Atlántico")
+    setClicked(clicked + 1)
+}
+if (area.id == 3) {
+    setRoute("/aquapedia/Mar Cantábrico")
+    setClicked(clicked + 1)
+}
 
     }
 
@@ -90,7 +92,6 @@ const Maps = props => {
             </div>
         </>
     )
-        ;
 }
 
 export default Maps;

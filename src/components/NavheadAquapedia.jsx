@@ -6,12 +6,16 @@ import { Link } from 'react-router-dom';
 const bgcolor = {
   backgroundColor: "#0A141F"
 }
+const nostyle = {
+  textDecoration: "none"
+}
+
 
 function Navhead() {
     return (
         <Navbar expand="lg" className='navbar-dark sticky-top' style={bgcolor} navbar-expand-end="true">
         <Container>
-          <Link to='/'><Navbar.Brand>Aquasfera</Navbar.Brand></Link>
+          <Link to='/' style={nostyle}><Navbar.Brand>Aquasfera</Navbar.Brand></Link>
           <Navbar.Toggle  aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">

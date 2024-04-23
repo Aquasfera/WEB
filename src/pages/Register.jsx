@@ -4,12 +4,17 @@ import { useNavigate, Link } from "react-router-dom";
 const API_URL = "http://192.168.1.244:3000/api";
 import "./aquagram/styles/Login.css"
 
+import Carousel from 'react-bootstrap/Carousel';
+
+import PFPPaths from '../assets/profilePics/profilePicsPaths.json'
+
 export default function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [active, setActive] = useState(true);
-  const [avatar, setAvatar] = useState("h");
+  const [avatar , setAvatar] = useState(0);
   const redirect = useNavigate();
+
   const register = (e) => {
     e.preventDefault();
 
@@ -17,8 +22,9 @@ export default function Register() {
       username,
       password,
       active,
-      avatar,
+      avatar: avatar.toString(),
     };
+
     const options = {
       method: "POST",
       credentials: "include",
@@ -27,10 +33,12 @@ export default function Register() {
       },
       body: JSON.stringify(credentials),
     };
+
     fetch(API_URL + "/register", options)
       .then((res) => res.json())
       .then((data) => {
-        if(data.error)//Usuario existe
+        console.log(data);
+        if(data.error) //Usuario existe
         {
           console.log('El usuario ya existe.')
         }
@@ -78,7 +86,17 @@ export default function Register() {
                 placeholder="Contraseña..."
               />
             </div>
-            <div className="justify-content-center d-flex pt-4 mt-4">
+
+            <div className="text-center mt-4 d-flex flex-column justify-content-center align-items-center">
+              <label className="form-label text-center letraBlanca p-1">
+                Imagen de Perfil
+              </label>
+              <Carousel activeIndex={avatar} onSelect={(e) => {setAvatar(e)}} interval={null} style={{ width: "100px", display: "flex", justifyContent: "center"}}>
+              {PFPPaths.map((img, index) => (
+              <Carousel.Item><img key={index} src={"src/assets/profilePics/" + img} style={{ width: "50px" }}/></Carousel.Item>))}
+              </Carousel>
+            </div>
+            <div className="justify-content-center d-flex pt-4 mt-2">
               <button type="submit" className="btn btn-primary">
                 Register
               </button>
@@ -86,9 +104,9 @@ export default function Register() {
           </div>
           <div>
             <p className="text-center pt-4 letraBlanca">
-              ¿ Ya tienes una cuenta ?<br />
+              ¿Ya tienes una cuenta?<br />
               <Link to="/login" className="NoSubrayado">
-                ¡ Ir al Login !
+                ¡Ir al Login!
               </Link>
             </p>
           </div>
