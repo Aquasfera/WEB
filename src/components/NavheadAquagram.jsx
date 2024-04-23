@@ -12,14 +12,11 @@ const bgcolor = {
 
 function Navhead() {
   
-  const {actualUser, logout} = useContext(Context);
-
   return (
         <Navbar expand="lg" className='navbar-dark sticky-top' style={bgcolor} navbar-expand-end="true">
         <Container>
           <Navbar.Brand href="/" >Aquasfera</Navbar.Brand>
           <PersonalMenu/>
-          {/* {actualUser ? <Navbar.Brand className='text-white' onClick={logout}>{actualUser.username}</Navbar.Brand> : <Navbar.Brand className='text-white'>Nope</Navbar.Brand>} */}
         </Container>
       </Navbar>
     )
