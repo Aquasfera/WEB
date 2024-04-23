@@ -22,10 +22,10 @@ export default function TeamCard(props) {
         color: "white",
     }
     return (
-        <div class="card m-1" style={style}>
-            <img class="card-img-top" src={ods} alt="Card image"></img>
-            <div class="card-body">
-                <h4 class="card-title">{props.name}</h4>
+        <div className="card m-1" style={style}>
+            <img className="card-img-top" src={ods} alt="Card image"></img>
+            <div className="card-body">
+                <h4 className="card-title">{props.name}</h4>
                 <div className='d-flex justify-content-center'>
                     <a className='' href={props.github} target="_blank" rel="noreferrer">
                         <img className='img-fluid' style={svgStyle} src={githubIcon}></img>
