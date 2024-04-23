@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Foundations from "../../components/Fouondations";
 import CarouselPhotos from "../../components/CarouselPhotosAnimals"
 import Loading from "../../components/Loading";
-
+import Sightings from "../../components/Sightings"
 
 function AnimalDetail() {
 
@@ -93,6 +93,9 @@ function AnimalDetail() {
                 <h1 style={titleStyle}>
                     Avistamientos
                 </h1>
+                <div>
+                    <Sightings id={animalData.id}/>
+                </div>
                 <h1 style={titleStyle}>
                     Fundaciones
                 </h1>
