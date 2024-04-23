@@ -11,6 +11,8 @@ const bgcolor = {
 
 function Navhead() {
   
+  const navigate = useNavigate()
+  
   return (
         <Navbar expand="lg" className='navbar-dark sticky-top' style={bgcolor} navbar-expand-end="true">
         <Container>

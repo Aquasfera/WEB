@@ -23,7 +23,7 @@ function Navhead() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link onClick={() => navigate("/aquapedia")}  >Mapa</Nav.Link>
-            <Nav.Link onClick={() => navigate("/aquagram")} >Instagram</Nav.Link>
+            <Nav.Link onClick={() => navigate("/aquagram")} >Aquagram</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
