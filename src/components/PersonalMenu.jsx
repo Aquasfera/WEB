@@ -18,9 +18,8 @@ function PersonalMenu(){
     return(
         <>
         <h1>{actualUser.name}</h1>
-        <div style={{display: showMenu ? 'none' : 'flex', gap: '10px',  justifyContent: 'center', alignItems: 'center'}}>
+        <div style={{display: showMenu ? 'none' : 'flex', gap: '15px',  justifyContent: 'center', alignItems: 'center'}}>
             <img src={logoutSvg} style={{width: '20px', transform: "scaleX(-1)"}} onClick={() => logout()}/>
-            <img src={options} style={{width: '25px'}} onClick={() => {setShowMenu(true); navigate('/')}}/>
             <img src={newPost} style={{width: '25px'}} onClick={() => {setShowMenu(true); navigate('/aquagram/newPost')}}/>
             <img src={aquarium} style={{width: '25px'}} onClick={() => {setShowMenu(true); navigate('/aquagram/personal-profile')}}/>
         </div>

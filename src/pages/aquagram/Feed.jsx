@@ -10,6 +10,7 @@ function Feed() {
     const API_URL = import.meta.env.VITE_API_URL;
     const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO;
 
+    const [feedTrigger, setFeedTrigger] = useState(0);
     useEffect(() => {
         fetch(API_URL + 'post')
             .then(response => response.json())
@@ -19,7 +20,7 @@ function Feed() {
             })
             .catch(error => console.error(error))
 
-    }, [])
+    }, [feedTrigger])
 
     // const handleLike = async (postId, currentLikes) => {
     //     try {
@@ -76,7 +77,8 @@ function Feed() {
                                 likes={post.likes}
                                 key={post.id}
                                 animal={post.animal.name}
-
+                                feedTrigger={feedTrigger}
+                                setFeedTrigger={setFeedTrigger}
                             />
 
                         );

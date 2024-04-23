@@ -22,7 +22,7 @@ export default function Register() {
       username,
       password,
       active,
-      avatar: avatar + 1,
+      avatar: avatar.toString(),
     };
 
     const options = {

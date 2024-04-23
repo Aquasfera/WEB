@@ -36,7 +36,7 @@ function Aquagram()
           logout()
         }
         else{
-          resp.avatar = resp.avatar - 1;
+          resp.avatar = resp.avatar;
           setActualUser(resp)
           console.log('Usuario comprobado.', resp)
       }}
@@ -63,7 +63,7 @@ function Aquagram()
     }
 
     return(
-        <Context.Provider value={{actualUser, setActualUser, logout}}>  
+        <Context.Provider value={{actualUser, setActualUser, logout, token}}>  
             <NavHeadAquagram/>
             <Outlet/>
         </Context.Provider>

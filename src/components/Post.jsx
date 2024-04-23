@@ -1,15 +1,18 @@
 /* eslint-disable react/prop-types */
 
 import { useContext, useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Context from "../contexts/Context"
 
 import PFPPaths from '../assets/profilePics/profilePicsPaths.json'
 
+
 function Post(props) {
 
-    const {actualUser} = useContext(Context);
+    const {actualUser, token} = useContext(Context);
     
+    const redirect = useNavigate();
+
     const bgcolor = {
         height: "auto",
         backgroundColor: "#0A141F"
@@ -102,7 +105,19 @@ function Post(props) {
     }
 
     const deletePost = () => {
+        
+        const options = {
+            method: 'DELETE',
+            credentials: 'include',
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({token: token})
+          };   
 
+        fetch(API_URL+'/post/' + props.id, options)
+        .then(resp=> props.setFeedTrigger(props.feedTrigger+1))
+        .catch(err => console.log(err))
     }
 
     return (
@@ -130,7 +145,7 @@ function Post(props) {
                     <span className="like-count" style={textColor}>{likeCount}</span>
                 </div>
                 {actualUser.username == props.username ? <div>
-                    <img src="../src/assets/icons/delete.svg"/> 
+                    <img onClick={() => deletePost()} src="../src/assets/icons/delete.svg"/> 
                 </div> : null}
                 <div className="encilopedia-icon flex" style={display}>
                     <Link to={animalLink}>
