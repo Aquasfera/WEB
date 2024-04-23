@@ -145,7 +145,7 @@ function Post(props) {
                     <span className="like-count" style={textColor}>{likeCount}</span>
                 </div>
                 {actualUser.username == props.username ? <div>
-                    <img onClick={() => deletePost()} src="../src/assets/icons/delete.svg"/> 
+                    <img onClick={deletePost} src="../src/assets/icons/delete.svg"/> 
                 </div> : null}
                 <div className="encilopedia-icon flex" style={display}>
                     <Link to={animalLink}>
