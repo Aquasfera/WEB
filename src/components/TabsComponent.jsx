@@ -5,15 +5,15 @@ import { useState } from 'react';
 
 import { Link } from 'react-router-dom';
 import UserCard from './UserCard';
-export default function TabsComponent() {
+export default function TabsComponent(props) {
     const [key, setKey] = useState('Mis Post');
     const [data, setData] = useState([])
     const [user, setUser] = useState([])
     const API_URL = import.meta.env.VITE_API_URL;
-    const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO ;
+    const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO;
     console.log(API_URL)
     useEffect(() => {
-        fetch(API_URL +'post/user/' + 1)
+        fetch(API_URL + 'post/user/' + 1)
             .then(res => res.json())
             .then(data => {
                 setData(data)
@@ -22,13 +22,13 @@ export default function TabsComponent() {
     }, []);
     useEffect(() => {
         fetch(API_URL + 'user')
-        .then(res => res.json())
-        .then(data => {
-            setUser(data)
-        })
-        .catch(error => console.error(error))
+            .then(res => res.json())
+            .then(data => {
+                setUser(data)
+            })
+            .catch(error => console.error(error))
     }
-    , []);
+        , []);
 
     return (
         <Tabs
@@ -36,6 +36,7 @@ export default function TabsComponent() {
             activeKey={key}
             onSelect={(k) => setKey(k)}
             className="mb-3"
+            style={props.textStyle}
         >
             <Tab eventKey="Mis Post" title="Mis Post">
 
@@ -44,9 +45,9 @@ export default function TabsComponent() {
                         data.map((item, index) => {
                             return (
                                 <Link to={`/post/${item.id}`} className='col-5 m-1'>
-                                
+
                                     <img className='img-fluid' src={`${API_PHOTOS}${item.url}`}></img>
-                                
+
                                 </Link>
                             )
                         }
@@ -54,13 +55,17 @@ export default function TabsComponent() {
                 </div>
             </Tab>
             <Tab eventKey="usuarios" title="Usuarios">
-                {
-                    user.map((item, index) => {
-                        return (
-                            <UserCard username={item.username} avatar={item.avatar} id={item.id}  />
-                        )
-                    })
-                }
+
+                <div className='col-12 justify-content-center d-flex flex-row flex-wrap'>
+                    {
+                        user.map((item, index) => {
+                            return (
+                                <UserCard username={item.username} avatar={item.avatar} id={item.id} />
+                            )
+                        })
+                    }
+                </div>
+
             </Tab>
             <Tab eventKey="contact" title="Contact" disabled>
                 Tab content for Contact

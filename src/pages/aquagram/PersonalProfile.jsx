@@ -26,16 +26,41 @@ export default function PersonalProfile() {
                 console.log(data)
             })
     }, [])
+    const bgcolor = {
+        
+        minHeight: "100vh",
+        backgroundColor: "#0A141F"
+    }
+    const titleStyle = {
+        color: "#D2AD89",
+        marginLeft: "1em",
+        marginTop: "0.8em"
+    }
+    const textStyle = {
+        color: "white",
+        fontSize: "1.1em",
+        fontWeight: "lighter"
+    }
+    const hRule = {
+        border: "2px solid white",
+        marginInline: "1.5em",
+        marginBlock: "1.5em"
+
+    }
+    const containerStyle = {
+        paddingInline: "1.5em",
+    }
+
     return (
         <>
-            <div className="container-fluid">
-                <section className="row">
-                    <div className='d-flex justify-content-center align-items-start'>
-                        <div className="col-8 col-md-6 col-lg-4 mt-2 d-flex flex-column flex-wrap ">
-                            <h3 className="">Nombre de usuario</h3>
+            <div className="container-fluid" style={bgcolor}>
+                <section className="row ">
+                    <div className='d-flex mt-4 mb-4'>
+                        <div className="col-8 col-md-6 col-lg-4 mt-2 d-flex align-items-center flex-column flex-wrap ">
+                            <h3 className="d-flex justify-content-start" style={textStyle}>Nombre de usuario</h3>
                             <div className='pt-2 d-flex flex-row flex-wrap'>
-                                <p className='me-1'>Seguidores {followers}</p>
-                                <p className='me-1'>Seguidos {followeds} </p>
+                                <p className='me-1' style={textStyle}>Seguidores {followers}</p>
+                                <p className='me-1' style={textStyle}>Seguidos {followeds} </p>
                             </div>
                         </div>
                         <div className='col-4 col-md-6 col-lg-8 mt-2'>
@@ -44,7 +69,7 @@ export default function PersonalProfile() {
                     </div>
                 </section>
                 <section className='row'>
-                    <TabsComponent />
+                    <TabsComponent textStyle={textStyle} />
                 </section>
 
             </div>
