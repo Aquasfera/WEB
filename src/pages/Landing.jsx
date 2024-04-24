@@ -49,6 +49,9 @@ function Landing() {
                 <h1 style={titleStyle}>
                     AQUASFERA
                 </h1>
+                {/*  <h5 style={textStyle}>
+                    ¡Descubre el fondo marino y las especies que se esconden en él!
+                </h5> */}
                 <div className="d-inline-flex justify-content-around w-100" style={buttonContainerStyle}>
                     <NavLink to={"/aquapedia"} style={noTextDecoration}>
                         <img style={iconStyle} src="src/assets/icons/aquapedia-icon.svg" />
