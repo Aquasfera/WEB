@@ -2,6 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 const API_URL = import.meta.env.VITE_API_URL;
+=======
+import NavheadAquapedia from "../components/NavheadAquapedia.jsx";
+
 import "./aquagram/styles/Login.css"
 
 import Carousel from 'react-bootstrap/Carousel';
@@ -14,6 +17,8 @@ export default function Register() {
   const [active, setActive] = useState(true);
   const [avatar, setAvatar] = useState(0);
   const redirect = useNavigate();
+
+  const [errorMessage, setErrorMessage] = useState("");
 
   const register = (e) => {
     e.preventDefault();
@@ -41,17 +46,19 @@ export default function Register() {
         if (data.error) //Usuario existe
         {
           console.log('El usuario ya existe.')
+          setErrorMessage('El usuario ya existe')
         }
         else {
           redirect("/login");
         }
 
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err), setErrorMessage('Error al registrse'))
   };
 
   return (
     <div className="box">
+      <NavheadAquapedia/>
       <form
         onSubmit={register}
         className="col-lg-12 d-flex justify-content-center align-items-center"
@@ -86,7 +93,7 @@ export default function Register() {
                 placeholder="Contraseña..."
               />
             </div>
-
+            <p className="text-center text-danger pt-4 small">{errorMessage}</p>
             <div className="text-center mt-4 d-flex flex-column justify-content-center align-items-center">
               <label className="form-label text-center letraBlanca p-1">
                 Imagen de Perfil

@@ -50,8 +50,9 @@ function Aquagram()
           .then(resp => resp.json())
           .then(data => {
                   console.log(data);})
-          .catch(err => Cookie.remove('tokenCookie'))
+          .catch(err => console.log(err))
           
+          Cookie.remove('tokenCookie')
           setActualUser(null)
               
           console.log("Logout hecho")

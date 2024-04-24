@@ -16,50 +16,11 @@ function Feed() {
             .then(response => response.json())
             .then(data => {
                 setPosts(data)
-                console.log(data[0].id)
+                console.log(data)
             })
             .catch(error => console.error(error))
 
     }, [feedTrigger])
-
-    // const handleLike = async (postId, currentLikes) => {
-    //     try {
-    //         const updatedLikes = currentLikes + 1;
-
-    //         const response = await fetch(`${API_URL}/like`, {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //             },
-
-    //             body: JSON.stringify({
-    //                 userId: 1,
-    //                 postId: data[0].id,
-    //             })
-    //         })
-
-    //         if (response.ok) {
-    //             const updatedPosts = posts.map(post => {
-    //                 if (post.id === postId) {
-    //                     return {
-    //                         ...post,
-    //                         likes: updatedLikes,
-    //                     };
-    //                 }
-    //                 return post;
-    //             });
-    //             setPosts(updatedPosts);
-    //             console.log(posts[0].likes)
-    //             setLiked(!liked);
-
-    //         } else {
-    //             console.error('Error al actualizar los likes del post');
-    //         }
-
-    //     } catch (error) {
-    //         console.error('Error al actualizar los likes del post:', error);
-    //     }
-    // }
 
     return (
         <>
@@ -76,7 +37,7 @@ function Feed() {
                                 comment={post.description}
                                 likes={post.likes}
                                 key={post.id}
-                                animal={post.animal.name}
+                                animal={post.animal?.name}
                                 feedTrigger={feedTrigger}
                                 setFeedTrigger={setFeedTrigger}
                             />
