@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Fundación Biodiversidad",	
+        "description": "Bajo la línea de actuación de ecosistemas marinos, la Fundación Biodiversidad contribuye a su conservación y recuperación, así como al impulso de la economía azul, apoyando a cumplir con el objetivo de conferir protección jurídica al 30% de la superficie marina de la UE en 2030 de la Estrategia de la Unión Europea sobre la biodiversidad."
+    },
+    {
+        "id": 2,
+        "name": "CRAM",
+        "description": "La Fundación CRAM es una entidad privada sin ánimo de lucro dedicada a la protección del medio marino y de las especies que lo habitan. Sus líneas de actuación son la clínica y rescate de fauna marina, la investigación y conservación de especies y ecosistemas marinos, y la sensibilización a favor de la conservación de nuestros mares y océanos."
+    },
+    {
+        "id": 3,
+        "name": "ECOMAR",
+        "description": "Sumérgete con nosotros en un viaje de 25 años cuidando uno de nuestros tesoros más preciados: el océano. Fundada en 1999 por Theresa Zabell, única mujer española con dos oros olímpicos, Ecomar es mucho más que una organización sin fines de lucro, somos el latido de los mares, comprometidos con su conservación y preservación."
+    },
+    {
+        "id": 4,
+        "name": "FUNDACIÓN ALMAS MARINAS",       
+        "description": "Tras muchos meses de esfuerzo y trabajo, llega “Fundación Almas Marinas”, un proyecto de educación y concienciación ambiental, una experiencia única en Baleares, que nace de la necesidad de dotar de información y actividades en mar abierto con el fin de preservar los ecosistemas marinos. Esta experiencia va dirigida a estudiantes, empresas y a todas las instituciones de nuestra sociedad en general."
+    },
+    {
+        "id": 5,
+        "name": "FUNDACIÓN PALMA AQUARIUM",
+        "description": "Desde su apertura en el año 2007, Palma Aquarium se presenta como un parque marino comprometido con la conservación de los mares y océanos de todo el mundo y más concreto con el Mar Balear, involucrándose así durante estos años en múltiples acciones medioambientales."
+    },
+    {
+        "id": 6,
+        "name": "SUBMON",
+        "description": "Trabajamos para conservar la biodiversidad marina y para alcanzar un uso sostenible del medio marino, y lo hacemos promoviendo un cambio en la relación de la sociedad con el mar, con actuaciones in situ y utilizando y transmitiendo conocimiento."
+    }
+]

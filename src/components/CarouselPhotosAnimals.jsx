@@ -9,7 +9,7 @@ function CarouselPhotos(props) {
         setIndex(selectedIndex);
     };
     const API_URL = import.meta.env.VITE_API_URL;
-    const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO ;
+    const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO;
     useEffect(() => {
         fetch(API_URL + 'photo/animal/' + props.id)
             .then(res => res.json())
@@ -23,21 +23,17 @@ function CarouselPhotos(props) {
 
     return (
         <section className='row d-flex justify-content-center'>
-        <Carousel activeIndex={index} onSelect={handleSelect} className='col-12 col-lg-7'>
-            {
-                data.map((item, index) => {
-                    return (
-                        <Carousel.Item key={index} className='' >
-                            <img className='img-fluid' src={`${API_PHOTOS}${item.url}`} />
-                            {/* <Carousel.Caption>
-                                <h3>{item.title}</h3>
-                                <p>{item.description}</p>
-                            </Carousel.Caption> */}
-                        </Carousel.Item>
-                    )
-                })
-            }
-        </Carousel>
+            <Carousel activeIndex={index} onSelect={handleSelect} className='col-12 col-lg-7'>
+                {
+                    data.map((item, index) => {
+                        return (
+                            <Carousel.Item key={index} className='' >
+                                <img className='img-fluid' src={`${API_PHOTOS}${item.url}`} />
+                            </Carousel.Item>
+                        )
+                    })
+                }
+            </Carousel>
         </section>
     );
 }
