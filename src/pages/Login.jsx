@@ -45,7 +45,7 @@ export default function Login() {
           navigate("/aquagram");
         }
       })
-      .catch((err) => console.log('Fallo de login : ' + err));
+      .catch((err) => {console.log('Fallo de login : ' + err), setErrorMessage('Fallo al iniciar sesión')});
   };
 
   return (

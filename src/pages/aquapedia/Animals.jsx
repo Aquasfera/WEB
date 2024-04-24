@@ -2,18 +2,23 @@ import AnimalCard from "../../components/AnimalCard.jsx";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Loading from "../../components/Loading.jsx";
+import Wallpaper from "../../assets/images/wallpaper.png"
 
 
 function Animals() {
     const stickyTop = {
         top: "3.5em",
-        backgroundColor: "#0A141F",
+        backgroundColor: "transparent",
         paddingTop: "1em"
     }
     const bgcolor = {
 
         minHeight: "100vh",
-        backgroundColor: "#0A141F"
+        backgroundImage: `url(${Wallpaper})`,
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+        backgroundPosition: "center",
+        backgroundSize: "cover"
     }
     const titleStyle = {
         color: "#D2AD89",
@@ -39,13 +44,31 @@ function Animals() {
     }
 
     const [animalData, setAnimalData] = useState([]);
+
     let { sea } = useParams()
+    
+    let seaID;
+    switch (sea) {
+        case "Mar Mediterráneo":
+            seaID = 1;
+            break;
+        case "Mar Cantábrico":
+            seaID = 2;
+            break
+        case "Océano Atlántico":
+            seaID = 3;
+            break
+    }
+    
+
+
     const API_URL = import.meta.env.VITE_API_URL;
     const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO;
+
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(API_URL + 'animal');
+                const response = await fetch(API_URL + 'animal/location/' + seaID);
                 const jsonData = await response.json();
                 setAnimalData(jsonData);
                 console.log("hola")

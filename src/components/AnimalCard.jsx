@@ -1,7 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 const cardStyle = {
-  width: '7em',
+
   marginBlock: "1em",
   backgroundColor: "transparent",
 }

@@ -3,9 +3,7 @@ import ImageMapper from 'react-img-mapper';
 import mapImg from '../../assets/images/mapaGrande.png'
 import cords from '../../assets/imagmap.json'
 import { useNavigate } from 'react-router-dom';
-
-
-
+import AboutUs from './AboutUs';
 const bgcolor = {
 
     minHeight: "100vh",

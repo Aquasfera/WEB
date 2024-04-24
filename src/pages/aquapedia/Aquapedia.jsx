@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, ScrollRestoration } from "react-router-dom";
 import NavheadAquapedia from "../../components/NavheadAquapedia.jsx";
 
 
@@ -7,6 +7,7 @@ function Aquapedia(){
         <>
             <NavheadAquapedia/>
             <Outlet/>
+            <ScrollRestoration/>
         </>
     )
 }

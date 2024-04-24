@@ -11,9 +11,8 @@ export default function TabsComponent(props) {
     const [user, setUser] = useState([])
     const API_URL = import.meta.env.VITE_API_URL;
     const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO;
-    console.log(API_URL)
     useEffect(() => {
-        fetch(API_URL + 'post/user/' + 1)
+        fetch(API_URL + 'post/user/' + props.actualUser.id)
             .then(res => res.json())
             .then(data => {
                 setData(data)
@@ -44,7 +43,7 @@ export default function TabsComponent(props) {
                     {
                         data.map((item, index) => {
                             return (
-                                <Link to={`/post/${item.id}`} className='col-5 m-1'>
+                                <Link key={index} to={`/personal-post/${item.id}`} className='col-5 m-1'>
 
                                     <img className='img-fluid' src={`${API_PHOTOS}${item.url}`}></img>
 
@@ -60,7 +59,7 @@ export default function TabsComponent(props) {
                     {
                         user.map((item, index) => {
                             return (
-                                <UserCard username={item.username} avatar={item.avatar} id={item.id} />
+                                <UserCard key={index} username={item.username} actualUser={props.actualUser} token={props.token} avatar={item.avatar} id={item.id} />
                             )
                         })
                     }
