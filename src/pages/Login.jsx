@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import NavheadAquapedia from "../components/NavheadAquapedia.jsx";
+
 const API_URL = import.meta.env.VITE_API_URL;
 const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO ;
 
@@ -12,6 +14,9 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
+
+  const [errorMessage, setErrorMessage] = useState("");
+
 
   const login = (e) => {
     e.preventDefault();
@@ -33,6 +38,7 @@ export default function Login() {
       .then(res => {
         if(res.error){
           console.log('Credenciales mal.')
+          setErrorMessage('Usuario o contraseña equivocados')
         }
         else{
           Cookie.set('tokenCookie', res, { expires: 180000 });
@@ -44,6 +50,7 @@ export default function Login() {
 
   return (
     <div className="box">
+      <NavheadAquapedia/>
       <form
         onSubmit={login}
         className="col-lg-12 d-flex justify-content-center align-items-center"
@@ -83,17 +90,18 @@ export default function Login() {
               id="password"
               placeholder="Contraseña..."
             />
+            <p className="text-center text-danger pt-4 small">{errorMessage}</p>
             <div className="justify-content-center d-flex pt-4 mt-4">
               <button type="submit" className="btn btn-primary">
                 Login
               </button>
             </div>
           </div>
-          <div className="d-flex justify-content-center align-items-center">
+          <div className="d-flex flex-column justify-content-center align-items-center">
             <p className="text-center pt-4 letraBlanca">
-              ¿ Todavía no tienes cuenta ?<br />
+              ¿Todavía no tienes cuenta?<br />
               <Link to="/register" className="NoSubrayado">
-                ¡ Regístrate !
+                ¡Regístrate!
               </Link>
             </p>
           </div>

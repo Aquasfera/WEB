@@ -23,7 +23,7 @@ function NewPost() {
 
   const [description, setDescription] = useState("");
 
-  const {actualUser} = useContext(Context);
+  const {actualUser, token} = useContext(Context);
   const onDrop = useCallback((acceptedFiles) => {}, []);
 
   const { getRootProps, getInputProps, isDragActive, acceptedFiles } =
@@ -53,6 +53,7 @@ function NewPost() {
     formData.append("location_id", locationIdSelected);
     formData.append("url", acceptedFiles[0]);
     formData.append("user_id", actualUser.id);
+    formData.append('token', token);
 
     const options = {
       method: "post",
@@ -119,8 +120,8 @@ function NewPost() {
                 onSelect={(a) => setLocationIdSelected(a)}
               >
                 {possibleLocations.length > 0
-                  ? possibleLocations.map((locs) => (
-                      <Dropdown.Item key={locs.id} eventKey={locs.id}>
+                  ? possibleLocations.map((locs, index) => (
+                      <Dropdown.Item key={index} eventKey={locs.id}>
                         {locs.name}
                       </Dropdown.Item>
                     ))
@@ -142,8 +143,8 @@ function NewPost() {
                 }}
               >
                 {possibleAnimals.length > 0
-                  ? possibleAnimals.map((ani) => (
-                      <Dropdown.Item key={ani.id} eventKey={ani.id}>
+                  ? possibleAnimals.map((ani, index) => (
+                      <Dropdown.Item key={index} eventKey={ani.id}>
                         {ani.name}
                       </Dropdown.Item>
                     ))
