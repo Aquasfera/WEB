@@ -23,7 +23,9 @@ function Feed() {
     }, [feedTrigger])
 
     return (
-        <>
+
+
+        <div>
             <div className="container-fluid">
                 <div className=" row">
                     {posts.map(post => {
@@ -46,7 +48,7 @@ function Feed() {
                     })}
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 
