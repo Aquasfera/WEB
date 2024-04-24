@@ -28,9 +28,18 @@ const Maps = props => {
     const [width, setWidth] = useState();
 
     useEffect(() => {
-        setWidth(divRef.current.offsetWidth);
-        const handleResize = () => {
+        if (divRef.current.offsetWidth > 700) {
+            setWidth(700)
+        }else{
             setWidth(divRef.current.offsetWidth);
+        }
+        const handleResize = () => {
+            if (divRef.current.offsetWidth > 700) {
+                setWidth(700)
+            }else{
+                setWidth(divRef.current.offsetWidth);
+            }
+            
         };
 
         window.addEventListener('resize', handleResize);
@@ -75,7 +84,7 @@ const Maps = props => {
             <h1 style={titleStyle}>
                 ¡Descubre miles de especies en nuestro mapa!
             </h1>
-            <div className='container-fluid' ref={divRef} >
+            <div className='container-fluid d-flex justify-content-center' ref={divRef} >
                 <ImageMapper src={mapImg} map={MAP} onClick={test} responsive={true} parentWidth={width - 30} />
             </div>
             <h2 style={textStyle}>

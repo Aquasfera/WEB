@@ -8,7 +8,7 @@ import Wallpaper from "../../assets/images/wallpaper.png"
 function Animals() {
     const stickyTop = {
         top: "3.5em",
-        backgroundColor: "transparent",
+        backgroundColor: `rgba(87, 120, 158,0.4)`,
         paddingTop: "1em"
     }
     const bgcolor = {
@@ -31,7 +31,7 @@ function Animals() {
         marginRight: "2em",
         marginTop: "1em",
         fontSize: "1.1em",
-        fontWeight: "lighter"
+        fontWeight: "lighter",
     }
     const hRule = {
         border: "2px solid white",
