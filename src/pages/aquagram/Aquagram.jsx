@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import NavHeadAquagram from '../../components/NavheadAquagram.jsx';
 import Context from "../../contexts/Context.js";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate, ScrollRestoration } from "react-router-dom";
 import Cookie from 'js-cookie';
 
 import Loading from "../../components/Loading";
@@ -67,6 +67,7 @@ function Aquagram()
         <Context.Provider value={{actualUser, setActualUser, logout, token}}>  
             <NavHeadAquagram/>
             <Outlet/>
+            <ScrollRestoration/>
         </Context.Provider>
     )
 }

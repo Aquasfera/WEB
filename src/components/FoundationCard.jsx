@@ -5,9 +5,7 @@ const titleOverImage = {
   color: "white",
   marginLeft: "0.4em"
 }
-const shadow = {
-  maxHeight: "16em",
-}
+
 const textOverImage = {
   position: "absolute",
   bottom: "0.5em",
@@ -18,7 +16,7 @@ function FoundationCard() {
   return (
  
           <div className="col-12 position-relative mt-4 mb-4"  >
-            <img src={bgImage} style={shadow} className="img-fluid rounded" />
+            <img src={bgImage}  className="img-fluid rounded" />
             <h2 style={titleOverImage}  >
               Lorem Ipsum
             </h2>

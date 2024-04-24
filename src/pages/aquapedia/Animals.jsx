@@ -39,13 +39,31 @@ function Animals() {
     }
 
     const [animalData, setAnimalData] = useState([]);
+
     let { sea } = useParams()
+    
+    let seaID;
+    switch (sea) {
+        case "Mar Mediterráneo":
+            seaID = 1;
+            break;
+        case "Mar Cantábrico":
+            seaID = 2;
+            break
+        case "Océano Atlántico":
+            seaID = 3;
+            break
+    }
+    
+
+
     const API_URL = import.meta.env.VITE_API_URL;
     const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO;
+
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(API_URL + 'animal');
+                const response = await fetch(API_URL + 'animal/location/' + seaID);
                 const jsonData = await response.json();
                 setAnimalData(jsonData);
                 console.log("hola")

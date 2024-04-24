@@ -57,7 +57,7 @@ export default function Register() {
 
   return (
     <div className="box">
-      <NavheadAquapedia/>
+      <NavheadAquapedia />
       <form
         onSubmit={register}
         className="col-lg-12 d-flex justify-content-center align-items-center"

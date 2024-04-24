@@ -3,6 +3,7 @@ import Footer from './components/Footer'
 import Context from './contexts/Context'
 import Landing from './pages/Landing'
 import Cookie from 'js-cookie'
+
 function App() {
 
   // const cookie = Cookie.get('token')
@@ -20,6 +21,7 @@ function App() {
       {/* <Context.Provider value={data}> */}
         <Landing />
         <Footer />
+        
       {/* </Context.Provider> */}
 
     </>

@@ -144,13 +144,13 @@ function Post(props) {
                     <img className="heart-icon me-2" style={iconSize} src={!like ? "../src/assets/icons/fav.svg" : "../src/assets/icons/fav-like-icon.svg"} onClick={handleLike} />
                     <span className="like-count" style={textColor}>{likeCount}</span>
                 </div>
-                {actualUser.username == props.username ? <div>
-                    <img onClick={deletePost} src="../src/assets/icons/delete.svg"/> 
-                </div> : null}
                 <div className="encilopedia-icon flex" style={display}>
                     <Link to={animalLink}>
                         <img className="pedia-icon" src="../src/assets/icons/pediaReference.svg" style={iconSize} />
                     </Link>
+                    {actualUser.username == props.username ? <div>
+                    <img onClick={deletePost} className="" src="../src/assets/icons/delete.svg"/> 
+                    </div> : null}
                 </div>
             </div>
 
