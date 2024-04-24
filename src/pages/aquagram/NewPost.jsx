@@ -10,6 +10,7 @@ import "./styles/NewPost.css";
 import Card from "react-bootstrap/Card";
 import { useDropzone } from "react-dropzone";
 import { useNavigate } from "react-router-dom";
+import { DropdownMenu } from "react-bootstrap";
 
 function NewPost() {
   const API_URL = import.meta.env.VITE_API_URL;
@@ -78,7 +79,7 @@ function NewPost() {
           method="post"
           onSubmit={createPost}
           encType="multipart/form-data"
-          className="d-flex flex-column justify-content-center rounded align-items-center w-75 rounded-lg gap-4 p-3"
+          className="d-flex flex-column rounded w-75 rounded-lg gap-4 p-3"
         >
           
           
@@ -96,19 +97,8 @@ function NewPost() {
             )}
             {/* <input type="file" id="image" onChange={(e)=>{setImage(e.target.files[0])}} accept="image/*" capture="environment"/> */}
           </div>
-          <div className="">
-            <label className="form-label text-white">Descripción</label>
-            <textarea
-              type="textarea"
-              cols="40" rows="5"
-              className="form-control descripcion"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              placeholder=""
-            />
-          </div>
-          <div className="mb-3 center row">
-            <div className="col-6">
+          <div>
+            <div>
               <DropdownButton
                 id="locationDropdown"
                 title={
@@ -117,8 +107,10 @@ function NewPost() {
                 }
                 className="mb-3"
                 variant="light"
+                style={{maxHeight: '400px'}}
                 onSelect={(a) => setLocationIdSelected(a)}
               >
+                <Dropdown.Menu style={{maxHeight: '150px' , overflowY: 'scroll'}}>
                 {possibleLocations.length > 0
                   ? possibleLocations.map((locs, index) => (
                       <Dropdown.Item key={index} eventKey={locs.id}>
@@ -126,22 +118,23 @@ function NewPost() {
                       </Dropdown.Item>
                     ))
                   : "Not Valid"}
+                  </Dropdown.Menu>
               </DropdownButton>
             </div>
-            <div className="col-6">
+            <div>
               <DropdownButton
                 id="fishDropdown"
                 title={
                   possibleAnimals.find((an) => an.id == animalIdSelected)
                     ?.name || "Animal"
                 }
-
-                className="mb-3"
                 variant="light"
+                style={{maxHeight: '400px'}}
                 onSelect={(a) => {
                   setAnimalIdSelected(a);
                 }}
               >
+                <Dropdown.Menu style={{maxHeight: '150px' , overflowY: 'scroll'}}>
                 {possibleAnimals.length > 0
                   ? possibleAnimals.map((ani, index) => (
                       <Dropdown.Item key={index} eventKey={ani.id}>
@@ -149,10 +142,23 @@ function NewPost() {
                       </Dropdown.Item>
                     ))
                   : "Not Valid"}
+                  </Dropdown.Menu>
               </DropdownButton>
             </div>
           </div>
-          <Button variant="light" type="submit">
+          <div>
+            <label className="form-label text-white">Descripción</label>
+            <textarea
+              type="textarea"
+              cols="40" rows="5"
+              className="form-control descripcion"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              placeholder="Escribe aqui la descripción del post..."
+            />
+          </div>
+          
+          <Button variant="light" type="submit" className="primary-color">
             Postear
           </Button>
         </form>
