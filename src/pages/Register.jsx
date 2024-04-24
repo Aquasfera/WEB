@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 const API_URL = import.meta.env.VITE_API_URL;
-=======
 import NavheadAquapedia from "../components/NavheadAquapedia.jsx";
 
 import "./aquagram/styles/Login.css"
@@ -58,7 +57,7 @@ export default function Register() {
 
   return (
     <div className="box">
-      <NavheadAquapedia/>
+      <NavheadAquapedia />
       <form
         onSubmit={register}
         className="col-lg-12 d-flex justify-content-center align-items-center"
