@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-const API_URL = "http://192.168.1.244:3000/api";
+const API_URL = import.meta.env.VITE_API_URL;
+import NavheadAquapedia from "../components/NavheadAquapedia.jsx";
+
 import "./aquagram/styles/Login.css"
 
 import Carousel from 'react-bootstrap/Carousel';
@@ -12,8 +14,10 @@ export default function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [active, setActive] = useState(true);
-  const [avatar , setAvatar] = useState(0);
+  const [avatar, setAvatar] = useState(0);
   const redirect = useNavigate();
+
+  const [errorMessage, setErrorMessage] = useState("");
 
   const register = (e) => {
     e.preventDefault();
@@ -34,24 +38,26 @@ export default function Register() {
       body: JSON.stringify(credentials),
     };
 
-    fetch(API_URL + "/register", options)
+    fetch(API_URL + "register", options)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if(data.error) //Usuario existe
+        if (data.error) //Usuario existe
         {
           console.log('El usuario ya existe.')
+          setErrorMessage('El usuario ya existe')
         }
-        else{
+        else {
           redirect("/login");
         }
-        
+
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err), setErrorMessage('Error al registrse'))
   };
 
   return (
     <div className="box">
+      <NavheadAquapedia />
       <form
         onSubmit={register}
         className="col-lg-12 d-flex justify-content-center align-items-center"
@@ -86,14 +92,14 @@ export default function Register() {
                 placeholder="Contraseña..."
               />
             </div>
-
+            <p className="text-center text-danger pt-4 small">{errorMessage}</p>
             <div className="text-center mt-4 d-flex flex-column justify-content-center align-items-center">
               <label className="form-label text-center letraBlanca p-1">
                 Imagen de Perfil
               </label>
-              <Carousel activeIndex={avatar} onSelect={(e) => {setAvatar(e)}} interval={null} style={{ width: "100px", display: "flex", justifyContent: "center"}}>
-              {PFPPaths.map((img, index) => (
-              <Carousel.Item><img key={index} src={"src/assets/profilePics/" + img} style={{ width: "50px" }}/></Carousel.Item>))}
+              <Carousel activeIndex={avatar} onSelect={(e) => { setAvatar(e) }} interval={null} style={{ width: "100px", display: "flex", justifyContent: "center" }}>
+                {PFPPaths.map((img, index) => (
+                  <Carousel.Item><img key={index} src={"src/assets/profilePics/" + img} style={{ width: "50px" }} /></Carousel.Item>))}
               </Carousel>
             </div>
             <div className="justify-content-center d-flex pt-4 mt-2">

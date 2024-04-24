@@ -38,10 +38,10 @@ function Landing() {
         <div style={backgroundimage}>
             <div className="container">
                 <h1 style={titleStyle}>
-                    Lorem ipsum dolor comsdosd adispldsa elit
+                    Aquasfera
                 </h1>
                 <h5 style={textStyle}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    ¡Descubre el fondo marino y las especies que se esconden en él!
                 </h5>
                 <div className="d-inline-flex justify-content-around w-100" style={buttonContainerStyle}>
                     <NavLink to={"/aquapedia"}>

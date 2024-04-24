@@ -71,22 +71,17 @@ const Maps = props => {
     };
 
     return (
-        <>
-            <div style={bgcolor}>
-                <h1 style={titleStyle}>
-                    Descubre miles de especies en nuestro mapa!
-                </h1>
-                <div className='container-fluid' ref={divRef} >
-                    <ImageMapper src={mapImg} map={MAP} onClick={test} responsive={true} parentWidth={width - 30} />
-                </div>
-                <h2 style={textStyle}>
-                    Clica en algun punto del mapa y descubre!
-                </h2>
+        <div style={bgcolor}>
+            <h1 style={titleStyle}>
+                ¡Descubre miles de especies en nuestro mapa!
+            </h1>
+            <div className='container-fluid' ref={divRef} >
+                <ImageMapper src={mapImg} map={MAP} onClick={test} responsive={true} parentWidth={width - 30} />
             </div>
-            <div>
-                <AboutUs></AboutUs>
-            </div>
-        </>
+            <h2 style={textStyle}>
+                ¡Haz clic en algun punto del mapa y descubre!
+            </h2>
+        </div>
     )
 }
 

@@ -30,15 +30,13 @@ export default function AboutUs() {
         <section className='row'>
           <div className='col-sm-12 col-md-12 col-lg-12 '>
             <h1 style={titleStyle}>Sobre Nosotros</h1>
-            <p style={textStyle}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet
-              pharetra nunc. Nullam nec nisl in dolor ultricies ultrices. Phasellus
-              varius, dui nec lacinia tincidunt, nunc nisl tincidunt justo, a
-              fermentum nisl libero sit amet mi. Donec quis nisl ut nisl fermentum
-              fermentum. Nullam nec nisl in dolor ultricies ultrices. Phasellus varius,
-              dui nec lacinia tincidunt, nunc nisl tincidunt justo, a fermentum nisl
-              libero sit amet mi. Donec quis nisl ut nisl fermentum fermentum.
-            </p>
+            <p style={textStyle}>El proyecto Aquasfera nace con un objetivo claro: explorar y difundir la riqueza de la vida marina que habita en las costas españolas. Esta iniciativa única combina dos elementos esenciales: una enciclopedia marina exhaustiva que proporciona información detallada sobre las especies marinas que habitan en nuestras aguas, y una vibrante plataforma de redes sociales donde los usuarios pueden compartir sus experiencias y avistamientos marinos a través de fotografías.</p>
+
+            <p style={textStyle}> La parte informativa de Aquasfera actúa como una guía invaluable, ofreciendo datos precisos y curiosidades sobre una amplia variedad de criaturas marinas, desde peces coloridos hasta majestuosas ballenas. Esta enciclopedia virtual no solo educa, sino que también promueve la conservación marina al aumentar la conciencia sobre la diversidad y la fragilidad de nuestros ecosistemas acuáticos.</p>
+
+            <p style={textStyle}>Por otro lado, la función de red social de Aquasfera permite a los entusiastas del mar conectarse, compartir sus descubrimientos y contribuir a una comunidad apasionada por la vida marina. Los usuarios pueden cargar fotos de sus encuentros con la vida marina, desde el avistamiento de delfines juguetones hasta el descubrimiento de criaturas marinas raras. Esta plataforma no solo fomenta el intercambio de conocimientos, sino que también inspira a otros a explorar y apreciar la belleza de los océanos españoles.</p>
+
+            <p style={textStyle}> En resumen, Aquasfera es mucho más que un proyecto; es un llamado a la acción para proteger y preservar nuestros océanos, mientras celebramos la asombrosa biodiversidad que habita en ellos.</p>
           </div>
         </section>
         <section className='row pt-3'>
