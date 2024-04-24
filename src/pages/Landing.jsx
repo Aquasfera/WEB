@@ -4,52 +4,62 @@ import { NavLink } from "react-router-dom";
 function Landing() {
     const backgroundimage = {
         minHeight: "100vh",
-        backgroundImage: `url(${bgImage})`
+        backgroundImage: `url(${bgImage})`,
+        backgroundPosition: "right"
     }
     const titleStyle = {
-        paddingTop: "3em",
-        marginLeft: "1em",
-        marginRight: "1em",
-        fontSize: "2.5em",
+        fontSize: "3.5em",
         lineHeight: "1.4",
-        color: "#CCDBDC"
+        color: "#CCDBDC",
+        marginTop: "1em"
     }
     const textStyle = {
-        marginTop: "3em",
-        marginLeft: "2.5em",
-        marginRight: "1em,",
-        fontSize: "1.1em",
+        fontSize: "1.5em",
+        textDecoration: "none",
+        textAlign: "center",
+        marginLeft: "-1em",
         lineHeight: "1.6",
         color: "#CCDBDC"
     }
     const buttonContainerStyle = {
-        marginTop: "5em",
+        marginTop: "32em",
     }
-    const buttonStyle = {
-        paddingInline: "2em",
-        paddingBlock: "0.6em",
-        borderColor: "#CCDBDC",
-        borderStyle: "solid",
-        backgroundColor: "transparent",
+    const iconStyle = {
+        height: "66px",
+        width: "66px",
         color: "#CCDBDC"
 
+    }
+
+    const separation = {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "spaceBetween"
+
+    }
+
+    const noTextDecoration = {
+        textDecoration: "none"
     }
     const API = 1
     return (
         <div style={backgroundimage}>
-            <div className="container">
+            <div className="container" style={separation}>
                 <h1 style={titleStyle}>
-                    Aquasfera
+                    AQUASFERA
                 </h1>
-                <h5 style={textStyle}>
+                {/*  <h5 style={textStyle}>
                     ¡Descubre el fondo marino y las especies que se esconden en él!
-                </h5>
+                </h5> */}
                 <div className="d-inline-flex justify-content-around w-100" style={buttonContainerStyle}>
-                    <NavLink to={"/aquapedia"}>
-                        <button className="rounded" style={buttonStyle}>Mapa</button>
+                    <NavLink to={"/aquapedia"} style={noTextDecoration}>
+                        <img style={iconStyle} src="src/assets/icons/aquapedia-icon.svg" />
+                        <p style={textStyle}>Aquapedia</p>
                     </NavLink>
-                    <NavLink to={"/aquagram"}>
-                        <button className="rounded" style={buttonStyle}>Insta</button>
+                    <NavLink to={"/aquagram"} style={noTextDecoration}>
+                        <img style={iconStyle} src="src/assets/icons/aquagram-icon.svg" />
+                        <p style={textStyle}>Aquagram</p>
                     </NavLink>
                 </div>
             </div>

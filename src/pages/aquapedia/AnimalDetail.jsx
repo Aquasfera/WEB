@@ -15,7 +15,8 @@ function AnimalDetail() {
         marginRight: "2em",
         marginTop: "1em",
         fontSize: "1.1em",
-        fontWeight: "lighter"
+        fontWeight: "lighter",
+        textAlign: "justify"
     }
     const textStyle = {
         color: "white",
@@ -36,15 +37,21 @@ function AnimalDetail() {
         paddingTop: "0.8em"
     }
     const listStyle = {
-        color: "white"
+        color: "white",
+        listStyle: "none",
+        marginLeft: "-1em"
     }
     const elementStyle = {
         marginBlock: "0.6em",
-        marginLeft: "1em"
+        marginLeft: "0.5em",
+        color: "white"
+    }
+    const divStyle = {
+        marginRight: "4.5em"
     }
     const [animalData, setAnimalData] = useState(null);
     const API_URL = import.meta.env.VITE_API_URL;
-    const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO ;
+    const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO;
     useEffect(() => {
         try {
             fetch(API_URL + 'animal/name/' + name)
@@ -59,7 +66,7 @@ function AnimalDetail() {
     }, [])
 
     if (animalData === null) {
-        return <Loading/>
+        return <Loading />
     }
 
     return (
@@ -68,25 +75,23 @@ function AnimalDetail() {
                 <h1 style={titleStyle}>
                     {animalData.name}
                 </h1>
+
+                <div className="container-fluid">
+
+                    <CarouselPhotos id={animalData.id} />
+
+                </div>
                 <h5 style={subtitleStyle}>
                     {animalData.description}
                 </h5>
-                <div className="container-fluid">
-
-                    {/* <img src={`http://192.168.1.244:3000/photos/` + animalData.photos[0]?.url} className="img-fluid mt-3 rounded" alt={animalData.name} /> */}
-                    <CarouselPhotos id={animalData.id}/>
-
-                </div>
-                <div >
+                <div style={divStyle}>
                     <h5 style={textStyle} className="mt-5">
                         Ficha tecnica {animalData.name}
                     </h5>
-                    <ul   style={listStyle}>
-                        <li style={elementStyle}>Tipo :</li>
-                        <li style={elementStyle}>Especie :</li>
-                        <li style={elementStyle}>Peso :</li>
-                        <li style={elementStyle}>Tamaño :</li>
-                        <li style={elementStyle}>Otras localizaciones :</li>
+                    <ul style={listStyle}>
+                        <li style={titleStyle}>Nombre científico:<span style={elementStyle}>{animalData.scientific_name}</span></li>
+                        <li style={titleStyle}>Especie:<span style={elementStyle}>{animalData.species.name}</span></li>
+                        <li style={titleStyle}>Tamaño y peso:<span style={elementStyle}>{animalData.size}</span></li>
                     </ul>
 
                 </div>
@@ -94,12 +99,12 @@ function AnimalDetail() {
                     Avistamientos
                 </h1>
                 <div>
-                    <Sightings id={animalData.id}/>
+                    <Sightings id={animalData.id} />
                 </div>
                 <h1 style={titleStyle}>
                     Fundaciones
                 </h1>
-                <Foundations/>
+                <Foundations />
 
             </div>
         </>
