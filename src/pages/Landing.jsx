@@ -5,7 +5,8 @@ function Landing() {
     const backgroundimage = {
         minHeight: "100vh",
         backgroundImage: `url(${bgImage})`,
-        backgroundPosition: "right"
+        backgroundPosition: "right",
+        backgroundSize: "cover"
     }
     const titleStyle = {
         fontSize: "3.5em",
