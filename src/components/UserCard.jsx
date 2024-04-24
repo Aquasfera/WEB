@@ -93,19 +93,19 @@ export default function UserCard(props) {
         paddingInline: "1.5em",
     }
     return (
-        <div class="container">
-            <section class=" my-2" style={sectionStyle}>
-                <div class="card testimonial-card mt-2 mb-3" style={cardStyle}>
-                    <div class="card-up aqua-gradient"></div>
-                    <div class="avatar mx-auto white">
-                        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" class="rounded-circle img-fluid"
+        <div className="container">
+            <section className=" my-2" style={sectionStyle}>
+                <div className="card testimonial-card mt-2 mb-3" style={cardStyle}>
+                    <div className="card-up aqua-gradient"></div>
+                    <div className="avatar mx-auto white">
+                        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" className="rounded-circle img-fluid"
                             alt="woman avatar"></img>
                     </div>
-                    <div class="d-flex flex-column align-items-center justify-content-center card-body text-center" >
-                        <h4 class="card-title font-weight-bold">{props.username}</h4>
+                    <div className="d-flex flex-column align-items-center justify-content-center card-body text-center" >
+                        <h4 className="card-title font-weight-bold">{props.username}</h4>
                         <div className='d-flex flex-row justify-content-center'>
-                            <span class="m-1">Seguidos: {followers}</span>
-                            <span class="m-1">Seguidores: {followeds}</span>
+                            <span className="m-1">Seguidos: {followers}</span>
+                            <span className="m-1">Seguidores: {followeds}</span>
                         </div>
                         <button className='btn btn-primary' onClick={() => handleFollow()}>{follow ? 'Dejar de seguir' : 'Seguir'} </button>
                     </div>
