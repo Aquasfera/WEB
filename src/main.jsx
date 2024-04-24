@@ -46,7 +46,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path='/aquagram' element={<Aquagram/>}>
           <Route path='/aquagram' element={<Feed />} />
           <Route path='/aquagram/personal-profile' element={<PersonalProfile />} />
-          <Route path='/aquagram/personal-post' element={<PersonalPost />} />
+          <Route path='/aquagram/personal-post/:postId' element={<PersonalPost />} />
           <Route path='/aquagram/newPost' element={<NewPost/>} />
         </Route>
       </Routes>

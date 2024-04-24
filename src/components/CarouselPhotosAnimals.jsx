@@ -22,11 +22,12 @@ function CarouselPhotos(props) {
     }, []);
 
     return (
-        <Carousel activeIndex={index} onSelect={handleSelect}>
+        <section className='row d-flex justify-content-center'>
+        <Carousel activeIndex={index} onSelect={handleSelect} className='col-12 col-lg-7'>
             {
                 data.map((item, index) => {
                     return (
-                        <Carousel.Item key={index}>
+                        <Carousel.Item key={index} className='' >
                             <img className='img-fluid' src={`${API_PHOTOS}${item.url}`} />
                             {/* <Carousel.Caption>
                                 <h3>{item.title}</h3>
@@ -37,6 +38,7 @@ function CarouselPhotos(props) {
                 })
             }
         </Carousel>
+        </section>
     );
 }
 
