@@ -2,18 +2,23 @@ import AnimalCard from "../../components/AnimalCard.jsx";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Loading from "../../components/Loading.jsx";
+import Wallpaper from "../../assets/images/wallpaper.png"
 
 
 function Animals() {
     const stickyTop = {
         top: "3.5em",
-        backgroundColor: "#0A141F",
+        backgroundColor: "transparent",
         paddingTop: "1em"
     }
     const bgcolor = {
 
         minHeight: "100vh",
-        backgroundColor: "#0A141F"
+        backgroundImage: `url(${Wallpaper})`,
+        backgroundRepeat: "no-repeat",
+        backgroundAttachment: "fixed",
+        backgroundPosition: "center",
+        backgroundSize: "cover"
     }
     const titleStyle = {
         color: "#D2AD89",
