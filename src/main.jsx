@@ -5,7 +5,7 @@ import '../src/styles/index.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap/dist/js/bootstrap.js'
 
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Animals from './pages/aquapedia/Animals.jsx'
 import AnimalDetail from './pages/aquapedia/AnimalDetail.jsx'
@@ -24,8 +24,67 @@ import NewPost from './pages/aquagram/NewPost.jsx'
 import Aquagram from './pages/aquagram/Aquagram.jsx'
 import FAQ from './pages/aquapedia/FAQ.jsx'
 
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: '/aquapedia',
+    element: <Aquapedia/>,
+    children: [
+      {
+        path:'/aquapedia', 
+        element:<Maps/>
+
+      },
+      {
+        path:'/aquapedia/:sea',
+        element:<Animals />
+      },
+      {
+        path:'/aquapedia/:sea/:name',
+        element:<AnimalDetail />
+      }
+    ],
+  },
+  {
+    path: '/login',
+    element: <Login/>
+  },
+  {
+    path: '/register',
+    element: <Register/>
+  },
+  {
+    path: '/aquagram',
+    element: <Aquagram/>,
+    children: [
+      {
+        path:'/aquagram', 
+        element:<Feed/>
+
+      },
+      {
+        path:'/aquagram/personal-profile',
+        element:<PersonalProfile />
+      },
+      {
+        path:'/aquagram/personal-post',
+        element:<PersonalPost />
+      },
+      {
+        path:'/aquagram/newPost',
+        element:<NewPost />
+      }
+    ],
+  },
+]);
+
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <BrowserRouter>
+  <RouterProvider router={router}/>
+   /*  <BrowserRouter>
       <Routes>
         
       
@@ -50,5 +109,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path='/aquagram/newPost' element={<NewPost/>} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */
 )
