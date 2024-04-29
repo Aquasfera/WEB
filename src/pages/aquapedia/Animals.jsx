@@ -71,8 +71,7 @@ function Animals() {
                 const response = await fetch(API_URL + 'animal/location/' + seaID);
                 const jsonData = await response.json();
                 setAnimalData(jsonData);
-                console.log("hola")
-                console.log(jsonData)
+
             } catch (error) {
                 console.error(error);
             }

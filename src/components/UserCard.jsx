@@ -1,9 +1,12 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect,useContext } from 'react'
 import './UserCard.css'
+import Context from "../contexts/Context";
+
+import PFPPaths from '../assets/profilePics/profilePicsPaths.json'
 export default function UserCard(props) {
     const API_URL = import.meta.env.VITE_API_URL;
-
+    const {actualUser, logout} = useContext(Context);
     const [followers, setFollowers] = useState(0)
     const [followeds, setFolloweds] = useState(0)
     const [follow, setFollow] = useState(false)
@@ -32,7 +35,7 @@ export default function UserCard(props) {
     const handleFollow = async (postId, currentLikes) => {
         try {
             if (follow) {
-                fetch(API_URL + 'follow/follower/' + 1 + '/followed/' + props.id, {
+                fetch(API_URL + 'follow/follower/' + props.actualUser.id + '/followed/' + props.id, {
                     method: 'DELETE',
                     body: JSON.stringify({
                         token: props.token
@@ -102,8 +105,8 @@ export default function UserCard(props) {
                 <div className="card testimonial-card mt-2 mb-3" style={cardStyle}>
                     <div className="card-up aqua-gradient"></div>
                     <div className="avatar mx-auto white">
-                        <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%2831%29.jpg" className="rounded-circle img-fluid"
-                            alt="woman avatar"></img>
+                    <img src={"../assets/profilePics/" + PFPPaths[actualUser.avatar]} style={{width: "40px", padding: "2px"}}/>
+
                     </div>
                     <div className="d-flex flex-column align-items-center justify-content-center card-body text-center" >
                         <h4 className="card-title font-weight-bold">{props.username}</h4>

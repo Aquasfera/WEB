@@ -57,7 +57,6 @@ function AnimalDetail() {
             fetch(API_URL + 'animal/name/' + name)
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data)
                     setAnimalData(data)
                 })
         } catch (error) {

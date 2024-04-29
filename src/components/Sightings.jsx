@@ -19,7 +19,6 @@ function Sightings(props) {
                 const response = await fetch(API_URL + 'post/animal/' + props.id);
                 const jsonData = await response.json();
                 setanimalPosts(jsonData);
-                console.log(jsonData)
             } catch (error) {
                 console.error(error);
             }

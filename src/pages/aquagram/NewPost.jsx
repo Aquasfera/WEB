@@ -65,7 +65,7 @@ function NewPost() {
 
     fetch(API_URL + "post", options)
       .then((res) => res.json())
-      .then((res) => {console.log("Post creado", res); navigate('/aquagram')})
+      .then((res) => {navigate('/aquagram')})
       .catch((err) => console.log(err));
   }
 

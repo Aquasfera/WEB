@@ -57,14 +57,12 @@ function Post(props) {
             .then(response => response.json())
             .then(data => {
                 setLike(data)
-                // console.log(data)
             })
             .catch(error => console.error(error))
         fetch(API_URL + 'like/count/' + props.id)
             .then(response => response.json())
             .then(data => {
                 setLikeCount(data)
-                // console.log(data)
             })
             .catch(error => console.error(error))
     }, [like])
@@ -83,7 +81,6 @@ function Post(props) {
                 })
                     .then(response => response.json())
                     .then(data => {
-                        // console.log(data)
                         setLike(null)
                     })
                     .catch(error => console.error(error))
@@ -101,7 +98,6 @@ function Post(props) {
                 })
                     .then(response => response.json())
                     .then(data => {
-                        // console.log(data)
                         setLike(data)
                     })
                     .catch(error => console.error(error))

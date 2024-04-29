@@ -16,7 +16,6 @@ function Feed() {
             .then(response => response.json())
             .then(data => {
                 setPosts(data)
-                console.log(data)
             })
             .catch(error => console.error(error))
 

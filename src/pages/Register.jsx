@@ -41,10 +41,8 @@ export default function Register() {
     fetch(API_URL + "register", options)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.error) //Usuario existe
         {
-          console.log('El usuario ya existe.')
           setErrorMessage('El usuario ya existe')
         }
         else {
@@ -52,7 +50,7 @@ export default function Register() {
         }
 
       })
-      .catch((err) => console.log(err), setErrorMessage('Error al registrse'))
+      .catch((err) => setErrorMessage('Error al registrse'))
   };
 
   return (

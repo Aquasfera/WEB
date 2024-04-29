@@ -44,7 +44,6 @@ function PersonalPost() {
                     return post;
                 });
                 setPosts(updatedPosts);
-                console.log(posts[0].likes)
                 setLiked(!liked);
 
             } else {

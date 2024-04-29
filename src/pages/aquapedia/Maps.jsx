@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import AboutUs from './AboutUs';
 const bgcolor = {
 
-    minHeight: "100vh",
+    minHeight: "60vh",
     backgroundColor: "#0A141F"
 }
 const titleStyle = {
@@ -80,6 +80,7 @@ const Maps = props => {
     };
 
     return (
+        <>
         <div style={bgcolor}>
             <h1 style={titleStyle}>
                 ¡Descubre miles de especies en nuestro mapa!
@@ -91,6 +92,8 @@ const Maps = props => {
                 ¡Haz clic en algun punto del mapa y descubre!
             </h2>
         </div>
+        <AboutUs></AboutUs>
+        </>
     )
 }
 

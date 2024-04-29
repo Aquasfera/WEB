@@ -37,7 +37,6 @@ export default function Login() {
       .then((res) => res.json())
       .then(res => {
         if(res.error){
-          console.log('Credenciales mal.')
           setErrorMessage('Usuario o contraseña equivocados')
         }
         else{
@@ -45,7 +44,7 @@ export default function Login() {
           navigate("/aquagram");
         }
       })
-      .catch((err) => {console.log('Fallo de login : ' + err), setErrorMessage('Fallo al iniciar sesión')});
+      .catch((err) => {setErrorMessage('Fallo al iniciar sesión')});
   };
 
   return (
