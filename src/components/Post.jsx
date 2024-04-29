@@ -74,6 +74,12 @@ function Post(props) {
             if (like) {
                 fetch(API_URL + 'like/user/' + actualUser.id + '/post/' + props.id, {
                     method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        token: token
+                    })
                 })
                     .then(response => response.json())
                     .then(data => {
@@ -90,6 +96,7 @@ function Post(props) {
                     body: JSON.stringify({
                         userId: actualUser.id,
                         postId: props.id,
+                        token: token
                     })
                 })
                     .then(response => response.json())
