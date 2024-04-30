@@ -43,6 +43,7 @@ export default function PersonalProfile() {
         marginTop: "0.8em"
     }
     const textStyle = {
+        textDecoration: 'none',
         color: "white",
         fontSize: "1.1em",
         fontWeight: "lighter"

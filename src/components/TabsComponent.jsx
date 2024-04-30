@@ -53,7 +53,7 @@ export default function TabsComponent(props) {
                         )}
                 </div>
             </Tab>
-            <Tab eventKey="usuarios" title="Usuarios">
+            <Tab eventKey="usuarios" title="Usuarios" style={{color:'white', textDecoration:'None'}}>
 
                 <div className='col-12 justify-content-center d-flex flex-row flex-wrap'>
                     {
