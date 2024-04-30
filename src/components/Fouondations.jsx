@@ -8,7 +8,7 @@ function Foundations() {
     <div className="container-fluid pt-3 pb-5 ">
       <div className="grid">
         <div className="row">
-          <div className="col-9 offset-lg-3">
+
           {
             Fundaciones.map((e)=>{
               return(
@@ -17,7 +17,6 @@ function Foundations() {
               
             })
           }
-          </div>
         </div>
       </div>
     </div>
