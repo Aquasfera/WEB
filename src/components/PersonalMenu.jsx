@@ -12,11 +12,11 @@ import { useNavigate } from "react-router-dom";
 import PFPPaths from '../assets/profilePics/profilePicsPaths.json'
 
 function PersonalMenu(){
-
+    const API_PHOTOS = import.meta.env.VITE_API_URL_PHOTO;
     const {actualUser, logout} = useContext(Context);
     const [showMenu, setShowMenu] = useState(true);
     const navigate = useNavigate();
-
+    console.log(API_PHOTOS,actualUser.avatar)
     return(
         <>
         <h1>{actualUser.name}</h1>
@@ -26,7 +26,8 @@ function PersonalMenu(){
             <img src={feed} style={{width: '25px'}} onClick={() => {setShowMenu(true); navigate('/aquagram')}}/>
             <img src={aquarium} style={{width: '25px'}} onClick={() => {setShowMenu(true); navigate('/aquagram/personal-profile')}}/>
         </div>
-        <img src={"src/assets/profilePics/" + PFPPaths[actualUser.avatar]} style={{width: "40px", padding: "2px"}} onClick={() => setShowMenu((showMenu ? false : true))}/>
+
+        <img src={`${API_PHOTOS}${actualUser.avatar}`} style={{width: "40px", padding: "2px"}} onClick={() => setShowMenu((showMenu ? false : true))}/>
         </>
     )
 }

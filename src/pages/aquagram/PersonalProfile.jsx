@@ -69,8 +69,8 @@ export default function PersonalProfile() {
                                 <p className='me-1' style={textStyle}>Seguidos {followeds} </p>
                             </div>
                         </div>
-                        <div className='col-4 col-md-6 col-lg-8 mt-2'>
-                            <img src={'src/assets/profilePics/' + PFPPaths[actualUser.avatar]} style={{width: "40px", padding: "2px"}}  className='img-fluid' alt="Foto de perfil" />
+                        <div className='col-4 col-md-6 col-lg-8 pe-2'>
+                            <img src={`${API_PHOTOS}${actualUser.avatar}`}  className='img-fluid' alt="Foto de perfil" />
                         </div>
                     </div>
                 </section>

@@ -7,6 +7,7 @@ import teamData from "../../assets/team.json"
 import TeamCard from '../../components/TeamCard'
 
 export default function AboutUs() {
+
   const bgcolor = {
 
     minHeight: "100vh",

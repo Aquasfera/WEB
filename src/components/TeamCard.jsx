@@ -1,19 +1,15 @@
 import React from 'react'
 import githubIcon from "../assets/images/github.svg"
 import linkedinIcon from "../assets/images/linkedin.svg"
-export default function TeamCard(props) {
 
+export default function TeamCard(props) {
+    // const {actualUser, logout} = useContext(Context);
+    const API_URL_PHOTOS = process.env.REACT_APP_API_URL_PHOTOS;
     const svgStyle = {
         width: "2em",
         height: "auto",
     }
-    const imgStyle = {
-        width: "auto",
-        height: "auto",
-    }
-    const cardStyle = {
 
-    }
     const style = {
         width: "10em",
         backgroundColor: "#273654",
