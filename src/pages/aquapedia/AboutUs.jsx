@@ -41,9 +41,9 @@ export default function AboutUs() {
           <div className='col-sm-12 col-md-12 col-lg-12  '>
             <h1 style={titleStyle}>Nuestras ODS</h1>
             <div className='d-flex flex-wrap justify-content-center'>
-              <img className='img-fluid p-1 rounded' src={ods4} alt='ODS'></img>
-              <img className='img-fluid p-1 rounded' src={ods13} alt='ODS'></img>
-              <img className='img-fluid p-1 rounded' src={ods14} alt='ODS'></img>
+              <img className='img-fluid p-1 rounded' style={{maxWidth: '300px', maxHeight: '300px'}} src={ods4} alt='ODS'></img>
+              <img className='img-fluid p-1 rounded' style={{maxWidth: '300px', maxHeight: '300px'}} src={ods13} alt='ODS'></img>
+              <img className='img-fluid p-1 rounded' style={{maxWidth: '300px', maxHeight: '300px'}} src={ods14} alt='ODS'></img>
             </div>
           </div>
         </section>
