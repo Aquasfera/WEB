@@ -18,8 +18,8 @@ export default function TeamCard(props) {
     }
     return (
         <div className="card m-1" style={style}>
-            {/* <img src={"src/assets/profilePics/" + PFPPaths[actualUser.avatar]} style={{ width: "40px", padding: "2px" }} onClick={() => setShowMenu((showMenu ? false : true))} /> */}
-            <div className="card-body">
+            <img className="card-img-top" src={props.photo} alt="Card image"></img>
+            <div className="card-body text-center text-sm">
                 <h4 className="card-title">{props.name}</h4>
                 <div className='d-flex justify-content-center'>
                     <a className='' href={props.github} target="_blank" rel="noreferrer">
