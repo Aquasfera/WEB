@@ -19,6 +19,7 @@ const textStyle = {
     marginLeft: "1.6em",
     marginRight: "2em",
     marginTop: "1em",
+    marginBottom: "0em",
     fontSize: "1.6em",
     fontWeight: "lighter"
 }
@@ -92,7 +93,7 @@ const Maps = props => {
                 ¡Haz clic en algun punto del mapa y descubre!
             </h2>
         </div>
-        <AboutUs></AboutUs>
+        <AboutUs/>
         </>
     )
 }

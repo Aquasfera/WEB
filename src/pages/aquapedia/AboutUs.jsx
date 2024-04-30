@@ -1,12 +1,10 @@
 import React from 'react'
 import bgImage from "../../assets/images/landing-bg.png"
-import ods3 from "../../assets/images/ods-3.png"
 import ods4 from "../../assets/images/ods-4.png"
 import ods13 from "../../assets/images/ods-13.png"
 import ods14 from "../../assets/images/ods-14.png"
 import teamData from "../../assets/team.json"
 import TeamCard from '../../components/TeamCard'
-import Footer from '../../components/Footer'
 
 export default function AboutUs() {
   const bgcolor = {
@@ -40,31 +38,29 @@ export default function AboutUs() {
           </div>
         </section>
         <section className='row pt-3'>
-          <div className='col-sm-12 col-md-12 col-lg-12 '>
+          <div className='col-sm-12 col-md-12 col-lg-12  '>
             <h1 style={titleStyle}>Nuestras ODS</h1>
             <div className='d-flex flex-wrap justify-content-center'>
-              <img className='img-fluid p-1 rounded' src={ods3} alt='ODS'></img>
-              <img className='img-fluid p-1 rounded' src={ods4} alt='ODS'></img>
-              <img className='img-fluid p-1 rounded' src={ods13} alt='ODS'></img>
-              <img className='img-fluid p-1 rounded' src={ods14} alt='ODS'></img>
+              <img className='img-fluid p-1 rounded' style={{maxWidth: '300px', maxHeight: '300px'}} src={ods4} alt='ODS'></img>
+              <img className='img-fluid p-1 rounded' style={{maxWidth: '300px', maxHeight: '300px'}} src={ods13} alt='ODS'></img>
+              <img className='img-fluid p-1 rounded' style={{maxWidth: '300px', maxHeight: '300px'}} src={ods14} alt='ODS'></img>
             </div>
           </div>
         </section>
         <section className='row pt-3'>
 
           <h1 style={titleStyle}>Nuestro equipo</h1>
-          <div className='col-sm-12 col-md-12 col-lg-12 d-flex flex-wrap justify-content-center '>
+          <div className='col-sm-12 col-md-12 col-lg-12 d-flex flex-wrap justify-content-center pb-3'>
             {
               teamData.map((team, index) => {
                 return (
-                  <TeamCard key={index} linkedin={team.linkedin} name={team.name} photo={team.photo} github={team.github} style={textStyle}></TeamCard>
+                  <TeamCard key={index} linkedin={team.linkedin} name={team.name} photo={'src/assets/workers/' + team.photo} github={team.github} style={textStyle}></TeamCard>
                 )
               })
             }
           </div>
         </section>
       </section>
-      <Footer></Footer> 
     </>
   )
 }

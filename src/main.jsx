@@ -58,6 +58,14 @@ const router = createBrowserRouter([
     element: <Register/>
   },
   {
+    path: '/*',
+    element: <App/>
+  },
+  {
+    path: '/faq',
+    element: <FAQ/>
+  },
+  {
     path: '/aquagram',
     element: <Aquagram/>,
     children: [

@@ -1,7 +1,6 @@
 
 import React, { useEffect, useState,useContext } from 'react'
 import TabsComponent from '../../components/TabsComponent'
-import Footer from '../../components/Footer'
 import Context from '../../contexts/Context'
 import PFPPaths from '../../assets/profilePics/profilePicsPaths.json'
 
@@ -71,7 +70,7 @@ export default function PersonalProfile() {
                             </div>
                         </div>
                         <div className='col-4 col-md-6 col-lg-8 mt-2'>
-                            <img src={"src/assets/profilePics/" + PFPPaths[actualUser.avatar]} style={{width: "40px", padding: "2px"}}  className='img-fluid' alt="Foto de perfil" />
+                            <img src={'src/assets/profilePics/' + PFPPaths[actualUser.avatar]} style={{width: "40px", padding: "2px"}}  className='img-fluid' alt="Foto de perfil" />
                         </div>
                     </div>
                 </section>
@@ -79,10 +78,7 @@ export default function PersonalProfile() {
                     <TabsComponent actualUser={actualUser} token={token} textStyle={textStyle} />
                 </section>
 
-            </div>
-
-                <Footer />
-                
+            </div>                
         </>
     )
 }
