@@ -1,7 +1,6 @@
 import React from 'react'
 import githubIcon from "../assets/images/github.svg"
 import linkedinIcon from "../assets/images/linkedin.svg"
-import ods from "../assets/images/ods-3.png"
 export default function TeamCard(props) {
 
     const svgStyle = {
@@ -23,8 +22,8 @@ export default function TeamCard(props) {
     }
     return (
         <div className="card m-1" style={style}>
-            <img className="card-img-top" src={ods} alt="Card image"></img>
-            <div className="card-body">
+            <img className="card-img-top" src={props.photo} alt="Card image"></img>
+            <div className="card-body text-center text-sm">
                 <h4 className="card-title">{props.name}</h4>
                 <div className='d-flex justify-content-center'>
                     <a className='' href={props.github} target="_blank" rel="noreferrer">

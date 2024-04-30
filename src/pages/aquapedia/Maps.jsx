@@ -93,7 +93,7 @@ const Maps = props => {
                 ¡Haz clic en algun punto del mapa y descubre!
             </h2>
         </div>
-        <AboutUs></AboutUs>
+        <AboutUs/>
         </>
     )
 }
