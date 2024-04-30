@@ -16,7 +16,7 @@ const nostyle = {
 function Navhead() {
   const navigate = useNavigate()
   return (
-    <Navbar expand="lg" className='navbar-dark sticky-top' style={bgcolor} navbar-expand-end="true">
+    <Navbar expand="lg" className='navbar-dark sticky-top pt-1' style={bgcolor} navbar-expand-end="true">
       <Container>
         <Link to='/' style={nostyle}><img src={world} style={{width: '20px', marginBottom: '4px', marginRight: '2px'}}/><Navbar.Brand>Aquasfera</Navbar.Brand></Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -24,6 +24,7 @@ function Navhead() {
           <Nav className="me-auto">
             <Nav.Link onClick={() => navigate("/aquapedia")}  >Mapa</Nav.Link>
             <Nav.Link onClick={() => navigate("/aquagram")} >Aquagram</Nav.Link>
+            <Nav.Link onClick={() => navigate("/faq")} >Preguntas Frecuentes</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

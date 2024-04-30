@@ -1,7 +1,6 @@
 
 import React, { useEffect, useState,useContext } from 'react'
 import TabsComponent from '../../components/TabsComponent'
-import Footer from '../../components/Footer'
 import Context from '../../contexts/Context'
 import PFPPaths from '../../assets/profilePics/profilePicsPaths.json'
 
@@ -79,10 +78,7 @@ export default function PersonalProfile() {
                     <TabsComponent actualUser={actualUser} token={token} textStyle={textStyle} />
                 </section>
 
-            </div>
-
-                <Footer />
-                
+            </div>                
         </>
     )
 }
