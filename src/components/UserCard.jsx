@@ -3,10 +3,10 @@ import { useState, useEffect,useContext } from 'react'
 import './UserCard.css'
 import Context from "../contexts/Context";
 
-import PFPPaths from '../assets/profilePics/profilePicsPaths.json'
 export default function UserCard(props) {
     const API_URL = import.meta.env.VITE_API_URL;
-    const {actualUser, logout} = useContext(Context);
+    const API_URL_PHOTOS = import.meta.env.VITE_API_URL_PHOTO;
+    const {actualUser, logout} = useContext(Context);   
     const [followers, setFollowers] = useState(0)
     const [followeds, setFolloweds] = useState(0)
     const [follow, setFollow] = useState(false)
@@ -68,10 +68,7 @@ export default function UserCard(props) {
             console.error('Error al actualizar los likes del post:', error);
         }
     }
-    const iconSize = {
-        width: "25px",
-        height: "25px"
-    }
+
     const sectionStyle = {
         maxWidth: "23rem",
 
@@ -82,30 +79,14 @@ export default function UserCard(props) {
         fontSize: "1.1em",
         fontWeight: "lighter"
     }
-    const titleStyle = {
-        color: "#D2AD89",
-        marginLeft: "1em",
-        marginTop: "0.8em"
-    }
-    const textStyle = {
-        
-    }
-    const hRule = {
-        border: "2px solid white",
-        marginInline: "1.5em",
-        marginBlock: "1.5em"
 
-    }
-    const containerStyle = {
-        paddingInline: "1.5em",
-    }
     return (
         <div className="container">
             <section className=" my-2" style={sectionStyle}>
                 <div className="card testimonial-card mt-2 mb-3" style={cardStyle}>
                     <div className="card-up aqua-gradient"></div>
                     <div className="avatar mx-auto white">
-                    <img src={"../assets/profilePics/" + PFPPaths[actualUser.avatar]} style={{width: "40px", padding: "2px"}}/>
+                    <img src={`${API_URL_PHOTOS}${props.avatar}`} style={{width: "6.3em", height:"auto" }}/>
 
                     </div>
                     <div className="d-flex flex-column align-items-center justify-content-center card-body text-center" >

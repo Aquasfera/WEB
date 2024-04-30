@@ -46,6 +46,10 @@ const router = createBrowserRouter([
       {
         path:'/aquapedia/:sea/:name',
         element:<AnimalDetail />
+      },
+      {
+        path:'/aquapedia/faqs',
+        element:<FAQ />
       }
     ],
   },

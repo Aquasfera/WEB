@@ -1,20 +1,15 @@
 import React from 'react'
 import githubIcon from "../assets/images/github.svg"
 import linkedinIcon from "../assets/images/linkedin.svg"
-import ods from "../assets/images/ods-3.png"
-export default function TeamCard(props) {
 
+export default function TeamCard(props) {
+    // const {actualUser, logout} = useContext(Context);
+    const API_URL_PHOTOS = process.env.REACT_APP_API_URL_PHOTOS;
     const svgStyle = {
         width: "2em",
         height: "auto",
     }
-    const imgStyle = {
-        width: "auto",
-        height: "auto",
-    }
-    const cardStyle = {
 
-    }
     const style = {
         width: "10em",
         backgroundColor: "#273654",
@@ -23,7 +18,7 @@ export default function TeamCard(props) {
     }
     return (
         <div className="card m-1" style={style}>
-            <img className="card-img-top" src={ods} alt="Card image"></img>
+            {/* <img src={"src/assets/profilePics/" + PFPPaths[actualUser.avatar]} style={{ width: "40px", padding: "2px" }} onClick={() => setShowMenu((showMenu ? false : true))} /> */}
             <div className="card-body">
                 <h4 className="card-title">{props.name}</h4>
                 <div className='d-flex justify-content-center'>

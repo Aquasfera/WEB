@@ -23,7 +23,7 @@ function Landing() {
         color: "#CCDBDC"
     }
     const buttonContainerStyle = {
-        marginTop: "32em",
+        marginTop: "60vh",
     }
     const iconStyle = {
         height: "66px",

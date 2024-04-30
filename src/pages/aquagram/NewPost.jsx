@@ -121,7 +121,7 @@ function NewPost() {
                   </Dropdown.Menu>
               </DropdownButton>
             </div>
-            <div>
+            <div >
               <DropdownButton
                 id="fishDropdown"
                 title={

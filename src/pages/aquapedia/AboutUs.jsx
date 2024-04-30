@@ -9,6 +9,7 @@ import TeamCard from '../../components/TeamCard'
 import Footer from '../../components/Footer'
 
 export default function AboutUs() {
+
   const bgcolor = {
 
     minHeight: "100vh",

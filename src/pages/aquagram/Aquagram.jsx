@@ -26,28 +26,36 @@ function Aquagram()
         body: JSON.stringify({token: token})
       };      
       
+      console.log('este token', token)
+
       fetch(API_URL + 'refresh', options)
       .then(resp => resp.json())
       .then(resp => {
         if(resp.error){//Si no hay token
+          console.log('No detecta token')
           logout()
         }
         else{
           resp.avatar = resp.avatar;
           setActualUser(resp)
+          console.log('Usuario comprobado.', resp)
       }}
       )
       .catch(err => logout())
       },[])
 
       const logout = () => {
+          console.log("Logout intento")
           fetch(API_URL + 'logout', {method: 'POST', credentials: 'include'})
           .then(resp => resp.json())
           .then(data => {
-            })
+                  console.log(data);})
           .catch(err => console.log(err))
+          
           Cookie.remove('tokenCookie')
           setActualUser(null)
+              
+          console.log("Logout hecho")
           navigate('/login')
       }
     

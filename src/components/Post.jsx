@@ -127,7 +127,7 @@ function Post(props) {
         <div className="pb-5" style={bgcolor}>
             <div className="post-header" style={displayHeader}>
                 <div className="post-username flex" style={display}>
-                    <img className="user-avatar img-fluid" style={iconSize} src={'src/assets/profilePics/' + PFPPaths[props.avatar]} />
+                    <img className="user-avatar img-fluid" style={iconSize} src={`${API_PHOTOS}${props.avatar}`} />
                     <p className="username" style={textColor}>{props.username}</p>
                 </div>
                 <div className="post-location" style={display}>
