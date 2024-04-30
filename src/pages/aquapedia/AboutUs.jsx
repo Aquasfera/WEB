@@ -40,7 +40,7 @@ export default function AboutUs() {
           </div>
         </section>
         <section className='row pt-3'>
-          <div className='col-sm-12 col-md-12 col-lg-12 '>
+          <div className='col-sm-12 col-md-12 col-lg-12  '>
             <h1 style={titleStyle}>Nuestras ODS</h1>
             <div className='d-flex flex-wrap justify-content-center'>
               <img className='img-fluid p-1 rounded' src={ods3} alt='ODS'></img>
@@ -53,7 +53,7 @@ export default function AboutUs() {
         <section className='row pt-3'>
 
           <h1 style={titleStyle}>Nuestro equipo</h1>
-          <div className='col-sm-12 col-md-12 col-lg-12 d-flex flex-wrap justify-content-center '>
+          <div className='col-sm-12 col-md-12 col-lg-12 d-flex flex-wrap justify-content-center pb-3'>
             {
               teamData.map((team, index) => {
                 return (

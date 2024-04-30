@@ -19,6 +19,7 @@ const textStyle = {
     marginLeft: "1.6em",
     marginRight: "2em",
     marginTop: "1em",
+    marginBottom: "0em",
     fontSize: "1.6em",
     fontWeight: "lighter"
 }
