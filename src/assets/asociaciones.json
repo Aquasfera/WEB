@@ -29,7 +29,7 @@
     },
     {
         "id": 5,
-        "name": "FUNDACIÓN PALMA AQUARIUM",
+        "name": "PALMA AQUARIUM",
         "description": "Palma Aquarium se presenta como un parque marino comprometido con la conservación de los mares y océanos de todo el mundo.",
         "img" : "http://192.168.1.244:3000/api/photos/pejeperro31713892012956.webp",
         "dir": "https://www.fundacionpalmaaquarium.org/"
