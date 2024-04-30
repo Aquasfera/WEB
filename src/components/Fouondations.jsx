@@ -5,9 +5,10 @@ const API_URL = import.meta.env.VITE_API_URL;
 
 function Foundations() {
   return (
-    <div className="container-fluid pt-3 pb-5">
+    <div className="container-fluid pt-3 pb-5 ">
       <div className="grid">
         <div className="row">
+          <div className="col-12 offset-lg-3">
           {
             Fundaciones.map((e)=>{
               return(
@@ -16,6 +17,7 @@ function Foundations() {
               
             })
           }
+          </div>
         </div>
       </div>
     </div>
