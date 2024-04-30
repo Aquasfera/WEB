@@ -88,18 +88,13 @@ function Animals() {
         data.locations.map(location => {
             if (sea === "Mar Mediterráneo") {
                 text = location.description;
-            }
-            if (sea === "Oceáno Atlántico") {
+            } else if (sea === "Océano Atlántico") {
+                text = location.description;
+            } else if (sea === "Mar Cantábrico") {
                 text = location.description;
             }
-            if (sea === "Mar Cantábrico") {
-                text = location.description;
-            }
-
-
-        })
-
-    })
+        });
+    });
 
     return (
         <div style={bgcolor}>

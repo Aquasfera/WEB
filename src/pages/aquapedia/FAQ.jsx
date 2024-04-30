@@ -1,9 +1,10 @@
 import NavHeadAquapedia from '../../components/NavheadAquapedia';
+import Accordion from 'react-bootstrap/Accordion';
+import './styles/accordionStyle.css';
 
 import "./styles/FAQ.css";
 
 const FAQ = () => {
-
 
 
   const faqData = [
@@ -44,17 +45,24 @@ const FAQ = () => {
       <NavHeadAquapedia />
       <h2 className="titulo">Preguntas Frecuentes</h2>
 
-      {faqData.map((faq, index) => (
-        <div key={index} className="faq-question caja1">
-          <h4 className="pointer click tituloPreg">
-            {faq.question}
-          </h4>
+      <Accordion className='p-4' >
+        {
+          faqData.map((data, index) => {
+            return (
+              <Accordion.Item eventKey={index} key={index}>
+                <Accordion.Header>{data.question}</Accordion.Header>
+                <Accordion.Body>
+                  {data.answer}
+                </Accordion.Body>
+              </Accordion.Item>
+            )
 
-          <div className="answer textwhite">
-            {faq.answer}
-          </div>
-        </div>
-      ))}
+
+          })
+        }
+      </Accordion>
+
+
     </div>
   );
 };
