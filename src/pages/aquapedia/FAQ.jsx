@@ -43,9 +43,9 @@ const FAQ = () => {
   return (
     <div className="box0">
       <NavHeadAquapedia />
-      <h2 className="titulo">Preguntas Frecuentes</h2>
+      <h2 className="titulo mb-4">Preguntas Frecuentes</h2>
 
-      <Accordion className='p-4' >
+      <Accordion className='p-4 pt-0' >
         {
           faqData.map((data, index) => {
             return (
