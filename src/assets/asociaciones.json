@@ -3,35 +3,35 @@
         "id": 1,
         "name": "Fundación Biodiversidad",	
         "description": "La Fundación Biodiversidad contribuye a la conservación y recuperación de los mares, así como al impulso de la economía azul.",
-        "img" : "http://192.168.1.244:3000/api/photos/tintorera11713966192367.webp",
+        "img" : "http://localhost:3000/api/photos/tintorera11713966192367.webp",
         "dir": "https://fundacion-biodiversidad.es/"
     },
     {
         "id": 2,
         "name": "CRAM",
         "description": "La Fundación CRAM es una entidad privada sin ánimo de lucro dedicada a la protección del medio marino y de las especies que lo habitan",
-        "img": "http://192.168.1.244:3000/api/photos/delfin31713966181544.webp",
+        "img": "http://localhost:3000/api/photos/delfin31713966181544.webp",
         "dir": "https://cram.org/"
     },
     {
         "id": 3,
         "name": "ECOMAR",
         "description": "Ecomar es mucho más que una organización sin fines de lucro, somos el latido de los mares, comprometidos con su conservación y preservación.",
-        "img": "http://192.168.1.244:3000/api/photos/tiburonblanco11713891366034.webp",
+        "img": "http://localhost:3000/api/photos/tiburonblanco11713891366034.webp",
         "dir": "https://fundacionecomar.org/"
     },
     {
         "id": 4,
         "name": "FUNDACIÓN ALMAS MARINAS",       
         "description": "Fundación Almas Marinas es un proyecto de educación y concienciación ambiental, una experiencia única en Baleares.",
-        "img": "http://192.168.1.244:3000/api/photos/sargo31713891902457.webp",
+        "img": "http://localhost:3000/api/photos/sargo31713891902457.webp",
         "dir": "https://www.almasmarinas.org/"
     },
     {
         "id": 5,
         "name": "PALMA AQUARIUM",
         "description": "Palma Aquarium se presenta como un parque marino comprometido con la conservación de los mares y océanos de todo el mundo.",
-        "img" : "http://192.168.1.244:3000/api/photos/pejeperro31713892012956.webp",
+        "img" : "http://localhost:3000/api/photos/pejeperro31713892012956.webp",
         "dir": "https://www.fundacionpalmaaquarium.org/"
 
     },
@@ -39,7 +39,7 @@
         "id": 6,
         "name": "SUBMON",
         "description": "Trabajamos para conservar la biodiversidad marina y para alcanzar un uso sostenible del medio marino, y lo hacemos promoviendo un cambio en la relación de la sociedad con el mar.",
-        "img": "http://192.168.1.244:3000/api/photos/atun21713891520838.webp",
+        "img": "http://localhost:3000/api/photos/atun21713891520838.webp",
         "dir": "https://www.submon.org/es/inicio/"
     }
 ]
